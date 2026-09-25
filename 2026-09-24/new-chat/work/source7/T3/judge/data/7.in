@@ -1,0 +1,73 @@
+8
+8
+Zj007 GAMMA
+Zj007 delta
+alpha alpha.cpp
+GAMMA GAMMA.cpp
+Zj007 alpha
+Zj007 Beta
+Beta Beta.cpp
+delta delta.cpp
+8
+Beta Beta.cpp
+1234 alpha
+1234 GAMMA
+alpha alpha.cpp
+1234 delta
+delta delta.cpp
+1234 Beta
+GAMMA GAMMA.cpp
+8
+alpha alpha.cpp
+ABCDE alpha
+ABCDE delta
+ABCDE GAMMA
+ABCDE Beta
+delta delta.cpp
+GAMMA GAMMA.cpp
+Beta Beta.cpp
+8
+A2B Beta
+A2B alpha
+alpha alpha.cpp
+GAMMA GAMMA.cpp
+delta delta.cpp
+A2B GAMMA
+Beta Beta.cpp
+A2B delta
+8
+-A12 alpha
+GAMMA GAMMA.cpp
+alpha alpha.cpp
+-A12 GAMMA
+delta delta.cpp
+-A12 delta
+-A12 Beta
+Beta Beta.cpp
+7
+Zj007 GAMMA
+GAMMA GAMMA.cpp
+Beta Beta.cpp
+Zj007 alpha
+alpha alpha.cpp
+Zj007 Beta
+Zj007 delta
+9
+Zj007 GAMMA
+delta delta.cpp
+Zj007 Beta
+Beta Beta.cpp
+GAMMA GAMMA.cpp
+alpha.cpp extra
+alpha alpha.cpp
+Zj007 delta
+Zj007 alpha
+8
+Zj007 Beta
+Zj007 alpha
+Zj007 delta
+GAMMA GAMMA.cpp
+delta delta.cpp
+Beta Beta.cpp
+alpha alpha.cpp
+Zj007 GAMMA

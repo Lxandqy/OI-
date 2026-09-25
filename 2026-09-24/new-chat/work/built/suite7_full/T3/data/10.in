@@ -1,0 +1,72 @@
+8
+8
+a1 b
+a a.cpp
+a1 a
+b b.cpp
+a1 d
+c c.cpp
+a1 c
+d d.cpp
+8
+A1B2 delta
+Beta Beta.cpp
+A1B2 GAMMA
+delta delta.cpp
+GAMMA GAMMA.cpp
+A1B2 alpha
+alpha alpha.cpp
+A1B2 Beta
+8
+Ab Ab.cpp
+Z0 Ab
+Z0 AB
+AB AB.cpp
+ab ab.cpp
+Z0 ab
+aB aB.cpp
+Z0 aB
+9
+Zj007 delta
+alpha alpha.cpp
+Zj007 Beta
+Beta Beta.cpp
+Zj007 GAMMA
+delta delta.cpp
+Zj007 alpha
+delta.cpp x
+GAMMA GAMMA.cpp
+6
+Zj007 GAMMA
+Zj007 delta
+alpha alpha.cpp
+Zj007 Beta
+Zj007 alpha
+Beta Beta.cpp
+8
+a9999999999999999999 Beta
+a9999999999999999999 GAMMA
+delta delta.cpp
+a9999999999999999999 delta
+alpha alpha.cpp
+Beta Beta.cpp
+a9999999999999999999 alpha
+GAMMA GAMMA.cpp
+8
+GAMMA GAMMA.cpp
+Zj007 alpha
+Zj007 Beta1
+alpha alpha.cpp
+Zj007 delta
+Zj007 GAMMA
+delta delta.cpp
+Beta1 Beta1.cpp
+8
+delta delta.cpp
+0A GAMMA
+Beta Beta.cpp
+0A Beta
+GAMMA GAMMA.cpp
+0A alpha
+alpha alpha.cpp
+0A delta

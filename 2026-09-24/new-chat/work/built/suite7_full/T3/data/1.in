@@ -1,0 +1,45 @@
+6
+2
+taskA taskA.cpp
+a00001 taskA
+8
+a00001 taskA
+taskA taskA.cpp
+a00001 taskC
+a00001 taskB
+taskD taskD.cpp
+taskB taskB.cpp
+a00001 taskD
+taskC taskC.cpp
+6
+taskC taskC.cpp
+a00001 taskA
+a00001 taskC
+taskA taskA.cpp
+a00001 taskB
+taskB taskB.cpp
+10
+taskD taskD.cpp
+a00001 taskE
+taskE taskE.cpp
+taskB taskB.cpp
+a00001 taskA
+a00001 taskB
+a00001 taskD
+a00001 taskC
+taskC taskC.cpp
+taskA taskA.cpp
+4
+taskB taskB.cpp
+taskA taskA.cpp
+a00001 taskA
+a00001 taskB
+8
+taskC taskC.cpp
+a00001 taskD
+taskA taskA.cpp
+a00001 taskA
+a00001 taskB
+taskB taskB.cpp
+a00001 taskC
+taskD taskD.cpp

@@ -1,0 +1,44 @@
+5
+8
+ABC999 AbC
+ABC ABC.cpp
+AbC AbC.cpp
+aBc aBc.cpp
+ABC999 aBc
+ABC999 abc
+ABC999 ABC
+abc abc.cpp
+6
+AA1 one
+Three Three.cpp
+one one.cpp
+two two.cpp
+BB2 Three
+AA1 two
+6
+three three.cpp
+one one.cpp
+A1 one
+C3 three
+B2 two
+two two.cpp
+10
+n00000 taskC
+n00000 taskB
+n00000 taskA
+taskA taskA.cpp
+taskD taskD.cpp
+n00000 taskD
+taskB taskB.cpp
+n00000 taskE
+taskE taskE.cpp
+taskC taskC.cpp
+8
+n00000 taskD
+taskB taskB.cpp
+taskC taskC.cpp
+n00000 taskB
+taskD taskD.cpp
+n00000 taskA
+taskA taskA.cpp
+n00000 taskC

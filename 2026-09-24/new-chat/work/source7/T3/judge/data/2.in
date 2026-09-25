@@ -1,0 +1,45 @@
+6
+10
+taskB taskB.cpp
+AbC000 taskB
+AbC000 taskD
+taskC taskC.cpp
+taskD taskD.cpp
+taskE taskE.cpp
+AbC000 taskE
+AbC000 taskA
+taskA taskA.cpp
+AbC000 taskC
+8
+AbC000 taskC
+AbC000 taskB
+AbC000 taskD
+taskB taskB.cpp
+AbC000 taskA
+taskC taskC.cpp
+taskA taskA.cpp
+taskD taskD.cpp
+2
+AbC000 taskA
+taskA taskA.cpp
+4
+AbC000 taskB
+taskB taskB.cpp
+AbC000 taskA
+taskA taskA.cpp
+8
+AbC000 taskA
+taskC taskC.cpp
+AbC000 taskD
+taskD taskD.cpp
+AbC000 taskC
+AbC000 taskB
+taskB taskB.cpp
+taskA taskA.cpp
+6
+AbC000 taskA
+AbC000 taskC
+taskB taskB.cpp
+taskA taskA.cpp
+taskC taskC.cpp
+AbC000 taskB

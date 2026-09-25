@@ -1,0 +1,40 @@
+5
+8
+taskB taskB.cpp
+A1 taskA
+taskC taskC.cpp
+taskD taskD.cpp
+A1 taskD
+taskA taskA.cpp
+A1 taskC
+A1 taskB
+4
+B2 taskA
+B2 taskB
+taskB taskB.cpp
+taskA taskA.cpp
+4
+A1 taskA
+taskA taskA.cpp
+B2 Other
+Other Other.cpp
+8
+A1 taskB
+taskB taskB.cpp
+taskC taskC.cpp
+A1 taskC
+taskA taskA.cpp
+B2 Other
+A1 taskA
+Other Other.cpp
+10
+A1 taskC
+A1 taskB
+taskB taskB.cpp
+A1 taskA
+A1 taskD
+taskD taskD.cpp
+A1 taskE
+taskC taskC.cpp
+taskA taskA.cpp
+taskE taskE.cpp
