@@ -6,6 +6,7 @@ import shutil
 import re
 import subprocess
 from pypdf import PdfReader
+from source_map import SOURCES
 
 root = Path(__file__).parent
 built = root / 'built'
@@ -21,12 +22,10 @@ for t in range(1, 5):
     folder = built / f'T{t}'
     solution = (folder / 'solution.md').read_text(encoding='utf-8')
     blocks = re.findall(r'```cpp\n(.*?)\n```', solution, re.S)
-    assert len(blocks) == 3, (t, len(blocks))
-    brute_name = f'partial_T{t}.cpp' if t <= 2 else f'partial_brute_T{t}.cpp'
-    mid_name = f'partial_mid_T{t}.cpp' if t <= 2 else f'partial_T{t}.cpp'
-    assert blocks[0] + '\n' == (root / brute_name).read_text(encoding='utf-8')
-    assert blocks[1] + '\n' == (root / mid_name).read_text(encoding='utf-8')
-    assert blocks[2] + '\n' == (folder / 'std.cpp').read_text(encoding='utf-8')
+    assert len(blocks) == len(SOURCES[t]), (t, len(blocks))
+    for block, (_, filename) in zip(blocks, SOURCES[t]):
+        assert block + '\n' == (root / filename).read_text(encoding='utf-8')
+    assert blocks[-1] + '\n' == (folder / 'std.cpp').read_text(encoding='utf-8')
     assert '{{' not in solution
     statement = (folder / 'statement.md').read_text(encoding='utf-8')
     found = re.findall(r'```text\n(.*?)\n```', statement, re.S)
@@ -38,7 +37,7 @@ for t in range(1, 5):
     for label, source in [('data', folder / 'data'), ('attachment', folder / 'attachment_source')]:
         target = folder / ('data.zip' if label == 'data' else 'attachment.zip')
         members = sorted(source.glob('*'))
-        assert len(members) == (20 if label == 'data' else 2)
+        assert len(members) == (40 if label == 'data' else 2)
         with ZipFile(target, 'w', ZIP_DEFLATED, compresslevel=8) as z:
             for item in members:
                 z.write(item, item.name)

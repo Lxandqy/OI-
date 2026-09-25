@@ -1,13 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-const int N = 35;
+const int N = 100005;
 const long long NEG = -(1LL << 60);
 struct Info{
 	long long sum,pref,suf,best;
 };
-Info data[5][N][N];
-int n,x[N],b[5];
+vector<Info> data[5];
+int n,x[N],b[5],width;
 long long answer = NEG;
 
 Info emptyInfo(){
@@ -28,7 +28,7 @@ Info mergeInfo(Info a,Info c){
 
 Info getInfo(int mask,int l,int r){
 	if(l > r) return emptyInfo();
-	return data[mask][l][r];
+	return data[mask][l * width + r];
 }
 
 void dfs(int j,int start,Info cur){
@@ -53,6 +53,8 @@ int main(){
 	cin >> n;
 	for(int j = 1; j <= 4; j++) cin >> b[j];
 	for(int i = 1; i <= n; i++) cin >> x[i];
+	width = n + 1;
+	for(int mask = 0; mask <= 4; mask++) data[mask] = vector<Info>(1LL * width * width);
 	for(int mask = 0; mask <= 4; mask++){
 		for(int l = 1; l <= n; l++){
 			long long sum = 0,bestEnd = NEG,best = NEG,pref = NEG;
@@ -68,7 +70,7 @@ int main(){
 					tail += x[i] ^ b[mask];
 					z.suf = max(z.suf,tail);
 				}
-				data[mask][l][r] = z;
+				data[mask][l * width + r] = z;
 			}
 		}
 	}

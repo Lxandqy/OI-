@@ -16,13 +16,19 @@
 2. 在变换后的数组中找到最大非空连续子数组和。
 3. 在所有合法区间选择中取最大值。
 
-## 20 分做法：枚举四段
+| 测试点 | 对应解法 |
+|---|---|
+| 1～2、3～4、5～6、7～8 | 依次使用直接枚举、区间摘要枚举、固定答案两端点的 DP、固定答案左端点的 DP |
+| 9～14 | 依次使用零掩码、单点操作、全覆盖、不相交、仅第四掩码非零、非负零掩码的简化算法 |
+| 15～20 | 九阶段与最大子数组三态合并 |
+
+## 1～2 点（10 分）：直接枚举
 
 ---
 
 **步骤 1、3。** 用 `dfs(j,start)` 表示正在选择第 $j$ 段，其左端点至少为 `start`。枚举 $l\ge start,r\ge l$，原地异或 $[l,r]$ 后递归下一段；返回时再异或一次恢复。四段都选完才进入步骤 2。合法四段的选择数是 $\binom{n+4}{8}$，比把每层都估作 $n^2$ 更准确。
 
-**步骤 2。** 对每个完整方案用一次 Kadane 扫描，计算最大非空连续和，耗时 $O(n)$，额外空间 $O(1)$。合计时间 $O\!\left(n\binom{n+4}{8}\right)$，搜索深度 4，数组和调用栈共 $O(n)$ 空间。$n\le10$ 可用；$n=10^5$ 时远不能完成。
+**步骤 2。** 对每个完整方案再枚举答案子数组的左右端点，逐个累加其中的数，单方案 $O(n^3)$。总时间 $O\!\left(n^3\binom{n+4}{8}\right)$，搜索栈与数组共 $O(n)$ 空间。$n\le10$ 可用；第 3～4 点 $n=30$ 时实测超时。
 
 ### 四段搜索小图
 
@@ -58,16 +64,17 @@ long long ans = -(1LL << 60);
 
 void dfs(int j,int start){
 	if(j == 5){
-		long long best = -(1LL << 60),end = 0;
-		for(int i = 1; i <= n; i++){
-			end = max((long long)x[i],end + x[i]);
-			best = max(best,end);
+		for(int l = 1; l <= n; l++){
+			for(int r = l; r <= n; r++){
+				long long sum = 0;
+				for(int i = l; i <= r; i++) sum += x[i];
+				ans = max(ans,sum);
+			}
 		}
-		ans = max(ans,best);
 		return;
 	}
-	for(int l = start; l <= n; l++){
-		for(int r = l; r <= n; r++){
+	for(int l = start; l <= n - (4 - j); l++){
+		for(int r = l; r <= n - (4 - j); r++){
 			for(int i = l; i <= r; i++) x[i] ^= b[j];
 			dfs(j + 1,r + 1);
 			for(int i = l; i <= r; i++) x[i] ^= b[j];
@@ -88,7 +95,167 @@ int main(){
 }
 ```
 
-## 20 分做法：固定答案左端点的阶段 DP
+## 3～4 点（10 分）：预处理区间摘要后枚举四段
+
+---
+
+**步骤 1。** 对每个掩码 $0,b_1,b_2,b_3,b_4$ 和每个原数组区间预处理四个值：区间和、最大前缀和、最大后缀和、最大非空子数组和。两个相邻区间的摘要可在 $O(1)$ 合并，跨边界的最优子数组为左区间最大后缀加右区间最大前缀。代码直接扫描每个区间求摘要，时间 $O(5n^3)$、空间 $O(5n^2)$；$n\le30$ 时很小。
+
+**步骤 2。** 沿用上面的四段搜索图。选择一个操作段时把之前的零掩码空白和本段摘要依次合并；四段选完再合并尾部空白。每个搜索分支只做常数次摘要合并，不再逐个枚举答案子数组。总时间 $O\!\left(n^3+\binom{n+4}{8}\right)$，空间 $O(n^2)$。第 5～6 点 $n=100$ 时搜索方案数仍过大，实测超时。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 100005;
+const long long NEG = -(1LL << 60);
+struct Info{
+	long long sum,pref,suf,best;
+};
+vector<Info> data[5];
+int n,x[N],b[5],width;
+long long answer = NEG;
+
+Info emptyInfo(){
+	Info z = {0,NEG,NEG,NEG};
+	return z;
+}
+
+Info mergeInfo(Info a,Info c){
+	if(a.best == NEG) return c;
+	if(c.best == NEG) return a;
+	Info z;
+	z.sum = a.sum + c.sum;
+	z.pref = max(a.pref,a.sum + c.pref);
+	z.suf = max(c.suf,c.sum + a.suf);
+	z.best = max(max(a.best,c.best),a.suf + c.pref);
+	return z;
+}
+
+Info getInfo(int mask,int l,int r){
+	if(l > r) return emptyInfo();
+	return data[mask][l * width + r];
+}
+
+void dfs(int j,int start,Info cur){
+	if(j == 5){
+		Info all = mergeInfo(cur,getInfo(0,start,n));
+		answer = max(answer,all.best);
+		return;
+	}
+	for(int l = start; l <= n - (4 - j); l++){
+		Info before = mergeInfo(cur,getInfo(0,start,l - 1));
+		for(int r = l; r <= n - (4 - j); r++){
+			Info now = mergeInfo(before,getInfo(j,l,r));
+			dfs(j + 1,r + 1,now);
+		}
+	}
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	cin >> n;
+	for(int j = 1; j <= 4; j++) cin >> b[j];
+	for(int i = 1; i <= n; i++) cin >> x[i];
+	width = n + 1;
+	for(int mask = 0; mask <= 4; mask++) data[mask] = vector<Info>(1LL * width * width);
+	for(int mask = 0; mask <= 4; mask++){
+		for(int l = 1; l <= n; l++){
+			long long sum = 0,bestEnd = NEG,best = NEG,pref = NEG;
+			for(int r = l; r <= n; r++){
+				long long v = x[r] ^ b[mask];
+				sum += v;
+				pref = max(pref,sum);
+				bestEnd = max(v,bestEnd + v);
+				best = max(best,bestEnd);
+				Info z = {sum,pref,NEG,best};
+				long long tail = 0;
+				for(int i = r; i >= l; i--){
+					tail += x[i] ^ b[mask];
+					z.suf = max(z.suf,tail);
+				}
+				data[mask][l * width + r] = z;
+			}
+		}
+	}
+	dfs(1,1,emptyInfo());
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 5～6 点（10 分）：固定答案两端点的阶段 DP
+
+---
+
+**步骤 1。** 枚举答案子数组 $[L,R]$，共有 $O(n^2)$ 种。四个操作段用九阶段 $p=0,1,\ldots,8$ 表示，掩码依次为 $(0,b_1,0,b_2,0,b_3,0,b_4,0)$。每次处理一个位置，可以留在阶段、前进一阶段，或从奇数阶段越过零长度空白前进两阶段。进入奇数阶段必消耗一个元素，所以四段非空。
+
+**步骤 2。** 对固定 $[L,R]$，`dp[p]` 表示当前阶段能得到的 $[L,R]$ 内最大和。位置在 $[L,R]$ 外时本次加零，在其中时加异或后的值；枚举 9 个源阶段和 9 个目标阶段检查合法转移。处理完所有数后只接受阶段 7、8。每个 $[L,R]$ 耗时 $O(9^2n)$，合计 $O(9^2n^3)$ 时间，输入数组以外只需 $O(1)$ DP 空间；$n\le100$ 可用。
+
+### 固定两端点的 DP 小图
+
+节点 $(i,p)$ 表示处理完 $i$ 个位置、当前位于阶段 $p$。**左上角图例**：`0` = 留在原阶段；`1` = 前进一阶段；`2` = 从奇数阶段直接前进两阶段。条件：阶段前进必须消耗当前元素；代价：在 $[L,R]$ 内加 $x_i\mathbin{\mathrm{xor}}\mathrm{mask}[p]$，区间外加零；价值：当前累计和。
+
+```mermaid
+flowchart LR
+ A["(i-1,1)"] -- 0 --> D["(i,1)"]
+ B["(i-1,0)"] -- 1 --> D
+ A -- 2 --> E["(i,3)"]
+```
+
+**终态**：$i=n$ 且 $p=7$ 或 $8$；合流时取较大和。第 7～8 点 $n=500$ 时该程序实测超时。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 100005;
+const long long NEG = -(1LL << 60);
+int n,x[N],b[4],maskValue[9];
+long long dp[9],nextDp[9];
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	for(int i = 1; i <= n; i++) cin >> x[i];
+	int temp[9] = {0,b[0],0,b[1],0,b[2],0,b[3],0};
+	for(int p = 0; p < 9; p++) maskValue[p] = temp[p];
+	long long answer = NEG;
+	for(int left = 1; left <= n; left++){
+		for(int right = left; right <= n; right++){
+			for(int p = 0; p < 9; p++) dp[p] = NEG;
+			dp[0] = 0;
+			for(int i = 1; i <= n; i++){
+				for(int p = 0; p < 9; p++) nextDp[p] = NEG;
+				for(int q = 0; q < 9; q++){
+					for(int p = 0; p < 9; p++){
+						bool allowed = q == p || q == p + 1;
+						if(p % 2 == 1 && p < 7 && q == p + 2) allowed = true;
+						if(!allowed || dp[p] == NEG) continue;
+						long long value = dp[p];
+						if(left <= i && i <= right) value += x[i] ^ maskValue[q];
+						nextDp[q] = max(nextDp[q],value);
+					}
+				}
+				for(int p = 0; p < 9; p++) dp[p] = nextDp[p];
+			}
+			answer = max(answer,max(dp[7],dp[8]));
+		}
+	}
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 7～8 点（10 分）：固定答案左端点的阶段 DP
 
 ---
 
@@ -96,7 +263,7 @@ int main(){
 
 **步骤 2。** 对固定的 $L$，用 $s=0,1,2$ 表示答案子数组尚未开始、正在延伸、已经结束。$i<L$ 时只能保持 $s=0$；$i=L$ 时必须把变换后的 $a_L$ 加入，转为 $s=1$；之后可以延伸、结束或保持结束。相同 $(p,s)$ 只保留最大的和，因为后续可选操作相同。到 $i=n$ 时只接受阶段 7、8 且 $s=1,2$，所以四段都完成、答案子数组非空。每个 $L$ 扫描 $n$ 个数，耗时 $O(n)$，两层状态表空间 $O(9\cdot3)$。
 
-**步骤 3。** 在所有 $L$ 的合法终态中取最大值。总时间 $O(n^2)$，额外空间 $O(n)$（输入数组占主要部分）。$n\le2000$ 可用；$n=10^5$ 时需改用满分做法，把所有 $L$ 合并进“尚未开始”状态。
+**步骤 3。** 在所有 $L$ 的合法终态中取最大值。总时间 $O(n^2)$，额外空间 $O(n)$（输入数组占主要部分）。$n\le500$ 可用；完整范围需把所有 $L$ 合并进“尚未开始”状态。第 15～20 点的十万规模输入使该程序实测超时。
 
 ### 固定左端点的 DP 小图
 
@@ -170,7 +337,328 @@ int main(){
 }
 ```
 
-## 满分做法：区间阶段与最大子数组状态合并
+## 第 9 点（5 分）：四个掩码均为零
+
+---
+
+**步骤 1。** 异或零不改变数组，四段只需存在即可；由于 $n\ge4$，可以任选四个单点段。
+
+**步骤 2～3。** 用 Kadane 扫描最大非空连续和，当前位置的最优结尾和是“只取当前数”与“延续前一段”二者的较大值。时间 $O(n)$、额外空间 $O(1)$；全负数组也要输出最大的负数。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[4],x;
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	long long answer = -(1LL << 60),endHere = 0;
+	for(int i = 1; i <= n; i++){
+		cin >> x;
+		endHere = max((long long)x,endHere + x);
+		answer = max(answer,endHere);
+	}
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 第 10 点（5 分）：最优四段都可取单点
+
+---
+
+**步骤 1。** 按保证，只需依次选四个不同位置，分别异或 $b_1,b_2,b_3,b_4$。令 $j$ 为已经选中的单点数，本位置可不操作，或作为第 $j+1$ 个单点；每个状态最多两种选择。
+
+**步骤 2～3。** 叠加最大子数组的三态 $s=0,1,2$（未开始、正在延伸、已结束）。`dp[j][s]` 记录同状态下最大的和，最后只取 $j=4,s\in\{1,2\}$。每位置 $5\times3$ 个状态，时间 $O(n)$、额外空间 $O(1)$。该保证不限制一般测试点的合法区间。
+
+### 单点选择 DP 小图
+
+节点 $(i,j,s)$ 表示已处理 $i$ 个数、用了 $j$ 个单点和当前子数组状态。**左上角图例**：`0` = 本位置不操作；`1` = 本位置作为下一个单点。条件：`1` 需要 $j<4$；代价：分别取 $x_i$ 或 $x_i\mathbin{\mathrm{xor}}b_{j+1}$；价值：若 $s=1$，加入当前子数组和。
+
+```mermaid
+flowchart LR
+ A["(i-1,2,1)"] -- 0 --> B["(i,2,1)"]
+ A -- 1 --> C["(i,3,1)"]
+ D["(i-1,3,1)"] -- 0 --> C
+```
+
+**终态**：$i=n,j=4,s=1/2$，多条路径合到同状态时取较大和。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const long long NEG = -(1LL << 60);
+long long dp[5][3],nextDp[5][3];
+
+void update(int from,int to,int value){
+	if(dp[from][0] != NEG){
+		nextDp[to][0] = 0;
+		nextDp[to][1] = max(nextDp[to][1],(long long)value);
+	}
+	if(dp[from][1] != NEG){
+		nextDp[to][1] = max(nextDp[to][1],dp[from][1] + value);
+		nextDp[to][2] = max(nextDp[to][2],dp[from][1]);
+	}
+	if(dp[from][2] != NEG) nextDp[to][2] = max(nextDp[to][2],dp[from][2]);
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[5];
+	cin >> n;
+	for(int j = 1; j <= 4; j++) cin >> b[j];
+	for(int j = 0; j <= 4; j++){
+		for(int s = 0; s < 3; s++) dp[j][s] = NEG;
+	}
+	dp[0][0] = 0;
+	for(int i = 1; i <= n; i++){
+		int x;
+		cin >> x;
+		for(int j = 0; j <= 4; j++){
+			for(int s = 0; s < 3; s++) nextDp[j][s] = NEG;
+		}
+		for(int j = 0; j <= 4; j++){
+			update(j,j,x);
+			if(j < 4) update(j,j + 1,x ^ b[j + 1]);
+		}
+		for(int j = 0; j <= 4; j++){
+			for(int s = 0; s < 3; s++) dp[j][s] = nextDp[j][s];
+		}
+	}
+	cout << max(dp[4][1],dp[4][2]) << '\n';
+	return 0;
+}
+```
+
+## 第 11 点（5 分）：最优四段可覆盖全序列
+
+---
+
+**步骤 1。** 按保证，四段把位置 $1\ldots n$ 分成四个相邻非空块。当前位置只能继续当前块，或从第二个位置起进入下一块；没有未操作位置。
+
+**步骤 2～3。** 用块号 $j=1,2,3,4$ 与最大子数组三态做 DP。每次用本块的掩码异或当前数，终态必须在第 4 块且子数组非空。总时间 $O(4\cdot3n)=O(n)$，额外空间 $O(1)$。
+
+### 覆盖全序列的 DP 小图
+
+节点 $(i,j,s)$ 中 $j$ 是当前块。**左上角图例**：`0` = 留在第 $j$ 块；`1` = 当前数开始第 $j+1$ 块。条件：`1` 只在 $j<4$ 时可用；代价：当前数异或目标块的掩码；价值：最大子数组当前和。
+
+```mermaid
+flowchart LR
+ A["(i-1,2,1)"] -- 0 --> B["(i,2,1)"]
+ A -- 1 --> C["(i,3,1)"]
+ D["(i-1,3,1)"] -- 0 --> C
+```
+
+**终态**：$i=n,j=4,s=1/2$；与上一图的节点形状相似，但这里每个位置都属于某个操作块，`0` 的含义不是“不操作”。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const long long NEG = -(1LL << 60);
+long long dp[4][3],nextDp[4][3];
+
+void update(int from,int to,int value){
+	if(dp[from][0] != NEG){
+		nextDp[to][0] = 0;
+		nextDp[to][1] = max(nextDp[to][1],(long long)value);
+	}
+	if(dp[from][1] != NEG){
+		nextDp[to][1] = max(nextDp[to][1],dp[from][1] + value);
+		nextDp[to][2] = max(nextDp[to][2],dp[from][1]);
+	}
+	if(dp[from][2] != NEG) nextDp[to][2] = max(nextDp[to][2],dp[from][2]);
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[4],x;
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	for(int j = 0; j < 4; j++){
+		for(int s = 0; s < 3; s++) dp[j][s] = NEG;
+	}
+	dp[0][0] = 0;
+	for(int i = 1; i <= n; i++){
+		cin >> x;
+		for(int j = 0; j < 4; j++){
+			for(int s = 0; s < 3; s++) nextDp[j][s] = NEG;
+		}
+		for(int j = 0; j < 4; j++){
+			update(j,j,x ^ b[j]);
+			if(i > 1 && j < 3) update(j,j + 1,x ^ b[j + 1]);
+		}
+		for(int j = 0; j < 4; j++){
+			for(int s = 0; s < 3; s++) dp[j][s] = nextDp[j][s];
+		}
+	}
+	cout << max(dp[3][1],dp[3][2]) << '\n';
+	return 0;
+}
+```
+
+## 第 12 点（5 分）：存在与操作段不相交的最优子数组
+
+---
+
+**步骤 1。** 若答案子数组为 $[L,R]$，四个非空操作段与它不相交，当且仅当区间外至少有四个位置，即 $R-L+1\le n-4$。充分性是从区间外按顺序选四个单点作操作段。答案子数组中的数不会改变。
+
+**步骤 2～3。** 因题目保证存在这样的最优方案，求原数组中长度不超过 $n-4$ 的最大非空子数组和即可。令前缀和为 $P_i$，对每个右端点 $r$，在 $j\in[r-(n-4),r-1]$ 中找最小 $P_j$。用单调队列维护这个滑动窗口，时间与空间均为 $O(n)$。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 100005;
+long long prefix[N];
+int que[N];
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[4],x;
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	for(int i = 1; i <= n; i++){
+		cin >> x;
+		prefix[i] = prefix[i - 1] + x;
+	}
+	int maxLength = n - 4,front = 1,back = 0;
+	long long answer = -(1LL << 60);
+	for(int r = 1; r <= n; r++){
+		int j = r - 1;
+		while(front <= back && prefix[que[back]] >= prefix[j]) back--;
+		que[++back] = j;
+		while(front <= back && que[front] < r - maxLength) front++;
+		if(front <= back) answer = max(answer,prefix[r] - prefix[que[front]]);
+	}
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 第 13 点（5 分）：仅第四个掩码可能非零
+
+---
+
+**步骤 1。** 前三段异或零，不改变数值。第四段左端点 $l\ge4$ 是必要且充分的：位置 $1,2,3$ 可以分别充当前三段。所以只需决定一个从第 4 个位置或更后开始的非空异或段。
+
+**步骤 2～3。** 用三个阶段“异或前、异或中、异或后”和最大子数组三态做 DP；异或前进入异或中只允许 $i\ge4$。终态处于异或中或异或后，子数组已开始。时间 $O(n)$、额外空间 $O(1)$。
+
+### 单个有效操作段的 DP 小图
+
+节点 $(i,p,s)$ 中 $p=0,1,2$ 分别表示异或前、中、后。**左上角图例**：`0` = 维持阶段；`1` = 开始第四段；`2` = 结束第四段。条件：`1` 仅当 $i\ge4$；代价：阶段 1 的当前数异或 $b_4$；价值：答案子数组当前和。
+
+```mermaid
+flowchart LR
+ A["(i-1,0,1)"] -- 0 --> B["(i,0,1)"]
+ A -- 1 --> C["(i,1,1)"]
+ D["(i-1,1,1)"] -- 0 --> C
+ D -- 2 --> E["(i,2,1)"]
+```
+
+**终态**：$i=n,p=1/2,s=1/2$。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const long long NEG = -(1LL << 60);
+long long dp[3][3],nextDp[3][3];
+
+void update(int from,int to,int value){
+	if(dp[from][0] != NEG){
+		nextDp[to][0] = 0;
+		nextDp[to][1] = max(nextDp[to][1],(long long)value);
+	}
+	if(dp[from][1] != NEG){
+		nextDp[to][1] = max(nextDp[to][1],dp[from][1] + value);
+		nextDp[to][2] = max(nextDp[to][2],dp[from][1]);
+	}
+	if(dp[from][2] != NEG) nextDp[to][2] = max(nextDp[to][2],dp[from][2]);
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[4],x;
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	for(int p = 0; p < 3; p++){
+		for(int s = 0; s < 3; s++) dp[p][s] = NEG;
+	}
+	dp[0][0] = 0;
+	for(int i = 1; i <= n; i++){
+		cin >> x;
+		for(int p = 0; p < 3; p++){
+			for(int s = 0; s < 3; s++) nextDp[p][s] = NEG;
+		}
+		update(0,0,x);
+		if(i >= 4) update(0,1,x ^ b[3]);
+		update(1,1,x ^ b[3]);
+		update(1,2,x);
+		update(2,2,x);
+		for(int p = 0; p < 3; p++){
+			for(int s = 0; s < 3; s++) dp[p][s] = nextDp[p][s];
+		}
+	}
+	long long answer = NEG;
+	for(int p = 1; p <= 2; p++){
+		for(int s = 1; s <= 2; s++) answer = max(answer,dp[p][s]);
+	}
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 第 14 点（5 分）：所有数非负且掩码全零
+
+---
+
+**步骤 1。** 操作不改变任何数。
+
+**步骤 2～3。** 非负数组的最大非空连续和就是整数组的和，线性累加并用 `long long` 输出。时间 $O(n)$，额外空间 $O(1)$。这档包含在第 9 点的零掩码性质内，但可用更直接的求和程序。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[4],x;
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	long long sum = 0;
+	for(int i = 1; i <= n; i++){
+		cin >> x;
+		sum += x;
+	}
+	cout << sum << '\n';
+	return 0;
+}
+```
+
+## 满分做法（15～20 点，30 分）：区间阶段与最大子数组状态合并
 
 ---
 

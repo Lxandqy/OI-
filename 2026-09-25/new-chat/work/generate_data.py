@@ -112,9 +112,17 @@ fourth = [-1000] * 3 + [100] * (n // 2 - 3) + [(1 << 29) + 100] * (n - n // 2)
 write(1, 13, arr1(fourth, [0, 0, 0, 1 << 29]), 'only fourth mask nonzero')
 write(1, 14, arr1([i % 1000 + 1 for i in range(n)], [0, 0, 0, 0]), 'all nonnegative and masks zero')
 write(1, 15, arr1([((i * 48271) % 1999999999) - 1000000000 for i in range(n)], [123456789, 987654321, 1, 7777777]), 'structured modular values; large masks')
-write(1, 16, arr1([-1000000000 + i % 97 for i in range(n)], [1, 2, 4, 8]), 'large all-negative nonempty Kadane boundary')
+four_zones = [base] * n
+for j, left in enumerate([5000, 29000, 53000, 77000]):
+    for i in range(left, left + 16000):
+        four_zones[i] ^= single_masks[j]
+write(1, 16, arr1(four_zones, single_masks), 'four long xor zones separated by positive untouched gaps')
 write(1, 17, arr1([900000000 if i in (0, n - 1) else -((i * 11) % 101 + 1) for i in range(n)], [5, 11, 17, 23]), 'both endpoints affect best subarray')
-write(1, 18, arr1([(-999999999 + i % 13) if i % 3 else 999999999 - i % 17 for i in range(n)], [(1 << 29) - 1, (1 << 29) - 2, (1 << 29) - 4, (1 << 29) - 8]), '64-bit sum and signed xor')
+large_zones = [999999999] * n
+for j, left in enumerate([1000, 26000, 51000, 76000]):
+    for i in range(left, left + 18000):
+        large_zones[i] ^= 1 << j
+write(1, 18, arr1(large_zones, [1, 2, 4, 8]), 'near-maximum positive values; 64-bit sum and four long zones')
 write(1, 19, arr1([((i % 8) - 4) * 11111111 for i in range(n)], [333, 777, 1023, 555]), 'adjacent and separated segments')
 write(1, 20, arr1([(-1000 if i % 17 == 0 else (i * 13) % 2001 - 1000) for i in range(n)], [42, 201, 7777, 12345]), 'fourth segment may end at n')
 write(1, 1, arr1([4, -8, 12, -3, 6, -4, 9, -5, 11, -7, 2, 3], [1, 5, 2, 6]), 'public larger example', True)

@@ -140,4 +140,22 @@ for t in range(1, 5):
 
 for t, name, i in [(1,'partial_direct_T1',3),(1,'partial_enum_T1',5),
                    (1,'partial_cube_T1',7),(1,'partial_mid_T1',15),
-                   (2,'partial_T2',3),(2,'partial_subset_T2'
+                   (2,'partial_T2',3),(2,'partial_subset_T2',5),(2,'partial_mid_T2',15),
+                   (3,'partial_brute_T3',3),(3,'partial_T3',13),
+                   (4,'partial_brute_T4',3),(4,'partial_T4',15)]:
+    raw = (BUILT / f'T{t}' / 'data' / f'{i}.in').read_text(encoding='utf-8')
+    result, elapsed = invoke(name, raw, timeout=2 if t == 1 else 4)
+    assert result == 'TLE', (t, i, name, result[:100] if isinstance(result, str) else result)
+    print(f'{name} TLE on higher-tier point {i}: {elapsed:.2f}s', flush=True)
+
+for t in range(1, 5):
+    src = BUILT / f'T{t}' / 'attachment_source'
+    raw = (src / 'attachment1.in').read_text(encoding='utf-8')
+    exp = (src / 'attachment1.out').read_text(encoding='utf-8')
+    got, _ = invoke(f'T{t}', raw)
+    assert got == exp
+    if t == 2:
+        check2(raw, exp)
+    if t == 4:
+        check4(raw, exp)
+print('attachments valid', flush=True)

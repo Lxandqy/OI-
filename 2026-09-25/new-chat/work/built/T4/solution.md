@@ -16,7 +16,13 @@
 2. 在至多 $k$ 次操作下，决定优先完成哪些块。
 3. 为最终序列给出操作次数最少、区间序列字典序最小的记录，并输出精确分数。
 
-## 20 分做法：枚举操作序列
+| 测试点 | 对应解法 |
+|---|---|
+| 1～2、3～8 | 直接枚举操作序列；逐个扫描后缀的最大前缀平均值 |
+| 9～11、12、13、14 | 原数组不变；严格递增整段平均；一次操作的最优前缀；下降均值的相邻数对 |
+| 15～20 | 单调块栈 |
+
+## 1～2 点（10 分）：枚举操作序列
 
 ---
 
@@ -138,7 +144,7 @@ int main(){
 }
 ```
 
-## 20 分做法：逐个扫描后缀的最大前缀平均值
+## 3～8 点（30 分）：逐个扫描后缀的最大前缀平均值
 
 ---
 
@@ -224,7 +230,198 @@ int main(){
 }
 ```
 
-## 满分做法：前缀和上凸包与单调块栈
+## 第 9～11 点（各 5 分）：最终数组不变
+
+---
+
+**第 9 点，$k=0$。** 没有可用操作，输出原数组和 0 次。
+
+**第 10 点，所有数相等。** 任意区间的平均值都等于原值，所有方案得到同一序列；按第二目标选 0 次。
+
+**第 11 点，严格递减。** 任取一段，其首项大于该段平均值；从最左发生变化的位置看，做操作只会把字典序变小。原数组最优，仍选 0 次。
+
+三个性质共用一份输出程序：扫描 $n$ 个数，逐个写作 `$a_i/1$`，时间 $O(n)$，额外空间 $O(1)$。这里“每个数都直接输出”是因为题目要求完整的最终数组。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,k;
+	cin >> n >> k;
+	cout << 0 << '\n';
+	for(int i = 1; i <= n; i++){
+		long long x;
+		cin >> x;
+		if(i > 1) cout << ' ';
+		cout << x << "/1";
+	}
+	cout << '\n';
+	return 0;
+}
+```
+
+## 第 12 点（5 分）：严格递增序列
+
+---
+
+**步骤 1。** 严格递增时，相邻块均值总是不降；相邻块合并算法会把整个序列合为一块。$n\ge2,k\ge1$，一次操作 $[1,n]$ 即可达到无限预算的字典序上界。
+
+**步骤 2～3。** 把全数组和约分为平均值，输出一次操作和 $n$ 个相同分数。时间 $O(n)$、额外空间 $O(1)$；最少次数为 1。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+long long gcdValue(long long a,long long b){
+	while(b){
+		long long c = a % b;
+		a = b;
+		b = c;
+	}
+	return a;
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,k;
+	cin >> n >> k;
+	long long sum = 0;
+	for(int i = 1; i <= n; i++){
+		long long x;
+		cin >> x;
+		sum += x;
+	}
+	long long g = gcdValue(sum,n);
+	cout << 1 << '\n';
+	for(int i = 1; i <= n; i++){
+		if(i > 1) cout << ' ';
+		cout << sum / g << '/' << n / g;
+	}
+	cout << '\n' << 1 << ' ' << n << '\n';
+	return 0;
+}
+```
+
+## 第 13 点（5 分）：只有一次操作且首项严格最小
+
+---
+
+**步骤 1。** $a_1<a_i$ 对所有 $i>1$ 成立，所以最优序列的第一项必须通过包含位置 1 的一次平均操作提高。枚举前缀 $[1,r]$，取平均值最大的最长前缀；若两个前缀平均值相同，较长者在第一个新增位置处更优或相同。扫描前缀和并用整数商、余数比较平均值，时间 $O(n)$。
+
+**步骤 2～3。** 对选中前缀，右端点缩到最后一个原值不等于平均值的位置，避免无效覆盖并使区间对最小；按平均值输出前缀，其余位置输出原值。约分、生成答案总时间 $O(n)$，存储数组 $O(n)$。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 100005;
+long long a[N];
+
+long long gcdValue(long long a,long long b){
+	while(b){
+		long long c = a % b;
+		a = b;
+		b = c;
+	}
+	return a;
+}
+
+bool lessEqualAverage(long long x,int nx,long long y,int ny){
+	long long qx = x / nx,qy = y / ny;
+	if(qx != qy) return qx < qy;
+	return (x % nx) * ny <= (y % ny) * nx;
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,k;
+	cin >> n >> k;
+	for(int i = 1; i <= n; i++) cin >> a[i];
+	long long sum = 0,bestSum = -1;
+	int bestLength = 1,end = 1;
+	for(int i = 1; i <= n; i++){
+		sum += a[i];
+		if(bestSum == -1 || lessEqualAverage(bestSum,bestLength,sum,i)){
+			bestSum = sum;
+			bestLength = i;
+			end = i;
+		}
+	}
+	int last = 0;
+	for(int i = 1; i <= end; i++){
+		if(a[i] * bestLength != bestSum) last = i;
+	}
+	long long g = gcdValue(bestSum,bestLength);
+	cout << 1 << '\n';
+	for(int i = 1; i <= n; i++){
+		if(i > 1) cout << ' ';
+		if(i <= end) cout << bestSum / g << '/' << bestLength / g;
+		else cout << a[i] << "/1";
+	}
+	cout << '\n' << 1 << ' ' << last << '\n';
+	return 0;
+}
+```
+
+## 第 14 点（5 分）：相邻数对的均值严格下降
+
+---
+
+**步骤 1。** 每对 $a_{2j-1}<a_{2j}$ 是一个上升块，需平均；各对平均值严格下降，跨对无需再合并。因此无限预算最优块恰是这些相邻数对。
+
+**步骤 2～3。** 按字典序从左到右，预算优先用于前 $\min(k,n/2)$ 对；每对一次操作，输出该对的精确平均分数和区间。时间 $O(n)$、空间 $O(n)$（保存输入和输出）。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 100005;
+long long a[N];
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,k;
+	cin >> n >> k;
+	for(int i = 1; i <= n; i++) cin >> a[i];
+	int used = min(k,n / 2);
+	cout << used << '\n';
+	for(int i = 1; i <= n; i++){
+		if(i > 1) cout << ' ';
+		int pairNumber = (i + 1) / 2;
+		if(pairNumber <= used){
+			int left = 2 * pairNumber - 1;
+			long long sum = a[left] + a[left + 1];
+			if(sum % 2 == 0) cout << sum / 2 << "/1";
+			else cout << sum << "/2";
+		}else{
+			cout << a[i] << "/1";
+		}
+	}
+	cout << '\n';
+	for(int j = 1; j <= used; j++) cout << 2 * j - 1 << ' ' << 2 * j << '\n';
+	return 0;
+}
+```
+
+## 满分做法（15～20 点，30 分）：前缀和上凸包与单调块栈
 
 ---
 

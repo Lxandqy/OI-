@@ -4,8 +4,8 @@ using namespace std;
 const int N = 200005;
 int head[N],to[2 * N],nxt[2 * N],eid[2 * N],ecnt;
 int deg[N],que[N],par[N],pe[N],sz[N];
-int cyc[N],ce[N],residue[N],forced[N],fcnt;
-bool alive[N],mark[N];
+int cyc[N],ce[N],forced[N],fcnt;
+bool alive[N];
 int answer[N],acnt,candidate[N],ccnt;
 
 void add(int u,int v,int id){
@@ -105,35 +105,24 @@ int main(){
 		for(int i = 1; i <= fcnt; i++) candidate[++ccnt] = forced[i];
 		consider();
 	}
-	int prefix = 0;
-	for(int i = 1; i <= len; i++){
-		prefix += sz[cyc[i]];
-		residue[i] = prefix % 3;
-	}
-	for(int r = 0; r < 3; r++){
-		int first = 0;
-		for(int i = 1; i <= len; i++){
-			mark[i] = residue[i] == r;
-			if(mark[i] && first == 0) first = i;
-		}
-		if(first == 0) continue;
-		bool good = true;
-		int sum = 0,i = first;
-		do{
-			i = i % len + 1;
-			sum += sz[cyc[i]];
-			if(mark[i]){
-				if(sum != 3) good = false;
-				sum = 0;
-			}
-		}while(i != first);
-		if(!good) continue;
+	for(int cut = 1; cut <= min(len,3); cut++){
 		ccnt = 0;
 		for(int j = 1; j <= fcnt; j++) candidate[++ccnt] = forced[j];
-		for(int j = 1; j <= len; j++){
-			if(mark[j]) candidate[++ccnt] = ce[j];
+		int sum = 0;
+		bool good = true;
+		for(int step = 1; step <= len; step++){
+			int j = (cut + step - 1) % len + 1;
+			sum += sz[cyc[j]];
+			if(sum > 3){
+				good = false;
+				break;
+			}
+			if(sum == 3){
+				candidate[++ccnt] = ce[j];
+				sum = 0;
+			}
 		}
-		consider();
+		if(good && sum == 0) consider();
 	}
 	if(acnt == -1){
 		cout << -1 << '\n';

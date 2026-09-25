@@ -21,12 +21,11 @@ int main(){
 			dp[0] = 0;
 			for(int i = 1; i <= n; i++){
 				for(int p = 0; p < 9; p++) nextDp[p] = NEG;
-				for(int p = 0; p < 9; p++){
-					if(dp[p] == NEG) continue;
-					for(int step = 0; step <= 2; step++){
-						int q = p + step;
-						if(q >= 9) continue;
-						if(step == 2 && (p % 2 == 0 || p >= 7)) continue;
+				for(int q = 0; q < 9; q++){
+					for(int p = 0; p < 9; p++){
+						bool allowed = q == p || q == p + 1;
+						if(p % 2 == 1 && p < 7 && q == p + 2) allowed = true;
+						if(!allowed || dp[p] == NEG) continue;
 						long long value = dp[p];
 						if(left <= i && i <= right) value += x[i] ^ maskValue[q];
 						nextDp[q] = max(nextDp[q],value);

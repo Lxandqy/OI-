@@ -16,13 +16,19 @@
 2. 在变换后的数组中找到最大非空连续子数组和。
 3. 在所有合法区间选择中取最大值。
 
-## 20 分做法：枚举四段
+| 测试点 | 对应解法 |
+|---|---|
+| 1～2、3～4、5～6、7～8 | 依次使用直接枚举、区间摘要枚举、固定答案两端点的 DP、固定答案左端点的 DP |
+| 9～14 | 依次使用零掩码、单点操作、全覆盖、不相交、仅第四掩码非零、非负零掩码的简化算法 |
+| 15～20 | 九阶段与最大子数组三态合并 |
+
+## 1～2 点（10 分）：直接枚举
 
 ---
 
 **步骤 1、3。** 用 `dfs(j,start)` 表示正在选择第 $j$ 段，其左端点至少为 `start`。枚举 $l\ge start,r\ge l$，原地异或 $[l,r]$ 后递归下一段；返回时再异或一次恢复。四段都选完才进入步骤 2。合法四段的选择数是 $\binom{n+4}{8}$，比把每层都估作 $n^2$ 更准确。
 
-**步骤 2。** 对每个完整方案用一次 Kadane 扫描，计算最大非空连续和，耗时 $O(n)$，额外空间 $O(1)$。合计时间 $O\!\left(n\binom{n+4}{8}\right)$，搜索深度 4，数组和调用栈共 $O(n)$ 空间。$n\le10$ 可用；$n=10^5$ 时远不能完成。
+**步骤 2。** 对每个完整方案再枚举答案子数组的左右端点，逐个累加其中的数，单方案 $O(n^3)$。总时间 $O\!\left(n^3\binom{n+4}{8}\right)$，搜索栈与数组共 $O(n)$ 空间。$n\le10$ 可用；第 3～4 点 $n=30$ 时实测超时。
 
 ### 四段搜索小图
 
@@ -58,16 +64,17 @@ long long ans = -(1LL << 60);
 
 void dfs(int j,int start){
 	if(j == 5){
-		long long best = -(1LL << 60),end = 0;
-		for(int i = 1; i <= n; i++){
-			end = max((long long)x[i],end + x[i]);
-			best = max(best,end);
+		for(int l = 1; l <= n; l++){
+			for(int r = l; r <= n; r++){
+				long long sum = 0;
+				for(int i = l; i <= r; i++) sum += x[i];
+				ans = max(ans,sum);
+			}
 		}
-		ans = max(ans,best);
 		return;
 	}
-	for(int l = start; l <= n; l++){
-		for(int r = l; r <= n; r++){
+	for(int l = start; l <= n - (4 - j); l++){
+		for(int r = l; r <= n - (4 - j); r++){
 			for(int i = l; i <= r; i++) x[i] ^= b[j];
 			dfs(j + 1,r + 1);
 			for(int i = l; i <= r; i++) x[i] ^= b[j];
@@ -88,7 +95,167 @@ int main(){
 }
 ```
 
-## 20 分做法：固定答案左端点的阶段 DP
+## 3～4 点（10 分）：预处理区间摘要后枚举四段
+
+---
+
+**步骤 1。** 对每个掩码 $0,b_1,b_2,b_3,b_4$ 和每个原数组区间预处理四个值：区间和、最大前缀和、最大后缀和、最大非空子数组和。两个相邻区间的摘要可在 $O(1)$ 合并，跨边界的最优子数组为左区间最大后缀加右区间最大前缀。代码直接扫描每个区间求摘要，时间 $O(5n^3)$、空间 $O(5n^2)$；$n\le30$ 时很小。
+
+**步骤 2。** 沿用上面的四段搜索图。选择一个操作段时把之前的零掩码空白和本段摘要依次合并；四段选完再合并尾部空白。每个搜索分支只做常数次摘要合并，不再逐个枚举答案子数组。总时间 $O\!\left(n^3+\binom{n+4}{8}\right)$，空间 $O(n^2)$。第 5～6 点 $n=100$ 时搜索方案数仍过大，实测超时。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 100005;
+const long long NEG = -(1LL << 60);
+struct Info{
+	long long sum,pref,suf,best;
+};
+vector<Info> data[5];
+int n,x[N],b[5],width;
+long long answer = NEG;
+
+Info emptyInfo(){
+	Info z = {0,NEG,NEG,NEG};
+	return z;
+}
+
+Info mergeInfo(Info a,Info c){
+	if(a.best == NEG) return c;
+	if(c.best == NEG) return a;
+	Info z;
+	z.sum = a.sum + c.sum;
+	z.pref = max(a.pref,a.sum + c.pref);
+	z.suf = max(c.suf,c.sum + a.suf);
+	z.best = max(max(a.best,c.best),a.suf + c.pref);
+	return z;
+}
+
+Info getInfo(int mask,int l,int r){
+	if(l > r) return emptyInfo();
+	return data[mask][l * width + r];
+}
+
+void dfs(int j,int start,Info cur){
+	if(j == 5){
+		Info all = mergeInfo(cur,getInfo(0,start,n));
+		answer = max(answer,all.best);
+		return;
+	}
+	for(int l = start; l <= n - (4 - j); l++){
+		Info before = mergeInfo(cur,getInfo(0,start,l - 1));
+		for(int r = l; r <= n - (4 - j); r++){
+			Info now = mergeInfo(before,getInfo(j,l,r));
+			dfs(j + 1,r + 1,now);
+		}
+	}
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	cin >> n;
+	for(int j = 1; j <= 4; j++) cin >> b[j];
+	for(int i = 1; i <= n; i++) cin >> x[i];
+	width = n + 1;
+	for(int mask = 0; mask <= 4; mask++) data[mask] = vector<Info>(1LL * width * width);
+	for(int mask = 0; mask <= 4; mask++){
+		for(int l = 1; l <= n; l++){
+			long long sum = 0,bestEnd = NEG,best = NEG,pref = NEG;
+			for(int r = l; r <= n; r++){
+				long long v = x[r] ^ b[mask];
+				sum += v;
+				pref = max(pref,sum);
+				bestEnd = max(v,bestEnd + v);
+				best = max(best,bestEnd);
+				Info z = {sum,pref,NEG,best};
+				long long tail = 0;
+				for(int i = r; i >= l; i--){
+					tail += x[i] ^ b[mask];
+					z.suf = max(z.suf,tail);
+				}
+				data[mask][l * width + r] = z;
+			}
+		}
+	}
+	dfs(1,1,emptyInfo());
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 5～6 点（10 分）：固定答案两端点的阶段 DP
+
+---
+
+**步骤 1。** 枚举答案子数组 $[L,R]$，共有 $O(n^2)$ 种。四个操作段用九阶段 $p=0,1,\ldots,8$ 表示，掩码依次为 $(0,b_1,0,b_2,0,b_3,0,b_4,0)$。每次处理一个位置，可以留在阶段、前进一阶段，或从奇数阶段越过零长度空白前进两阶段。进入奇数阶段必消耗一个元素，所以四段非空。
+
+**步骤 2。** 对固定 $[L,R]$，`dp[p]` 表示当前阶段能得到的 $[L,R]$ 内最大和。位置在 $[L,R]$ 外时本次加零，在其中时加异或后的值；枚举 9 个源阶段和 9 个目标阶段检查合法转移。处理完所有数后只接受阶段 7、8。每个 $[L,R]$ 耗时 $O(9^2n)$，合计 $O(9^2n^3)$ 时间，输入数组以外只需 $O(1)$ DP 空间；$n\le100$ 可用。
+
+### 固定两端点的 DP 小图
+
+节点 $(i,p)$ 表示处理完 $i$ 个位置、当前位于阶段 $p$。**左上角图例**：`0` = 留在原阶段；`1` = 前进一阶段；`2` = 从奇数阶段直接前进两阶段。条件：阶段前进必须消耗当前元素；代价：在 $[L,R]$ 内加 $x_i\mathbin{\mathrm{xor}}\mathrm{mask}[p]$，区间外加零；价值：当前累计和。
+
+```mermaid
+flowchart LR
+ A["(i-1,1)"] -- 0 --> D["(i,1)"]
+ B["(i-1,0)"] -- 1 --> D
+ A -- 2 --> E["(i,3)"]
+```
+
+**终态**：$i=n$ 且 $p=7$ 或 $8$；合流时取较大和。第 7～8 点 $n=500$ 时该程序实测超时。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 100005;
+const long long NEG = -(1LL << 60);
+int n,x[N],b[4],maskValue[9];
+long long dp[9],nextDp[9];
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	for(int i = 1; i <= n; i++) cin >> x[i];
+	int temp[9] = {0,b[0],0,b[1],0,b[2],0,b[3],0};
+	for(int p = 0; p < 9; p++) maskValue[p] = temp[p];
+	long long answer = NEG;
+	for(int left = 1; left <= n; left++){
+		for(int right = left; right <= n; right++){
+			for(int p = 0; p < 9; p++) dp[p] = NEG;
+			dp[0] = 0;
+			for(int i = 1; i <= n; i++){
+				for(int p = 0; p < 9; p++) nextDp[p] = NEG;
+				for(int q = 0; q < 9; q++){
+					for(int p = 0; p < 9; p++){
+						bool allowed = q == p || q == p + 1;
+						if(p % 2 == 1 && p < 7 && q == p + 2) allowed = true;
+						if(!allowed || dp[p] == NEG) continue;
+						long long value = dp[p];
+						if(left <= i && i <= right) value += x[i] ^ maskValue[q];
+						nextDp[q] = max(nextDp[q],value);
+					}
+				}
+				for(int p = 0; p < 9; p++) dp[p] = nextDp[p];
+			}
+			answer = max(answer,max(dp[7],dp[8]));
+		}
+	}
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 7～8 点（10 分）：固定答案左端点的阶段 DP
 
 ---
 
@@ -96,7 +263,7 @@ int main(){
 
 **步骤 2。** 对固定的 $L$，用 $s=0,1,2$ 表示答案子数组尚未开始、正在延伸、已经结束。$i<L$ 时只能保持 $s=0$；$i=L$ 时必须把变换后的 $a_L$ 加入，转为 $s=1$；之后可以延伸、结束或保持结束。相同 $(p,s)$ 只保留最大的和，因为后续可选操作相同。到 $i=n$ 时只接受阶段 7、8 且 $s=1,2$，所以四段都完成、答案子数组非空。每个 $L$ 扫描 $n$ 个数，耗时 $O(n)$，两层状态表空间 $O(9\cdot3)$。
 
-**步骤 3。** 在所有 $L$ 的合法终态中取最大值。总时间 $O(n^2)$，额外空间 $O(n)$（输入数组占主要部分）。$n\le2000$ 可用；$n=10^5$ 时需改用满分做法，把所有 $L$ 合并进“尚未开始”状态。
+**步骤 3。** 在所有 $L$ 的合法终态中取最大值。总时间 $O(n^2)$，额外空间 $O(n)$（输入数组占主要部分）。$n\le500$ 可用；完整范围需把所有 $L$ 合并进“尚未开始”状态。第 15～20 点的十万规模输入使该程序实测超时。
 
 ### 固定左端点的 DP 小图
 
@@ -170,7 +337,328 @@ int main(){
 }
 ```
 
-## 满分做法：区间阶段与最大子数组状态合并
+## 第 9 点（5 分）：四个掩码均为零
+
+---
+
+**步骤 1。** 异或零不改变数组，四段只需存在即可；由于 $n\ge4$，可以任选四个单点段。
+
+**步骤 2～3。** 用 Kadane 扫描最大非空连续和，当前位置的最优结尾和是“只取当前数”与“延续前一段”二者的较大值。时间 $O(n)$、额外空间 $O(1)$；全负数组也要输出最大的负数。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[4],x;
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	long long answer = -(1LL << 60),endHere = 0;
+	for(int i = 1; i <= n; i++){
+		cin >> x;
+		endHere = max((long long)x,endHere + x);
+		answer = max(answer,endHere);
+	}
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 第 10 点（5 分）：最优四段都可取单点
+
+---
+
+**步骤 1。** 按保证，只需依次选四个不同位置，分别异或 $b_1,b_2,b_3,b_4$。令 $j$ 为已经选中的单点数，本位置可不操作，或作为第 $j+1$ 个单点；每个状态最多两种选择。
+
+**步骤 2～3。** 叠加最大子数组的三态 $s=0,1,2$（未开始、正在延伸、已结束）。`dp[j][s]` 记录同状态下最大的和，最后只取 $j=4,s\in\{1,2\}$。每位置 $5\times3$ 个状态，时间 $O(n)$、额外空间 $O(1)$。该保证不限制一般测试点的合法区间。
+
+### 单点选择 DP 小图
+
+节点 $(i,j,s)$ 表示已处理 $i$ 个数、用了 $j$ 个单点和当前子数组状态。**左上角图例**：`0` = 本位置不操作；`1` = 本位置作为下一个单点。条件：`1` 需要 $j<4$；代价：分别取 $x_i$ 或 $x_i\mathbin{\mathrm{xor}}b_{j+1}$；价值：若 $s=1$，加入当前子数组和。
+
+```mermaid
+flowchart LR
+ A["(i-1,2,1)"] -- 0 --> B["(i,2,1)"]
+ A -- 1 --> C["(i,3,1)"]
+ D["(i-1,3,1)"] -- 0 --> C
+```
+
+**终态**：$i=n,j=4,s=1/2$，多条路径合到同状态时取较大和。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const long long NEG = -(1LL << 60);
+long long dp[5][3],nextDp[5][3];
+
+void update(int from,int to,int value){
+	if(dp[from][0] != NEG){
+		nextDp[to][0] = 0;
+		nextDp[to][1] = max(nextDp[to][1],(long long)value);
+	}
+	if(dp[from][1] != NEG){
+		nextDp[to][1] = max(nextDp[to][1],dp[from][1] + value);
+		nextDp[to][2] = max(nextDp[to][2],dp[from][1]);
+	}
+	if(dp[from][2] != NEG) nextDp[to][2] = max(nextDp[to][2],dp[from][2]);
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[5];
+	cin >> n;
+	for(int j = 1; j <= 4; j++) cin >> b[j];
+	for(int j = 0; j <= 4; j++){
+		for(int s = 0; s < 3; s++) dp[j][s] = NEG;
+	}
+	dp[0][0] = 0;
+	for(int i = 1; i <= n; i++){
+		int x;
+		cin >> x;
+		for(int j = 0; j <= 4; j++){
+			for(int s = 0; s < 3; s++) nextDp[j][s] = NEG;
+		}
+		for(int j = 0; j <= 4; j++){
+			update(j,j,x);
+			if(j < 4) update(j,j + 1,x ^ b[j + 1]);
+		}
+		for(int j = 0; j <= 4; j++){
+			for(int s = 0; s < 3; s++) dp[j][s] = nextDp[j][s];
+		}
+	}
+	cout << max(dp[4][1],dp[4][2]) << '\n';
+	return 0;
+}
+```
+
+## 第 11 点（5 分）：最优四段可覆盖全序列
+
+---
+
+**步骤 1。** 按保证，四段把位置 $1\ldots n$ 分成四个相邻非空块。当前位置只能继续当前块，或从第二个位置起进入下一块；没有未操作位置。
+
+**步骤 2～3。** 用块号 $j=1,2,3,4$ 与最大子数组三态做 DP。每次用本块的掩码异或当前数，终态必须在第 4 块且子数组非空。总时间 $O(4\cdot3n)=O(n)$，额外空间 $O(1)$。
+
+### 覆盖全序列的 DP 小图
+
+节点 $(i,j,s)$ 中 $j$ 是当前块。**左上角图例**：`0` = 留在第 $j$ 块；`1` = 当前数开始第 $j+1$ 块。条件：`1` 只在 $j<4$ 时可用；代价：当前数异或目标块的掩码；价值：最大子数组当前和。
+
+```mermaid
+flowchart LR
+ A["(i-1,2,1)"] -- 0 --> B["(i,2,1)"]
+ A -- 1 --> C["(i,3,1)"]
+ D["(i-1,3,1)"] -- 0 --> C
+```
+
+**终态**：$i=n,j=4,s=1/2$；与上一图的节点形状相似，但这里每个位置都属于某个操作块，`0` 的含义不是“不操作”。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const long long NEG = -(1LL << 60);
+long long dp[4][3],nextDp[4][3];
+
+void update(int from,int to,int value){
+	if(dp[from][0] != NEG){
+		nextDp[to][0] = 0;
+		nextDp[to][1] = max(nextDp[to][1],(long long)value);
+	}
+	if(dp[from][1] != NEG){
+		nextDp[to][1] = max(nextDp[to][1],dp[from][1] + value);
+		nextDp[to][2] = max(nextDp[to][2],dp[from][1]);
+	}
+	if(dp[from][2] != NEG) nextDp[to][2] = max(nextDp[to][2],dp[from][2]);
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[4],x;
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	for(int j = 0; j < 4; j++){
+		for(int s = 0; s < 3; s++) dp[j][s] = NEG;
+	}
+	dp[0][0] = 0;
+	for(int i = 1; i <= n; i++){
+		cin >> x;
+		for(int j = 0; j < 4; j++){
+			for(int s = 0; s < 3; s++) nextDp[j][s] = NEG;
+		}
+		for(int j = 0; j < 4; j++){
+			update(j,j,x ^ b[j]);
+			if(i > 1 && j < 3) update(j,j + 1,x ^ b[j + 1]);
+		}
+		for(int j = 0; j < 4; j++){
+			for(int s = 0; s < 3; s++) dp[j][s] = nextDp[j][s];
+		}
+	}
+	cout << max(dp[3][1],dp[3][2]) << '\n';
+	return 0;
+}
+```
+
+## 第 12 点（5 分）：存在与操作段不相交的最优子数组
+
+---
+
+**步骤 1。** 若答案子数组为 $[L,R]$，四个非空操作段与它不相交，当且仅当区间外至少有四个位置，即 $R-L+1\le n-4$。充分性是从区间外按顺序选四个单点作操作段。答案子数组中的数不会改变。
+
+**步骤 2～3。** 因题目保证存在这样的最优方案，求原数组中长度不超过 $n-4$ 的最大非空子数组和即可。令前缀和为 $P_i$，对每个右端点 $r$，在 $j\in[r-(n-4),r-1]$ 中找最小 $P_j$。用单调队列维护这个滑动窗口，时间与空间均为 $O(n)$。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 100005;
+long long prefix[N];
+int que[N];
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[4],x;
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	for(int i = 1; i <= n; i++){
+		cin >> x;
+		prefix[i] = prefix[i - 1] + x;
+	}
+	int maxLength = n - 4,front = 1,back = 0;
+	long long answer = -(1LL << 60);
+	for(int r = 1; r <= n; r++){
+		int j = r - 1;
+		while(front <= back && prefix[que[back]] >= prefix[j]) back--;
+		que[++back] = j;
+		while(front <= back && que[front] < r - maxLength) front++;
+		if(front <= back) answer = max(answer,prefix[r] - prefix[que[front]]);
+	}
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 第 13 点（5 分）：仅第四个掩码可能非零
+
+---
+
+**步骤 1。** 前三段异或零，不改变数值。第四段左端点 $l\ge4$ 是必要且充分的：位置 $1,2,3$ 可以分别充当前三段。所以只需决定一个从第 4 个位置或更后开始的非空异或段。
+
+**步骤 2～3。** 用三个阶段“异或前、异或中、异或后”和最大子数组三态做 DP；异或前进入异或中只允许 $i\ge4$。终态处于异或中或异或后，子数组已开始。时间 $O(n)$、额外空间 $O(1)$。
+
+### 单个有效操作段的 DP 小图
+
+节点 $(i,p,s)$ 中 $p=0,1,2$ 分别表示异或前、中、后。**左上角图例**：`0` = 维持阶段；`1` = 开始第四段；`2` = 结束第四段。条件：`1` 仅当 $i\ge4$；代价：阶段 1 的当前数异或 $b_4$；价值：答案子数组当前和。
+
+```mermaid
+flowchart LR
+ A["(i-1,0,1)"] -- 0 --> B["(i,0,1)"]
+ A -- 1 --> C["(i,1,1)"]
+ D["(i-1,1,1)"] -- 0 --> C
+ D -- 2 --> E["(i,2,1)"]
+```
+
+**终态**：$i=n,p=1/2,s=1/2$。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const long long NEG = -(1LL << 60);
+long long dp[3][3],nextDp[3][3];
+
+void update(int from,int to,int value){
+	if(dp[from][0] != NEG){
+		nextDp[to][0] = 0;
+		nextDp[to][1] = max(nextDp[to][1],(long long)value);
+	}
+	if(dp[from][1] != NEG){
+		nextDp[to][1] = max(nextDp[to][1],dp[from][1] + value);
+		nextDp[to][2] = max(nextDp[to][2],dp[from][1]);
+	}
+	if(dp[from][2] != NEG) nextDp[to][2] = max(nextDp[to][2],dp[from][2]);
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[4],x;
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	for(int p = 0; p < 3; p++){
+		for(int s = 0; s < 3; s++) dp[p][s] = NEG;
+	}
+	dp[0][0] = 0;
+	for(int i = 1; i <= n; i++){
+		cin >> x;
+		for(int p = 0; p < 3; p++){
+			for(int s = 0; s < 3; s++) nextDp[p][s] = NEG;
+		}
+		update(0,0,x);
+		if(i >= 4) update(0,1,x ^ b[3]);
+		update(1,1,x ^ b[3]);
+		update(1,2,x);
+		update(2,2,x);
+		for(int p = 0; p < 3; p++){
+			for(int s = 0; s < 3; s++) dp[p][s] = nextDp[p][s];
+		}
+	}
+	long long answer = NEG;
+	for(int p = 1; p <= 2; p++){
+		for(int s = 1; s <= 2; s++) answer = max(answer,dp[p][s]);
+	}
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 第 14 点（5 分）：所有数非负且掩码全零
+
+---
+
+**步骤 1。** 操作不改变任何数。
+
+**步骤 2～3。** 非负数组的最大非空连续和就是整数组的和，线性累加并用 `long long` 输出。时间 $O(n)$，额外空间 $O(1)$。这档包含在第 9 点的零掩码性质内，但可用更直接的求和程序。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,b[4],x;
+	cin >> n >> b[0] >> b[1] >> b[2] >> b[3];
+	long long sum = 0;
+	for(int i = 1; i <= n; i++){
+		cin >> x;
+		sum += x;
+	}
+	cout << sum << '\n';
+	return 0;
+}
+```
+
+## 满分做法（15～20 点，30 分）：区间阶段与最大子数组状态合并
 
 ---
 
@@ -283,13 +771,38 @@ int main(){
 2. 在环上把这些点数分成总和为 3 的连通组，并确定要切的环边。
 3. 对全部合法删除序列排序并取字典序最小者。
 
-## 20 分做法：枚举删边集合
+| 测试点 | 对应解法 |
+|---|---|
+| 1～2、3～4、5～8 | 依次枚举全部边集、只枚举环边集、逐条尝试环切边 |
+| 9～14 | 不可行判定、纯环、每环点一条二边挂链、三点环、交替叶子、全环点一叶子 |
+| 15～20 | 剥叶后只试前三条环边为起始切边 |
+
+## 1～2 点（10 分）：枚举删边集合
 
 ---
 
 **步骤 1、2。** 用一个二进制计数器遍历全部 $2^n$ 个删边集合。对当前方案把未删边加入并查集，再统计每个连通块的点数；所有非空连通块恰为 3 时方案合法。每个集合需要 $O(n\alpha(n))$ 时间和 $O(n)$ 空间。这里无需先求环，因为直接检查最终图。
 
-**步骤 3。** 合法方案的删除边编号天然按升序收集，与当前最好方案作 $O(n)$ 的字典序比较。总时间 $O(n\alpha(n)2^n)$，空间 $O(n)$；$n\le12$ 很轻松，完整范围的指数规模不可行。代码中的二进制计数器对任意 $n$ 都有定义，没有靠超过阈值直接输出错误值。
+**步骤 3。** 合法方案的删除边编号天然按升序收集，与当前最好方案作 $O(n)$ 的字典序比较。总时间 $O(n\alpha(n)2^n)$，空间 $O(n)$；$n\le12$ 可用，第 3～4 点已超时。代码中的二进制计数器对任意 $n$ 都有定义。
+
+### 删边搜索小图
+
+节点 $(i,d)$ 表示前 $i-1$ 条边已决定，其中删掉 $d$ 条。**左上角图例**：`0` = 保留第 $i$ 条边，`1` = 删除第 $i$ 条边；条件：$1\le i\le n$；代价：叶子用并查集检查连通块；价值：合法时的删除编号序列。虚线节点表示检查失败。
+
+```mermaid
+flowchart LR
+ A["(1,0)"] -- 0 --> B["(2,0)"]
+ A -- 1 --> C["(2,1)"]
+ B -- 0 --> D["(3,0)"]
+ B -- 1 --> E["(3,1)"]
+ C -- 0 --> F["(3,1)"]
+ C -- 1 --> G["(3,2)"]
+ G -- 1 --> X["(4,3)"]
+ classDef fail stroke-dasharray: 5 4,stroke:#aa5555,fill:#fff7f7
+ class X fail
+```
+
+**终态**：决定完全部边后，只有每个连通块大小为 3 的叶子参加字典序比较；图示三点环上 `(4,3)` 删去全部三条边，留下三个单点，是虚线非法叶子。
 
 ### 参考代码
 
@@ -380,7 +893,181 @@ int main(){
 }
 ```
 
-## 20 分做法：逐条尝试环上的起始切边
+## 3～4 点（10 分）：只枚举环边集合
+
+---
+
+**步骤 1。** 剥叶并自底向上确定所有树边的强制切法，得到每个环点未闭合的点数。队列和数组耗时、占用均为 $O(n)$。
+
+**步骤 2。** 环长 $c\le15$，只对 $c$ 条环边用二进制计数器枚举保留/删除，共 $2^c$ 种。以一条删除的环边为起点沿环扫描，每遇到下一条删除边时检查其间点数是否恰好为 3；不删环边时只允许整个环块恰有 3 点。这沿用上方编号为 `0/1` 的搜索选择，只是决策对象换成环边。每集合扫描 $O(c)$。
+
+**步骤 3。** 合法环方案与强制树边合并，按编号排序比较。保守时间 $O(n+2^c(c+n\log n))$、空间 $O(n)$。$n\le300,c\le15$ 可用；环长达到第 5～8 点规模时实测超时。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 200005;
+int head[N],to[2 * N],nxt[2 * N],eid[2 * N],ecnt;
+int deg[N],que[N],par[N],pe[N],sz[N];
+int cyc[N],ce[N],forced[N],fcnt;
+bool alive[N];
+int answer[N],acnt,candidate[N],ccnt;
+
+void add(int u,int v,int id){
+	ecnt++;
+	to[ecnt] = v;
+	eid[ecnt] = id;
+	nxt[ecnt] = head[u];
+	head[u] = ecnt;
+	deg[u]++;
+}
+
+void consider(){
+	sort(candidate + 1,candidate + ccnt + 1);
+	if(acnt == -1 || lexicographical_compare(candidate + 1,candidate + ccnt + 1,answer + 1,answer + acnt + 1)){
+		acnt = ccnt;
+		for(int i = 1; i <= ccnt; i++) answer[i] = candidate[i];
+	}
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,u,v;
+	cin >> n;
+	for(int i = 1; i <= n; i++){
+		cin >> u >> v;
+		add(u,v,i);
+		add(v,u,i);
+	}
+	if(n % 3 != 0){
+		cout << -1 << '\n';
+		return 0;
+	}
+	for(int i = 1; i <= n; i++){
+		alive[i] = true;
+		sz[i] = 1;
+	}
+	int front = 1,back = 0;
+	for(int i = 1; i <= n; i++){
+		if(deg[i] == 1) que[++back] = i;
+	}
+	while(front <= back){
+		int x = que[front++];
+		alive[x] = false;
+		for(int e = head[x]; e; e = nxt[e]){
+			int y = to[e];
+			if(!alive[y]) continue;
+			par[x] = y;
+			pe[x] = eid[e];
+			deg[y]--;
+			if(deg[y] == 1) que[++back] = y;
+		}
+	}
+	for(int i = 1; i <= back; i++){
+		int x = que[i],y = par[x];
+		if(sz[x] > 3){
+			cout << -1 << '\n';
+			return 0;
+		}
+		if(sz[x] == 3){
+			forced[++fcnt] = pe[x];
+		}else{
+			sz[y] += sz[x];
+			if(sz[y] > 3){
+				cout << -1 << '\n';
+				return 0;
+			}
+		}
+	}
+	int start = 0;
+	for(int i = 1; i <= n; i++){
+		if(alive[i]){
+			start = i;
+			break;
+		}
+	}
+	int x = start,last = 0,len = 0;
+	do{
+		cyc[++len] = x;
+		int next = 0,edge = 0;
+		for(int e = head[x]; e; e = nxt[e]){
+			int y = to[e];
+			if(alive[y] && y != last){
+				next = y;
+				edge = eid[e];
+				break;
+			}
+		}
+		ce[len] = edge;
+		last = x;
+		x = next;
+	}while(x != start);
+	acnt = -1;
+	static int bits[N];
+	bool finished = false;
+	while(!finished){
+		ccnt = 0;
+		for(int i = 1; i <= fcnt; i++) candidate[++ccnt] = forced[i];
+		int first = 0;
+		for(int i = 1; i <= len; i++){
+			if(bits[i]){
+				first = i;
+				break;
+			}
+		}
+		if(first == 0){
+			int total = 0;
+			for(int i = 1; i <= len; i++) total += sz[cyc[i]];
+			if(total == 3) consider();
+		}else{
+			int sum = 0;
+			bool good = true;
+			for(int step = 1; step <= len; step++){
+				int j = (first + step - 1) % len + 1;
+				sum += sz[cyc[j]];
+				if(sum > 3){
+					good = false;
+					break;
+				}
+				if(bits[j]){
+					if(sum != 3){
+						good = false;
+						break;
+					}
+					candidate[++ccnt] = ce[j];
+					sum = 0;
+				}
+			}
+			if(good && sum == 0) consider();
+		}
+		int pos = 1;
+		while(pos <= len && bits[pos]){
+			bits[pos] = 0;
+			pos++;
+		}
+		if(pos > len) finished = true;
+		else bits[pos] = 1;
+	}
+	if(acnt == -1){
+		cout << -1 << '\n';
+	}else{
+		cout << acnt << '\n';
+		for(int i = 1; i <= acnt; i++){
+			if(i > 1) cout << ' ';
+			cout << answer[i];
+		}
+		cout << '\n';
+	}
+	return 0;
+}
+```
+
+## 5～8 点（20 分）：逐条尝试环上的起始切边
 
 ---
 
@@ -388,7 +1075,7 @@ int main(){
 
 **步骤 2。** 设环长为 $c$。枚举一条环边作为起始切边，从它的下一环点顺时针累加附带点数；和为 3 就切下一条环边并清零，超过 3 则本次失败。扫描回起始切边时必须恰好清零。这样枚举了所有至少切一条环边的解，时间 $O(c^2)$、额外空间 $O(c)$。环恰有三个点且三个附带大小均为 1 时，另试“不切环边”的方案。
 
-**步骤 3。** 每个合法方案与强制树边合并，按边编号排序后比较删除序列。最多 $c+1$ 个方案，每次排序 $O(n\log n)$，故保守总时间 $O(n+c^2+cn\log n)=O(n^2\log n)$，空间 $O(n)$。$n\le3000$ 可用；大环需要满分做法的三种余数边界。
+**步骤 3。** 每个合法方案与强制树边合并，按边编号排序后比较删除序列。最多 $c+1$ 个方案，每次排序 $O(n\log n)$，故保守总时间 $O(n+c^2+cn\log n)=O(n^2\log n)$，空间 $O(n)$。$n\le3000$ 可用；第 15～20 点的大环实测超时。
 
 ### 参考代码
 
@@ -533,15 +1220,330 @@ int main(){
 }
 ```
 
-## 满分做法：剥叶子与三种环边界
+## 第 9 点（5 分）：点数不是 3 的倍数
+
+---
+
+**步骤 1～2。** 若全部连通块各有三个点，总点数必是 3 的倍数。题面保证 $3\nmid n$，直接无解。
+
+**步骤 3。** 输出 `-1`，时间与额外空间均为 $O(1)$。第 14 点也可复用同一输出程序，但依据不同。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout << -1 << '\n';
+	return 0;
+}
+```
+
+## 第 10 点（5 分）：图本身是一个环
+
+---
+
+**步骤 1。** 无挂树，沿环记录顺序及每条环边编号。遍历耗时 $O(n)$。
+
+**步骤 2。** $n>3$ 时每组恰是连续三个环点，环切边只有按位置模 3 的三种偏移；$n=3$ 时不切边的空序列字典序最小。
+
+**步骤 3。** 对三种偏移按编号扫描得到升序删除序列并比较，时间 $O(n)$、空间 $O(n)$。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 200005;
+int deg[N],neighbor[N][2],edgeId[N][2],ringEdge[N];
+int candidate[N],answer[N],bestCount = -1;
+bool cutEdge[N];
+
+void consider(int n){
+	int count = 0;
+	for(int id = 1; id <= n; id++){
+		if(cutEdge[id]) candidate[++count] = id;
+	}
+	if(bestCount == -1 || lexicographical_compare(candidate + 1,candidate + count + 1,answer + 1,answer + bestCount + 1)){
+		bestCount = count;
+		for(int i = 1; i <= count; i++) answer[i] = candidate[i];
+	}
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n;
+	cin >> n;
+	for(int id = 1; id <= n; id++){
+		int u,v;
+		cin >> u >> v;
+		neighbor[u][deg[u]] = v;
+		edgeId[u][deg[u]++] = id;
+		neighbor[v][deg[v]] = u;
+		edgeId[v][deg[v]++] = id;
+	}
+	if(n % 3 != 0){
+		cout << -1 << '\n';
+		return 0;
+	}
+	int current = 1,last = 0;
+	for(int i = 1; i <= n; i++){
+		int side = neighbor[current][0] == last ? 1 : 0;
+		ringEdge[i] = edgeId[current][side];
+		int next = neighbor[current][side];
+		last = current;
+		current = next;
+	}
+	if(n == 3){
+		cout << "0\n\n";
+		return 0;
+	}
+	for(int offset = 0; offset < 3; offset++){
+		for(int id = 1; id <= n; id++) cutEdge[id] = false;
+		for(int i = 1; i <= n; i++){
+			if((i - 1) % 3 == offset) cutEdge[ringEdge[i]] = true;
+		}
+		consider(n);
+	}
+	cout << bestCount << '\n';
+	for(int i = 1; i <= bestCount; i++){
+		if(i > 1) cout << ' ';
+		cout << answer[i];
+	}
+	cout << '\n';
+	return 0;
+}
+```
+
+## 第 11 点（5 分）：每个环点挂一条长度为 2 的路径
+
+---
+
+**步骤 1。** 剥叶识别环点与环边，时间、空间均为 $O(n)$。
+
+**步骤 2。** 每个环点连同自己的两点挂链已是三点块，不能再与另一环点连通，因此必须切去全部环边，挂链上的边全部保留。
+
+**步骤 3。** 顺着输入边编号输出所有环边，时间 $O(n)$，不存在其它合法删除序列。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 200005;
+int eu[N],ev[N],head[N],to[2 * N],nextEdge[2 * N],deg[N],queueNode[N],countEdge;
+bool alive[N];
+
+void add(int u,int v){
+	countEdge++;
+	to[countEdge] = v;
+	nextEdge[countEdge] = head[u];
+	head[u] = countEdge;
+	deg[u]++;
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n;
+	cin >> n;
+	for(int i = 1; i <= n; i++){
+		cin >> eu[i] >> ev[i];
+		add(eu[i],ev[i]);
+		add(ev[i],eu[i]);
+	}
+	for(int i = 1; i <= n; i++) alive[i] = true;
+	int front = 1,back = 0;
+	for(int i = 1; i <= n; i++){
+		if(deg[i] == 1) queueNode[++back] = i;
+	}
+	while(front <= back){
+		int u = queueNode[front++];
+		alive[u] = false;
+		for(int e = head[u]; e; e = nextEdge[e]){
+			int v = to[e];
+			if(!alive[v]) continue;
+			deg[v]--;
+			if(deg[v] == 1) queueNode[++back] = v;
+		}
+	}
+	int count = 0;
+	for(int id = 1; id <= n; id++){
+		if(alive[eu[id]] && alive[ev[id]]) count++;
+	}
+	cout << count << '\n';
+	bool first = true;
+	for(int id = 1; id <= n; id++){
+		if(alive[eu[id]] && alive[ev[id]]){
+			if(!first) cout << ' ';
+			cout << id;
+			first = false;
+		}
+	}
+	cout << '\n';
+	return 0;
+}
+```
+
+## 第 12 点（5 分）：唯一环只有三个点
+
+---
+
+**步骤 1。** 按 5～8 点的代码剥叶并确定树边，时间 $O(n)$。
+
+**步骤 2～3。** 环只有三条边，逐条试起始切边；再检查不切边的三点环特例。最多三次环扫描和四次排序，时间 $O(n\log n)$、空间 $O(n)$。直接使用上方“逐条尝试环切边”的完整代码，无需复制第二遍。
+
+## 第 13 点（5 分）：环点交替挂零或一片叶子
+
+---
+
+**步骤 1。** 剥叶得到环顺序；原度数 2、3 分别给环点权值 1、2，时间 $O(n)$。
+
+**步骤 2。** 每组三点必须由相邻的一权环点与二权环点组成，因此环上只有两种配对方向。分别从前两条环边出发累加到 3 时切边。
+
+**步骤 3。** 按边编号扫描比较两套升序删除序列。时间、空间均为 $O(n)$。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 200005;
+int head[N],to[2 * N],nextEdge[2 * N],edgeId[2 * N],deg[N],originalDeg[N];
+int queueNode[N],ringVertex[N],ringEdge[N],answer[N],candidate[N],edgeCount,bestCount = -1;
+bool alive[N],mark[N];
+
+void add(int u,int v,int id){
+	edgeCount++;
+	to[edgeCount] = v;
+	edgeId[edgeCount] = id;
+	nextEdge[edgeCount] = head[u];
+	head[u] = edgeCount;
+	deg[u]++;
+}
+
+void consider(int n){
+	int count = 0;
+	for(int id = 1; id <= n; id++){
+		if(mark[id]) candidate[++count] = id;
+	}
+	if(bestCount == -1 || lexicographical_compare(candidate + 1,candidate + count + 1,answer + 1,answer + bestCount + 1)){
+		bestCount = count;
+		for(int i = 1; i <= count; i++) answer[i] = candidate[i];
+	}
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n;
+	cin >> n;
+	for(int id = 1; id <= n; id++){
+		int u,v;
+		cin >> u >> v;
+		add(u,v,id);
+		add(v,u,id);
+	}
+	for(int i = 1; i <= n; i++){
+		alive[i] = true;
+		originalDeg[i] = deg[i];
+	}
+	int front = 1,back = 0;
+	for(int i = 1; i <= n; i++){
+		if(deg[i] == 1) queueNode[++back] = i;
+	}
+	while(front <= back){
+		int u = queueNode[front++];
+		alive[u] = false;
+		for(int e = head[u]; e; e = nextEdge[e]){
+			int v = to[e];
+			if(!alive[v]) continue;
+			deg[v]--;
+			if(deg[v] == 1) queueNode[++back] = v;
+		}
+	}
+	int start = 0;
+	for(int i = 1; i <= n; i++){
+		if(alive[i]){
+			start = i;
+			break;
+		}
+	}
+	int current = start,last = 0,length = 0;
+	do{
+		ringVertex[++length] = current;
+		int next = 0,id = 0;
+		for(int e = head[current]; e; e = nextEdge[e]){
+			int v = to[e];
+			if(alive[v] && v != last){
+				next = v;
+				id = edgeId[e];
+				break;
+			}
+		}
+		ringEdge[length] = id;
+		last = current;
+		current = next;
+	}while(current != start);
+	for(int cut = 1; cut <= 2; cut++){
+		for(int id = 1; id <= n; id++) mark[id] = false;
+		int sum = 0;
+		bool good = true;
+		for(int step = 1; step <= length; step++){
+			int j = (cut + step - 1) % length + 1;
+			sum += originalDeg[ringVertex[j]] - 1;
+			if(sum > 3){
+				good = false;
+				break;
+			}
+			if(sum == 3){
+				mark[ringEdge[j]] = true;
+				sum = 0;
+			}
+		}
+		if(good && sum == 0) consider(n);
+	}
+	if(bestCount == -1){
+		cout << -1 << '\n';
+		return 0;
+	}
+	cout << bestCount << '\n';
+	for(int i = 1; i <= bestCount; i++){
+		if(i > 1) cout << ' ';
+		cout << answer[i];
+	}
+	cout << '\n';
+	return 0;
+}
+```
+
+## 第 14 点（5 分）：每个环点挂一片叶子
+
+---
+
+**步骤 1～2。** 每个环点携带自己和一片叶子，大小为 2。任何块必须包含至少一个环点；若只含一个环点则块大小不足 3，若含两个环点则已有至少 4 个点。因此无解。
+
+**步骤 3。** 输出 `-1`，复用第 9 点的完整代码，时间与额外空间均为 $O(1)$。
+
+## 满分做法（15～20 点，30 分）：剥叶后尝试前三条环边
 
 ---
 
 **步骤 1。** 反复把度数为 1 的点从图上剥去，最后留下唯一的环。记录每个剥掉的点当时唯一还未剥掉的父点，再按剥除顺序自底向上处理。令 `sz[u]` 为向父点延伸、尚未闭合的块的点数，初始为 1。若 `sz[u]=3`，该块只能在父边处切断；若为 1 或 2，就把它加给父点；一旦超过 3 就无解。所有树边切法因此是强制的。队列剥除与累加各扫描边常数次，合计 $O(n)$ 时间、$O(n)$ 空间。
 
-**步骤 2。** 按环的顺序列出环点，其 `sz` 值均在 1 到 3。记沿环的前缀点数为 $P_i$。任何两条相邻切边之间必须恰好有三个点，因此它们对应的 $P_i\bmod3$ 相同。环上可能的切边集合至多三种：对每个余数 $r=0,1,2$，把所有满足 $P_i\equiv r\pmod3$ 的边作为边界，然后逐组核查点数是否为 3。环长为 3、三个环点的 `sz` 都为 1 时，还有保留整个三点环、不切任何环边的方案。环长遍历和三次核查均为 $O(n)$。
+**步骤 2。** 按环顺序列出环点，其 `sz` 均在 1 到 3。若要切环，任意连续三个环点的点数和至少为 3，因此任意合法切法在前三条环边中必有一条切边。分别假设前三条环边之一是切边，从下一环点开始累加；和到 3 就切下一条环边，超过 3 则失败。这样至多三次扫描就穷尽所有切法。环长为 3 且三个 `sz` 都为 1 时，另检查保留整个三点环、不切任何环边的方案。时间 $O(n)$。
 
-**步骤 3。** 每种合法环切法与强制树边合并，按边编号排序后比较序列。最多四种方案，排序总计 $O(n\log n)$，辅助数组 $O(n)$。所有树边选择被步骤 1 强制，所有环边界被步骤 2 穷尽，所以比较得到的就是全局字典序最小答案；不需要特殊判题。
+**步骤 3。** 每种合法环切法与强制树边合并，按边编号排序后比较序列。最多四种方案，排序总计 $O(n\log n)$，辅助数组 $O(n)$。所有树边选择被步骤 1 强制，前三条环边已覆盖每种合法环边界，所以得到全局字典序最小答案；不需要特殊判题。
 
 ### 参考代码
 
@@ -552,8 +1554,8 @@ using namespace std;
 const int N = 200005;
 int head[N],to[2 * N],nxt[2 * N],eid[2 * N],ecnt;
 int deg[N],que[N],par[N],pe[N],sz[N];
-int cyc[N],ce[N],residue[N],forced[N],fcnt;
-bool alive[N],mark[N];
+int cyc[N],ce[N],forced[N],fcnt;
+bool alive[N];
 int answer[N],acnt,candidate[N],ccnt;
 
 void add(int u,int v,int id){
@@ -653,35 +1655,24 @@ int main(){
 		for(int i = 1; i <= fcnt; i++) candidate[++ccnt] = forced[i];
 		consider();
 	}
-	int prefix = 0;
-	for(int i = 1; i <= len; i++){
-		prefix += sz[cyc[i]];
-		residue[i] = prefix % 3;
-	}
-	for(int r = 0; r < 3; r++){
-		int first = 0;
-		for(int i = 1; i <= len; i++){
-			mark[i] = residue[i] == r;
-			if(mark[i] && first == 0) first = i;
-		}
-		if(first == 0) continue;
-		bool good = true;
-		int sum = 0,i = first;
-		do{
-			i = i % len + 1;
-			sum += sz[cyc[i]];
-			if(mark[i]){
-				if(sum != 3) good = false;
-				sum = 0;
-			}
-		}while(i != first);
-		if(!good) continue;
+	for(int cut = 1; cut <= min(len,3); cut++){
 		ccnt = 0;
 		for(int j = 1; j <= fcnt; j++) candidate[++ccnt] = forced[j];
-		for(int j = 1; j <= len; j++){
-			if(mark[j]) candidate[++ccnt] = ce[j];
+		int sum = 0;
+		bool good = true;
+		for(int step = 1; step <= len; step++){
+			int j = (cut + step - 1) % len + 1;
+			sum += sz[cyc[j]];
+			if(sum > 3){
+				good = false;
+				break;
+			}
+			if(sum == 3){
+				candidate[++ccnt] = ce[j];
+				sum = 0;
+			}
 		}
-		consider();
+		if(good && sum == 0) consider();
 	}
 	if(acnt == -1){
 		cout << -1 << '\n';
@@ -701,7 +1692,7 @@ int main(){
 
 ---
 
-基环图先剥叶子，把挂树压成环点权值。目标块大小固定为 3 时，树边由剩余块大小强制决定；环上的切边只剩三种前缀和余数，另检查三点环整体保留的情况。
+基环图先剥叶子，把挂树压成环点权值。目标块大小固定为 3 时，树边由剩余块大小强制决定；任何合法环划分在前三条环边内必有切边，另检查三点环整体保留的情况。
 
 # T3 两种连通关系
 
@@ -721,7 +1712,13 @@ int main(){
 2. 确定关联图中可能保留的连通块，以及该块在原树中包含核心的区域。
 3. 从该区域中去掉违反原树连通或关联闭包的点，取最大合法区域。
 
-## 20 分做法：枚举保留点集
+| 测试点 | 对应解法 |
+|---|---|
+| 1～2、3～8 | 枚举保留点集；两两求最近异或并做双关系删点 |
+| 9～10、11～12 | 连续整数权值配对；关联点保证是原树邻居 |
+| 13～20 | 字典树求关联点并做双关系删点 |
+
+## 1～2 点（10 分）：枚举保留点集
 
 ---
 
@@ -836,7 +1833,7 @@ int main(){
 }
 ```
 
-## 20 分做法：两两计算异或
+## 3～8 点（30 分）：两两计算异或
 
 ---
 
@@ -846,7 +1843,7 @@ int main(){
 
 **步骤 3。** 先把 $B$ 内关联点不在 $B$ 的点标为坏点。坏点在以 $p$ 为根的原树中的后代也必须删，否则原树不连通；指向坏点的点也必须删，否则关联闭包不成立。用队列沿这两类反向关系传播，所有剩余点就是该块的最大合法集合。每点每边被处理常数次，合计 $O(n)$ 时间与空间。
 
-总时间 $O(n^2+n\alpha(n))=O(n^2)$、空间 $O(n)$，可以处理 $n\le3000$。所谓“最高二进制位互不相同”在本题 30 位值域下最多只有 30 个正权值，它自然包含在小范围做法中，不另造一个大规模子任务；链和菊花仍须检查两种连通关系，不能只按权值求答案。
+总时间 $O(n^2+n\alpha(n))=O(n^2)$、空间 $O(n)$，可以处理 $n\le3000$。所谓“最高二进制位互不相同”在本题 30 位值域下最多只有 30 个正权值，它自然包含在小范围做法中，不另造一个大规模子任务；链和菊花仍须检查两种连通关系，不能只按权值求答案。第 13～20 点的十万级输入使两两扫描实测超时。
 
 ### 参考代码
 
@@ -970,7 +1967,121 @@ int main(){
 }
 ```
 
-## 满分做法：字典树找关联点，双关系删点
+## 9～10 点（10 分）：连续整数权值形成配对
+
+---
+
+**步骤 1。** 权值恰为 $0,1,\ldots,n-1$ 且 $n$ 为偶数。对每个权值 $x$，$x\mathbin{\mathrm{xor}}1$ 也存在，异或距离为 1，是唯一最小值；关联图因而恰由 $n/2$ 个双向点对组成。无需字典树。
+
+**步骤 2～3。** 每个可选的非空关联块只能是一对节点。它在原树的诱导边下连通，当且仅当原树中有该点对的边。扫描 $n-1$ 条树边，发现一条权值互为 `xor 1` 的边就输出 2，否则输出 0。时间 $O(n)$、存储权值 $O(n)$。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 200005;
+int a[N];
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n;
+	cin >> n;
+	for(int i = 1; i <= n; i++) cin >> a[i];
+	if(n == 1){
+		cout << 1 << '\n';
+		return 0;
+	}
+	bool found = false;
+	for(int i = 1; i < n; i++){
+		int u,v;
+		cin >> u >> v;
+		if((a[u] ^ 1) == a[v]) found = true;
+	}
+	cout << (found ? 2 : 0) << '\n';
+	return 0;
+}
+```
+
+## 11～12 点（10 分）：关联点保证是原树邻居
+
+---
+
+**步骤 1。** 对每个点只扫描原树邻居，找异或距离最小的邻居。额外保证说全局最近异或点就在这些邻居中，所以所得 $f(u)$ 与原定义一致。全部树边只被扫描常数次，时间 $O(n)$、空间 $O(n)$。
+
+**步骤 2。** 用并查集合并每条关联边，时间 $O(n\alpha(n))$。每个关联连通块沿关联边连通，而这些边本身就是原树边，故该块在原树诱导边下也连通。
+
+**步骤 3。** 一个关联块整体保留即可满足关联闭包；不能跨两个关联块保留，否则关联边图不连通。取最大关联块的点数，时间 $O(n)$。总时间 $O(n\alpha(n))$、空间 $O(n)$。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 200005;
+int a[N],partner[N],distanceValue[N],parentNode[N],componentSize[N];
+
+int root(int u){
+	while(parentNode[u] != u){
+		parentNode[u] = parentNode[parentNode[u]];
+		u = parentNode[u];
+	}
+	return u;
+}
+
+void join(int u,int v){
+	u = root(u);
+	v = root(v);
+	if(u == v) return;
+	if(componentSize[u] < componentSize[v]) swap(u,v);
+	parentNode[v] = u;
+	componentSize[u] += componentSize[v];
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n;
+	cin >> n;
+	for(int i = 1; i <= n; i++){
+		cin >> a[i];
+		distanceValue[i] = INT_MAX;
+		parentNode[i] = i;
+		componentSize[i] = 1;
+	}
+	if(n == 1){
+		cout << 1 << '\n';
+		return 0;
+	}
+	for(int i = 1; i < n; i++){
+		int u,v;
+		cin >> u >> v;
+		int d = a[u] ^ a[v];
+		if(d < distanceValue[u]){
+			distanceValue[u] = d;
+			partner[u] = v;
+		}
+		if(d < distanceValue[v]){
+			distanceValue[v] = d;
+			partner[v] = u;
+		}
+	}
+	for(int i = 1; i <= n; i++) join(i,partner[i]);
+	int answer = 0;
+	for(int i = 1; i <= n; i++){
+		if(root(i) == i) answer = max(answer,componentSize[i]);
+	}
+	cout << answer << '\n';
+	return 0;
+}
+```
+
+## 满分做法（13～20 点，40 分）：字典树找关联点，双关系删点
 
 ---
 
@@ -1160,7 +2271,13 @@ int main(){
 2. 在至多 $k$ 次操作下，决定优先完成哪些块。
 3. 为最终序列给出操作次数最少、区间序列字典序最小的记录，并输出精确分数。
 
-## 20 分做法：枚举操作序列
+| 测试点 | 对应解法 |
+|---|---|
+| 1～2、3～8 | 直接枚举操作序列；逐个扫描后缀的最大前缀平均值 |
+| 9～11、12、13、14 | 原数组不变；严格递增整段平均；一次操作的最优前缀；下降均值的相邻数对 |
+| 15～20 | 单调块栈 |
+
+## 1～2 点（10 分）：枚举操作序列
 
 ---
 
@@ -1282,7 +2399,7 @@ int main(){
 }
 ```
 
-## 20 分做法：逐个扫描后缀的最大前缀平均值
+## 3～8 点（30 分）：逐个扫描后缀的最大前缀平均值
 
 ---
 
@@ -1368,7 +2485,198 @@ int main(){
 }
 ```
 
-## 满分做法：前缀和上凸包与单调块栈
+## 第 9～11 点（各 5 分）：最终数组不变
+
+---
+
+**第 9 点，$k=0$。** 没有可用操作，输出原数组和 0 次。
+
+**第 10 点，所有数相等。** 任意区间的平均值都等于原值，所有方案得到同一序列；按第二目标选 0 次。
+
+**第 11 点，严格递减。** 任取一段，其首项大于该段平均值；从最左发生变化的位置看，做操作只会把字典序变小。原数组最优，仍选 0 次。
+
+三个性质共用一份输出程序：扫描 $n$ 个数，逐个写作 `$a_i/1$`，时间 $O(n)$，额外空间 $O(1)$。这里“每个数都直接输出”是因为题目要求完整的最终数组。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,k;
+	cin >> n >> k;
+	cout << 0 << '\n';
+	for(int i = 1; i <= n; i++){
+		long long x;
+		cin >> x;
+		if(i > 1) cout << ' ';
+		cout << x << "/1";
+	}
+	cout << '\n';
+	return 0;
+}
+```
+
+## 第 12 点（5 分）：严格递增序列
+
+---
+
+**步骤 1。** 严格递增时，相邻块均值总是不降；相邻块合并算法会把整个序列合为一块。$n\ge2,k\ge1$，一次操作 $[1,n]$ 即可达到无限预算的字典序上界。
+
+**步骤 2～3。** 把全数组和约分为平均值，输出一次操作和 $n$ 个相同分数。时间 $O(n)$、额外空间 $O(1)$；最少次数为 1。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+long long gcdValue(long long a,long long b){
+	while(b){
+		long long c = a % b;
+		a = b;
+		b = c;
+	}
+	return a;
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,k;
+	cin >> n >> k;
+	long long sum = 0;
+	for(int i = 1; i <= n; i++){
+		long long x;
+		cin >> x;
+		sum += x;
+	}
+	long long g = gcdValue(sum,n);
+	cout << 1 << '\n';
+	for(int i = 1; i <= n; i++){
+		if(i > 1) cout << ' ';
+		cout << sum / g << '/' << n / g;
+	}
+	cout << '\n' << 1 << ' ' << n << '\n';
+	return 0;
+}
+```
+
+## 第 13 点（5 分）：只有一次操作且首项严格最小
+
+---
+
+**步骤 1。** $a_1<a_i$ 对所有 $i>1$ 成立，所以最优序列的第一项必须通过包含位置 1 的一次平均操作提高。枚举前缀 $[1,r]$，取平均值最大的最长前缀；若两个前缀平均值相同，较长者在第一个新增位置处更优或相同。扫描前缀和并用整数商、余数比较平均值，时间 $O(n)$。
+
+**步骤 2～3。** 对选中前缀，右端点缩到最后一个原值不等于平均值的位置，避免无效覆盖并使区间对最小；按平均值输出前缀，其余位置输出原值。约分、生成答案总时间 $O(n)$，存储数组 $O(n)$。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 100005;
+long long a[N];
+
+long long gcdValue(long long a,long long b){
+	while(b){
+		long long c = a % b;
+		a = b;
+		b = c;
+	}
+	return a;
+}
+
+bool lessEqualAverage(long long x,int nx,long long y,int ny){
+	long long qx = x / nx,qy = y / ny;
+	if(qx != qy) return qx < qy;
+	return (x % nx) * ny <= (y % ny) * nx;
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,k;
+	cin >> n >> k;
+	for(int i = 1; i <= n; i++) cin >> a[i];
+	long long sum = 0,bestSum = -1;
+	int bestLength = 1,end = 1;
+	for(int i = 1; i <= n; i++){
+		sum += a[i];
+		if(bestSum == -1 || lessEqualAverage(bestSum,bestLength,sum,i)){
+			bestSum = sum;
+			bestLength = i;
+			end = i;
+		}
+	}
+	int last = 0;
+	for(int i = 1; i <= end; i++){
+		if(a[i] * bestLength != bestSum) last = i;
+	}
+	long long g = gcdValue(bestSum,bestLength);
+	cout << 1 << '\n';
+	for(int i = 1; i <= n; i++){
+		if(i > 1) cout << ' ';
+		if(i <= end) cout << bestSum / g << '/' << bestLength / g;
+		else cout << a[i] << "/1";
+	}
+	cout << '\n' << 1 << ' ' << last << '\n';
+	return 0;
+}
+```
+
+## 第 14 点（5 分）：相邻数对的均值严格下降
+
+---
+
+**步骤 1。** 每对 $a_{2j-1}<a_{2j}$ 是一个上升块，需平均；各对平均值严格下降，跨对无需再合并。因此无限预算最优块恰是这些相邻数对。
+
+**步骤 2～3。** 按字典序从左到右，预算优先用于前 $\min(k,n/2)$ 对；每对一次操作，输出该对的精确平均分数和区间。时间 $O(n)$、空间 $O(n)$（保存输入和输出）。
+
+### 参考代码
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 100005;
+long long a[N];
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+
+	int n,k;
+	cin >> n >> k;
+	for(int i = 1; i <= n; i++) cin >> a[i];
+	int used = min(k,n / 2);
+	cout << used << '\n';
+	for(int i = 1; i <= n; i++){
+		if(i > 1) cout << ' ';
+		int pairNumber = (i + 1) / 2;
+		if(pairNumber <= used){
+			int left = 2 * pairNumber - 1;
+			long long sum = a[left] + a[left + 1];
+			if(sum % 2 == 0) cout << sum / 2 << "/1";
+			else cout << sum << "/2";
+		}else{
+			cout << a[i] << "/1";
+		}
+	}
+	cout << '\n';
+	for(int j = 1; j <= used; j++) cout << 2 * j - 1 << ' ' << 2 * j << '\n';
+	return 0;
+}
+```
+
+## 满分做法（15～20 点，30 分）：前缀和上凸包与单调块栈
 
 ---
 
