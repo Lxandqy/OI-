@@ -83,6 +83,44 @@ def tree3(a, kind):
     return str(n) + '\n' + ' '.join(map(str, a)) + '\n' + ''.join(f'{u} {v}\n' for u, v in edges)
 
 
+def core3(n, kind, seed):
+    core = [0] + [1 << i for i in range(29)]
+    Random(seed).shuffle(core)
+    a = core + [(1 << 29) + 2 * i for i in range(n - len(core))]
+    edges = [(i - 1, i) for i in range(2, len(core) + 1)]
+    for i in range(len(core) + 1, n + 1):
+        if kind == 'chain':
+            parent = i - 1
+        elif kind == 'binary':
+            parent = i // 2
+        elif kind == 'star':
+            parent = 1
+        elif kind == 'random':
+            parent = RNG.randrange(1, i)
+        else:
+            parent = len(core) if i == len(core) + 1 else i - 1
+        edges.append((parent, i))
+    return str(n) + '\n' + ' '.join(map(str, a)) + '\n' + ''.join(f'{u} {v}\n' for u, v in edges)
+
+
+def trap3(n, seed):
+    local = Random(seed)
+    small = [0, 1, 2, 4, 8]
+    local.shuffle(small)
+    large = [(1 << 29) + v for v in [0, 1] + [1 << i for i in range(1, 28)]]
+    first_bulk = len(small) + len(large) + 1
+    bulk = local.sample(range(1 << 28, 1 << 29), n - first_bulk + 1)
+    a = small + large + bulk
+    edges = [(i - 1, i) for i in range(2, len(small) + 1)]
+    edges.append((len(small), first_bulk))
+    for i in range(first_bulk + 1, n + 1):
+        edges.append((local.randrange(first_bulk, i), i))
+    for i in range(len(small) + 1, first_bulk):
+        edges.append((local.randrange(first_bulk, n + 1), i))
+    assert len(edges) == n - 1
+    return str(n) + '\n' + ' '.join(map(str, a)) + '\n' + ''.join(f'{u} {v}\n' for u, v in edges)
+
+
 def arr4(a, k):
     return f'{len(a)} {k}\n' + ' '.join(map(str, a)) + '\n'
 
@@ -171,16 +209,14 @@ pair_edges += [(2 * j + 1, 2 * (j - 1) + 1) for j in range(1, n // 2)]
 RNG.shuffle(pair_edges)
 write(3, 12, str(n) + '\n' + ' '.join(map(str, sparse_pairs)) + '\n' + ''.join(f'{u} {v}\n' for u, v in pair_edges), 'nearest-xor edges included in random-order tree')
 n = 199999
-write(3, 13, tree3(RNG.sample(range(1 << 30), n), 'random'), 'random original tree and weights; trie-only trap')
+write(3, 13, core3(n, 'random', 0), 'connected sparse xor core with random outside tree')
 write(3, 14, tree3([(i * 9137) % (1 << 30) for i in range(n)], 'star'), 'large star')
-write(3, 15, tree3([(i * 65537) % (1 << 30) for i in range(n)], 'chain'), 'large chain')
-write(3, 16, tree3([(i * 99991) % (1 << 30) for i in range(n)], 'binary'), 'large balanced tree and bit patterns')
-write(3, 17, tree3(RNG.sample(range(1 << 30), n), 'random'), 'second random trap with distinct seed')
-low = [0] + [1 << i for i in range(29)]
-high = [(1 << 29) + 2 * i for i in range(n - len(low))]
-write(3, 18, tree3(low + high, 'chain'), 'connected thirty-node nearest-xor component')
+write(3, 15, core3(n, 'chain', 7), 'permuted xor core and long chain')
+write(3, 16, core3(n, 'binary', 19), 'permuted xor core and binary outside tree')
+write(3, 17, core3(n, 'star', 29), 'permuted xor core and large star outside')
+write(3, 18, core3(n, 'longtail', 53), 'connected thirty-node nearest-xor core')
 write(3, 19, tree3(RNG.sample(range(1 << 30), n), 'binary'), 'random values on binary tree')
-write(3, 20, tree3([(i * 7919 + 17) % (1 << 30) for i in range(n)], 'random'), 'structured values and random tree')
+write(3, 20, trap3(n, 0), 'random bulk weights and tree; disconnected large xor component trap')
 write(3, 1, tree3([0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384], 'chain'), 'public larger example', True)
 
 # T4: operation search, quadratic scans, six easy but distinct structures.

@@ -3,343 +3,343 @@
     "task": 1,
     "point": "1",
     "n": 4,
-    "seconds": 0.0062,
+    "seconds": 0.0075,
     "purpose": "smallest four nonempty segments"
   },
   {
     "task": 1,
     "point": "2",
     "n": 10,
-    "seconds": 0.0035,
+    "seconds": 0.0046,
     "purpose": "small enumeration; zero mask"
   },
   {
     "task": 1,
     "point": "3",
     "n": 30,
-    "seconds": 0.0036,
+    "seconds": 0.0047,
     "purpose": "n thirty; interval-summary enumeration"
   },
   {
     "task": 1,
     "point": "4",
     "n": 30,
-    "seconds": 0.0034,
+    "seconds": 0.0042,
     "purpose": "n thirty; negative boundary"
   },
   {
     "task": 1,
     "point": "5",
     "n": 100,
-    "seconds": 0.0036,
+    "seconds": 0.0051,
     "purpose": "n hundred; cubic DP"
   },
   {
     "task": 1,
     "point": "6",
     "n": 100,
-    "seconds": 0.0037,
+    "seconds": 0.0042,
     "purpose": "n hundred; alternating signs"
   },
   {
     "task": 1,
     "point": "7",
     "n": 500,
-    "seconds": 0.0048,
+    "seconds": 0.0053,
     "purpose": "n five hundred; quadratic DP"
   },
   {
     "task": 1,
     "point": "8",
     "n": 500,
-    "seconds": 0.0034,
+    "seconds": 0.0044,
     "purpose": "n five hundred; all negative"
   },
   {
     "task": 1,
     "point": "9",
     "n": 100000,
-    "seconds": 0.013,
+    "seconds": 0.0133,
     "purpose": "all masks zero; Kadane"
   },
   {
     "task": 1,
     "point": "10",
     "n": 100000,
-    "seconds": 0.0146,
+    "seconds": 0.014,
     "purpose": "optimum has four singleton operations"
   },
   {
     "task": 1,
     "point": "11",
     "n": 100000,
-    "seconds": 0.0131,
+    "seconds": 0.0135,
     "purpose": "optimum operations cover all positions"
   },
   {
     "task": 1,
     "point": "12",
     "n": 100000,
-    "seconds": 0.0144,
+    "seconds": 0.0167,
     "purpose": "optimum answer interval avoids four operations"
   },
   {
     "task": 1,
     "point": "13",
     "n": 100000,
-    "seconds": 0.0147,
+    "seconds": 0.0156,
     "purpose": "only fourth mask nonzero"
   },
   {
     "task": 1,
     "point": "14",
     "n": 100000,
-    "seconds": 0.0126,
+    "seconds": 0.0136,
     "purpose": "all nonnegative and masks zero"
   },
   {
     "task": 1,
     "point": "15",
     "n": 100000,
-    "seconds": 0.014,
+    "seconds": 0.0156,
     "purpose": "structured modular values; large masks"
   },
   {
     "task": 1,
     "point": "16",
     "n": 100000,
-    "seconds": 0.0173,
+    "seconds": 0.0136,
     "purpose": "four long xor zones separated by positive untouched gaps"
   },
   {
     "task": 1,
     "point": "17",
     "n": 100000,
-    "seconds": 0.0129,
+    "seconds": 0.0127,
     "purpose": "both endpoints affect best subarray"
   },
   {
     "task": 1,
     "point": "18",
     "n": 100000,
-    "seconds": 0.0139,
+    "seconds": 0.0146,
     "purpose": "near-maximum positive values; 64-bit sum and four long zones"
   },
   {
     "task": 1,
     "point": "19",
     "n": 100000,
-    "seconds": 0.0143,
+    "seconds": 0.0149,
     "purpose": "adjacent and separated segments"
   },
   {
     "task": 1,
     "point": "20",
     "n": 100000,
-    "seconds": 0.0127,
+    "seconds": 0.0134,
     "purpose": "fourth segment may end at n"
   },
   {
     "task": 1,
     "point": "attachment1",
     "n": 12,
-    "seconds": 0.0036,
+    "seconds": 0.004,
     "purpose": "public larger example"
   },
   {
     "task": 2,
     "point": "1",
     "n": 3,
-    "seconds": 0.0064,
+    "seconds": 0.0059,
     "purpose": "triangle retained; zero cuts"
   },
   {
     "task": 2,
     "point": "2",
     "n": 12,
-    "seconds": 0.0035,
+    "seconds": 0.0037,
     "purpose": "small mixed cycle residues and lex order"
   },
   {
     "task": 2,
     "point": "3",
     "n": 300,
-    "seconds": 0.0035,
+    "seconds": 0.0065,
     "purpose": "bounded cycle subset; long attachment"
   },
   {
     "task": 2,
     "point": "4",
     "n": 300,
-    "seconds": 0.0036,
+    "seconds": 0.0045,
     "purpose": "cycle subset with fifteen ring edges"
   },
   {
     "task": 2,
     "point": "5",
     "n": 1500,
-    "seconds": 0.004,
+    "seconds": 0.0046,
     "purpose": "per-cut scan on mixed residual sizes"
   },
   {
     "task": 2,
     "point": "6",
     "n": 1800,
-    "seconds": 0.0038,
+    "seconds": 0.0045,
     "purpose": "per-cut scan on cycle"
   },
   {
     "task": 2,
     "point": "7",
     "n": 3000,
-    "seconds": 0.006,
+    "seconds": 0.0049,
     "purpose": "per-cut scan upper range"
   },
   {
     "task": 2,
     "point": "8",
     "n": 3000,
-    "seconds": 0.0041,
+    "seconds": 0.0043,
     "purpose": "per-cut scan upper range natural numbering"
   },
   {
     "task": 2,
     "point": "9",
     "n": 199999,
-    "seconds": 0.0312,
+    "seconds": 0.0311,
     "purpose": "n not divisible by three"
   },
   {
     "task": 2,
     "point": "10",
     "n": 199998,
-    "seconds": 0.054,
+    "seconds": 0.0555,
     "purpose": "pure cycle; three offsets"
   },
   {
     "task": 2,
     "point": "11",
     "n": 199998,
-    "seconds": 0.0532,
+    "seconds": 0.0528,
     "purpose": "each ring vertex has a path of two"
   },
   {
     "task": 2,
     "point": "12",
     "n": 199998,
-    "seconds": 0.0573,
+    "seconds": 0.0576,
     "purpose": "triangle cycle with long tree tail"
   },
   {
     "task": 2,
     "point": "13",
     "n": 199998,
-    "seconds": 0.0557,
+    "seconds": 0.0527,
     "purpose": "alternating cycle weights one and two"
   },
   {
     "task": 2,
     "point": "14",
     "n": 199998,
-    "seconds": 0.0405,
+    "seconds": 0.0402,
     "purpose": "all ring weights two; impossible"
   },
   {
     "task": 2,
     "point": "15",
     "n": 199998,
-    "seconds": 0.0512,
+    "seconds": 0.0497,
     "purpose": "mixed residual sizes one two three"
   },
   {
     "task": 2,
     "point": "16",
     "n": 199998,
-    "seconds": 0.0434,
+    "seconds": 0.0441,
     "purpose": "mixed pattern natural edge numbering"
   },
   {
     "task": 2,
     "point": "17",
     "n": 199998,
-    "seconds": 0.0561,
+    "seconds": 0.0554,
     "purpose": "short tree tail attached to very long cycle"
   },
   {
     "task": 2,
     "point": "18",
     "n": 199998,
-    "seconds": 0.0557,
+    "seconds": 0.059,
     "purpose": "two forced triples before huge cycle"
   },
   {
     "task": 2,
     "point": "19",
     "n": 199998,
-    "seconds": 0.0494,
+    "seconds": 0.0516,
     "purpose": "mixed residual pattern one three two"
   },
   {
     "task": 2,
     "point": "20",
     "n": 199998,
-    "seconds": 0.0502,
+    "seconds": 0.0578,
     "purpose": "mixed residual pattern three one two"
   },
   {
     "task": 2,
     "point": "attachment1",
     "n": 24,
-    "seconds": 0.0039,
+    "seconds": 0.0037,
     "purpose": "public larger example"
   },
   {
     "task": 3,
     "point": "1",
     "n": 1,
-    "seconds": 0.006,
+    "seconds": 0.0068,
     "purpose": "single node has no partner"
   },
   {
     "task": 3,
     "point": "2",
     "n": 15,
-    "seconds": 0.0036,
+    "seconds": 0.0049,
     "purpose": "small core pair and association closure"
   },
   {
     "task": 3,
     "point": "3",
     "n": 30,
-    "seconds": 0.0038,
+    "seconds": 0.0039,
     "purpose": "distinct highest bits imply at most thirty values"
   },
   {
     "task": 3,
     "point": "4",
     "n": 3000,
-    "seconds": 0.0066,
+    "seconds": 0.005,
     "purpose": "quadratic partial upper range"
   },
   {
     "task": 3,
     "point": "5",
     "n": 3000,
-    "seconds": 0.0049,
+    "seconds": 0.0055,
     "purpose": "quadratic star"
   },
   {
     "task": 3,
     "point": "6",
     "n": 3000,
-    "seconds": 0.0049,
+    "seconds": 0.0055,
     "purpose": "quadratic balanced tree"
   },
   {
     "task": 3,
     "point": "7",
     "n": 3000,
-    "seconds": 0.0049,
+    "seconds": 0.0058,
     "purpose": "quadratic random original tree"
   },
   {
@@ -353,126 +353,126 @@
     "task": 3,
     "point": "9",
     "n": 199998,
-    "seconds": 0.0736,
+    "seconds": 0.0788,
     "purpose": "consecutive values with no partner edge; answer zero"
   },
   {
     "task": 3,
     "point": "10",
     "n": 199998,
-    "seconds": 0.0817,
+    "seconds": 0.0749,
     "purpose": "consecutive values with partner edges"
   },
   {
     "task": 3,
     "point": "11",
     "n": 199998,
-    "seconds": 0.075,
+    "seconds": 0.0748,
     "purpose": "nearest-xor edges are original chain edges"
   },
   {
     "task": 3,
     "point": "12",
     "n": 199998,
-    "seconds": 0.0823,
+    "seconds": 0.0812,
     "purpose": "nearest-xor edges included in random-order tree"
   },
   {
     "task": 3,
     "point": "13",
     "n": 199999,
-    "seconds": 0.19,
-    "purpose": "random original tree and weights; trie-only trap"
+    "seconds": 0.0789,
+    "purpose": "connected sparse xor core with random outside tree"
   },
   {
     "task": 3,
     "point": "14",
     "n": 199999,
-    "seconds": 0.0781,
+    "seconds": 0.0812,
     "purpose": "large star"
   },
   {
     "task": 3,
     "point": "15",
     "n": 199999,
-    "seconds": 0.08,
-    "purpose": "large chain"
+    "seconds": 0.0776,
+    "purpose": "permuted xor core and long chain"
   },
   {
     "task": 3,
     "point": "16",
     "n": 199999,
-    "seconds": 0.0856,
-    "purpose": "large balanced tree and bit patterns"
+    "seconds": 0.0755,
+    "purpose": "permuted xor core and binary outside tree"
   },
   {
     "task": 3,
     "point": "17",
     "n": 199999,
-    "seconds": 0.1861,
-    "purpose": "second random trap with distinct seed"
+    "seconds": 0.0728,
+    "purpose": "permuted xor core and large star outside"
   },
   {
     "task": 3,
     "point": "18",
     "n": 199999,
-    "seconds": 0.0769,
-    "purpose": "connected thirty-node nearest-xor component"
+    "seconds": 0.0758,
+    "purpose": "connected thirty-node nearest-xor core"
   },
   {
     "task": 3,
     "point": "19",
     "n": 199999,
-    "seconds": 0.1763,
+    "seconds": 0.1562,
     "purpose": "random values on binary tree"
   },
   {
     "task": 3,
     "point": "20",
     "n": 199999,
-    "seconds": 0.0828,
-    "purpose": "structured values and random tree"
+    "seconds": 0.1811,
+    "purpose": "random bulk weights and tree; disconnected large xor component trap"
   },
   {
     "task": 3,
     "point": "attachment1",
     "n": 16,
-    "seconds": 0.004,
+    "seconds": 0.0038,
     "purpose": "public larger example"
   },
   {
     "task": 4,
     "point": "1",
     "n": 3,
-    "seconds": 0.0057,
+    "seconds": 0.0061,
     "purpose": "exact average; one operation despite k two"
   },
   {
     "task": 4,
     "point": "2",
     "n": 10,
-    "seconds": 0.0033,
+    "seconds": 0.004,
     "purpose": "small equal-prefix tie and canonical interval"
   },
   {
     "task": 4,
     "point": "3",
     "n": 2000,
-    "seconds": 0.0043,
+    "seconds": 0.0042,
     "purpose": "all equal medium point; brute still enumerates intervals"
   },
   {
     "task": 4,
     "point": "4",
     "n": 2000,
-    "seconds": 0.0038,
+    "seconds": 0.0039,
     "purpose": "quadratic upper range; strictly decreasing"
   },
   {
     "task": 4,
     "point": "5",
     "n": 2000,
-    "seconds": 0.0041,
+    "seconds": 0.0038,
     "purpose": "two thousand positions in descending pair blocks"
   },
   {
@@ -486,105 +486,105 @@
     "task": 4,
     "point": "7",
     "n": 2000,
-    "seconds": 0.0051,
+    "seconds": 0.0042,
     "purpose": "mixed values with two operations"
   },
   {
     "task": 4,
     "point": "8",
     "n": 2000,
-    "seconds": 0.0041,
+    "seconds": 0.0042,
     "purpose": "long prefix-average trap"
   },
   {
     "task": 4,
     "point": "9",
     "n": 100000,
-    "seconds": 0.0253,
+    "seconds": 0.0232,
     "purpose": "zero budget; original sequence"
   },
   {
     "task": 4,
     "point": "10",
     "n": 100000,
-    "seconds": 0.0241,
+    "seconds": 0.0234,
     "purpose": "all equal; zero operations"
   },
   {
     "task": 4,
     "point": "11",
     "n": 100000,
-    "seconds": 0.0254,
+    "seconds": 0.0251,
     "purpose": "strictly decreasing; zero operations"
   },
   {
     "task": 4,
     "point": "12",
     "n": 100000,
-    "seconds": 0.0221,
+    "seconds": 0.0203,
     "purpose": "strictly increasing; one full interval"
   },
   {
     "task": 4,
     "point": "13",
     "n": 99999,
-    "seconds": 0.0238,
+    "seconds": 0.0244,
     "purpose": "one operation; first element is strict minimum"
   },
   {
     "task": 4,
     "point": "14",
     "n": 100000,
-    "seconds": 0.0295,
+    "seconds": 0.0293,
     "purpose": "strictly descending pair means"
   },
   {
     "task": 4,
     "point": "15",
     "n": 99999,
-    "seconds": 0.0303,
+    "seconds": 0.0299,
     "purpose": "many rational thirds; quadratic scans must fail"
   },
   {
     "task": 4,
     "point": "16",
     "n": 100000,
-    "seconds": 0.0293,
+    "seconds": 0.0355,
     "purpose": "descending four-element blocks"
   },
   {
     "task": 4,
     "point": "17",
     "n": 99999,
-    "seconds": 0.0287,
+    "seconds": 0.028,
     "purpose": "paired blocks interleaved with singletons"
   },
   {
     "task": 4,
     "point": "18",
     "n": 99996,
-    "seconds": 0.0288,
+    "seconds": 0.0275,
     "purpose": "six-element rational blocks"
   },
   {
     "task": 4,
     "point": "19",
     "n": 99999,
-    "seconds": 0.0244,
+    "seconds": 0.0251,
     "purpose": "first distant prefix choice then second operation"
   },
   {
     "task": 4,
     "point": "20",
     "n": 100000,
-    "seconds": 0.0293,
+    "seconds": 0.0286,
     "purpose": "alternating pair and triple blocks"
   },
   {
     "task": 4,
     "point": "attachment1",
     "n": 12,
-    "seconds": 0.0039,
+    "seconds": 0.0048,
     "purpose": "public larger example"
   }
 ]

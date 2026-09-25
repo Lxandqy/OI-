@@ -27,7 +27,7 @@ for t, content in enumerate((mut1, mut2, mut3, mut4), 1):
     source.write_text(content, encoding='utf-8')
     subprocess.run([gpp, '-std=c++14', '-O2', str(source), '-o', str(binary)], check=True)
 
-for t, point in ((1, 4), (2, 1), (3, 5), (4, 5)):
+for t, point in ((1, 4), (2, 1), (3, 20), (4, 15)):
     folder = p / 'built' / f'T{t}' / 'data'
     raw = (folder / f'{point}.in').read_text(encoding='utf-8')
     exp = (folder / f'{point}.out').read_text(encoding='utf-8')
@@ -37,7 +37,7 @@ for t, point in ((1, 4), (2, 1), (3, 5), (4, 5)):
     print(f'T{t} mutant rejected on point {point}: expected {exp[:40]!r}, got {proc.stdout[:40]!r}', flush=True)
 
 # A local-neighbour averaging rule loses the first comparison on the long trap.
-raw = (p / 'built' / 'T4' / 'data' / '9.in').read_text(encoding='utf-8')
+raw = (p / 'built' / 'T4' / 'data' / '19.in').read_text(encoding='utf-8')
 z = list(map(int, raw.split()))
 first_pair = (z[2] + z[3]) / 2
 first_three = (z[2] + z[3] + z[4]) / 3
