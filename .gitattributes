@@ -1,0 +1,7 @@
+# Preserve the verified contest packages and dataset bytes.
+"比赛题目/**" -text
+"比赛题目/.audit/backup_zips/NOIP模拟赛-第二套-CC版.zip" filter=lfs diff=lfs merge=lfs -text
+"比赛题目/归档/S-01/洛谷数据包/洛谷-T4-subarray.zip" filter=lfs diff=lfs merge=lfs -text
+"比赛题目/归档/S-03/洛谷数据包/洛谷-T3-max.zip" filter=lfs diff=lfs merge=lfs -text
+"比赛题目/归档/S-14/洛谷数据包/洛谷-T2-mountain.zip" filter=lfs diff=lfs merge=lfs -text
+"比赛题目/归档/S-18/洛谷数据包/洛谷-T3-chase.zip" filter=lfs diff=lfs merge=lfs -text
