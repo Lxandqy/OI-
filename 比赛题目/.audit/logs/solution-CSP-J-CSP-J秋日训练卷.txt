@@ -1,0 +1,19 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\CSP-J秋日训练卷\statement.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\CSP-J秋日训练卷\solution.md --io file --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std harvest=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-CSP-J秋日训练卷\harvest.cpp --std pairs=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-CSP-J秋日训练卷\pairs.cpp --std rail=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-CSP-J秋日训练卷\rail.cpp --std visit=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-CSP-J秋日训练卷\visit.cpp
+
+STDOUT:
+solution.md: 15 code blocks, 13 cpp
+  harvest: std found verbatim in solution
+  pairs: std found verbatim in solution
+  rail: std found verbatim in solution
+  visit: std found verbatim in solution
+  pairs sample 1: std output matches
+  pairs sample 2: std output matches
+  rail sample 1: std output matches
+  rail sample 2: std output matches
+  visit sample 1: std output matches
+  visit sample 2: std output matches
+  harvest sample 1: std output matches
+  harvest sample 2: std output matches
+PASS
+
+STDERR:

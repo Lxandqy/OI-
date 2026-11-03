@@ -1,0 +1,7 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_isolation.py --hidden C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\isolation_tmp\iso-2zlhfvkd\hidden --public C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\isolation_tmp\iso-2zlhfvkd\public --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第五套_V3.8_完整重构包.zip\statement.md --slug date
+
+STDOUT:
+hidden points: 10, public inputs checked: 4
+PASS: no public input appears in the hidden data; hidden inputs are pairwise distinct.
+
+STDERR:

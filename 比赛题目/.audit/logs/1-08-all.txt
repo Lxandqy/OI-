@@ -1,0 +1,6 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\NOIP模拟赛-第二套-CC版.zip\总题面.md --public-root C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\public\1-08
+
+STDOUT:
+PASS
+
+STDERR:

@@ -1,0 +1,18 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第五套_V3.8_完整重构包.zip\statement.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第五套_V3.8_完整重构包.zip\solution.md --io std --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std date=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第五套_V3.8_完整重构包\date.cpp --std divisible=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第五套_V3.8_完整重构包\divisible.cpp --std green=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第五套_V3.8_完整重构包\green.cpp --std purchase=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第五套_V3.8_完整重构包\purchase.cpp
+
+STDOUT:
+solution.md: 14 code blocks, 9 cpp
+  date: std found verbatim in solution
+  divisible: std found verbatim in solution
+  green: std found verbatim in solution
+  purchase: std found verbatim in solution
+  date sample 1: std output matches
+  date sample 2: std output matches
+  purchase sample 1: std output matches
+  purchase sample 2: std output matches
+  divisible sample 1: std output matches
+  green sample 1: std output matches
+  green sample 2: std output matches
+PASS
+
+STDERR:

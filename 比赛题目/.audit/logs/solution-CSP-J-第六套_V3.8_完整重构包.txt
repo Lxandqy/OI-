@@ -1,0 +1,19 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第六套_V3.8_完整重构包.zip\statement.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第六套_V3.8_完整重构包.zip\solution.md --io std --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std crossmul=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第六套_V3.8_完整重构包\crossmul.cpp --std maxmod=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第六套_V3.8_完整重构包\maxmod.cpp --std splitnum=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第六套_V3.8_完整重构包\splitnum.cpp --std triples=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第六套_V3.8_完整重构包\triples.cpp
+
+STDOUT:
+solution.md: 13 code blocks, 7 cpp
+  crossmul: std found verbatim in solution
+  maxmod: std found verbatim in solution
+  splitnum: std found verbatim in solution
+  triples: std found verbatim in solution
+  maxmod sample 1: std output matches
+  maxmod sample 2: std output matches
+  crossmul sample 1: std output matches
+  crossmul sample 2: std output matches
+  triples sample 1: std output matches
+  splitnum sample 1: std output matches
+  splitnum sample 2: std output matches
+  splitnum sample 3: std output matches
+PASS
+
+STDERR:

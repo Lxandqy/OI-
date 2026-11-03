@@ -1,0 +1,20 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\NOIP模拟赛-第二套-CC版.zip\总题面.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\NOIP模拟赛-第二套-CC版.zip\总题解.md --io file --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std bridge=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-NOIP模拟赛-第二套-CC版\bridge.cpp --std lamp=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-NOIP模拟赛-第二套-CC版\lamp.cpp --std liar=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-NOIP模拟赛-第二套-CC版\liar.cpp --std park=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-NOIP模拟赛-第二套-CC版\park.cpp
+
+STDOUT:
+总题解.md: 5 code blocks, 4 cpp
+  bridge: std found verbatim in solution
+  lamp: std found verbatim in solution
+  liar: std found verbatim in solution
+  park: std found verbatim in solution
+  lamp sample 1: std output matches
+  lamp sample 2: std output matches
+  liar sample 1: std output matches
+  liar sample 2: std output matches
+  liar sample 3: std output matches
+  bridge sample 1: std output matches
+  bridge sample 2: std output matches
+  park sample 1: std output matches
+  park sample 2: std output matches
+PASS
+
+STDERR:

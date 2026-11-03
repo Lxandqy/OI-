@@ -1,0 +1,15 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\NOIP模拟赛-宴会名册\总题面.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\NOIP模拟赛-宴会名册\总题解.md --io std --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std invite=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-NOIP模拟赛-宴会名册\invite.cpp --std river=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-NOIP模拟赛-宴会名册\river.cpp --std roads=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-NOIP模拟赛-宴会名册\roads.cpp --std trio=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-NOIP模拟赛-宴会名册\trio.cpp
+
+STDOUT:
+总题解.md: 4 code blocks, 4 cpp
+  invite: std found verbatim in solution
+  river: std found verbatim in solution
+  roads: std found verbatim in solution
+  trio: std found verbatim in solution
+  invite sample 1: std output matches
+  river sample 1: std output matches
+  trio sample 1: std output matches
+  roads sample 1: std output matches
+PASS
+
+STDERR:

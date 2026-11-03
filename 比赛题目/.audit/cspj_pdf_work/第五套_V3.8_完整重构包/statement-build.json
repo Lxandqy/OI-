@@ -1,0 +1,18 @@
+{
+  "compiled": true,
+  "visual_review": "PENDING",
+  "engine": "tectonic.exe",
+  "source_sha256": "92a0845c6dc71495d5e5f9a5a6e33c14bd574b8bf177a14bf0a3b1e001471561",
+  "style_sha256": "40103e7475d9e2c5ee02cbf78c2f7ea336068b562e8ab14bea8135bd16d6c110",
+  "pdf_sha256": "4846c38019e5dd847fe442137c9436ceff4fe09955174bc45ed134ad97cc54e0",
+  "fonts": {
+    "NotoSansCJKsc-Regular.otf": "11b3cddb727e3e825dd9cb836c10421fb6cb335b097b4b9738f47f13032bc335",
+    "NotoSansCJKsc-Bold.otf": "06ebb1abd1a37671cb77e91bc05f3fb48fecf489c5c6084e73e19e67291d6690",
+    "NotoSerifCJKsc-Regular.otf": "188d2a3f36113d585607ef1b395961dae36d842e30dd3d38646cf4950bfef764",
+    "NotoSerifCJKsc-Bold.otf": "163770b8fcae623426155562ea47c163024d78f36b37e6d1d22a62ac1e3897fc",
+    "texgyretermes-regular.otf": "cc3fe7c707b81428d23d54df3eadd9228a2bf6a4d43125d94df56f5f63134659",
+    "texgyretermes-bold.otf": "2fb3e952065fa153c7e4e64e04b98b9d79225739b6025aa3f0f0782d299ff61e",
+    "texgyretermes-italic.otf": "6dd103a1672e50568cd2f8a706ccd48443d44d7d073a59d2286f4e6f746575d6",
+    "texgyretermes-bolditalic.otf": "1bf6af99cb0e26c12951317032d79b96ae009551e59ccf02a5b24f325ecfec87"
+  }
+}

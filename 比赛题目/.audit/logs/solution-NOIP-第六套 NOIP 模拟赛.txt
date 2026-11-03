@@ -1,0 +1,17 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第六套 NOIP 模拟赛\总题面.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第六套 NOIP 模拟赛\总题解.md --io file --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std disk=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第六套 NOIP 模拟赛\disk.cpp --std gcdforest=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第六套 NOIP 模拟赛\gcdforest.cpp --std joint=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第六套 NOIP 模拟赛\joint.cpp --std product=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第六套 NOIP 模拟赛\product.cpp
+
+STDOUT:
+总题解.md: 4 code blocks, 4 cpp
+  disk: std found verbatim in solution
+  gcdforest: std found verbatim in solution
+  joint: std found verbatim in solution
+  product: std found verbatim in solution
+  product sample 1: std output matches
+  product sample 2: std output matches
+  disk sample 1: std output matches
+  disk sample 2: std output matches
+  gcdforest sample 1: std output matches
+  joint sample 1: std output matches
+PASS
+
+STDERR:

@@ -1,0 +1,254 @@
+[
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "slug": "chorus",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "slug": "melody",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "slug": "slime",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "slug": "star",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "slug": "harvest",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "slug": "pairs",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "slug": "rail",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "slug": "visit",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "slug": "growmax",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "slug": "password",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "slug": "souvenir",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "slug": "widegraph",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "slug": "files",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "slug": "leafcut",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "slug": "palindrome",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "slug": "quad",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "slug": "date",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "slug": "divisible",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "slug": "green",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "slug": "purchase",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "slug": "crossmul",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "slug": "maxmod",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "slug": "splitnum",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "slug": "triples",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "slug": "chain",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "slug": "eval",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "slug": "necklace",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "slug": "sumsq",
+    "compiled": true,
+    "tests": 10,
+    "passed": 10,
+    "failures": []
+  }
+]

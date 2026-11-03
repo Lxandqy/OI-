@@ -1,0 +1,290 @@
+[
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "slug": "invite",
+    "compiled": true,
+    "tests": 25,
+    "passed": 25,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "slug": "river",
+    "compiled": true,
+    "tests": 25,
+    "passed": 25,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "slug": "roads",
+    "compiled": true,
+    "tests": 25,
+    "passed": 25,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "slug": "trio",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "slug": "bridge",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "slug": "lamp",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "slug": "liar",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "slug": "park",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "slug": "logic",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "slug": "menu",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "slug": "triplet",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "slug": "xor4",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "slug": "circle",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "slug": "palpath",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "slug": "relay",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "slug": "watch",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "slug": "compile",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "slug": "orcost",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "slug": "patrol",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "slug": "repair",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "slug": "cross",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "slug": "password",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "slug": "spider",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "slug": "tree",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "slug": "disk",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "slug": "gcdforest",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "slug": "joint",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "slug": "product",
+    "compiled": true,
+    "tests": 20,
+    "passed": 20,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "slug": "bits",
+    "compiled": true,
+    "tests": 25,
+    "passed": 25,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "slug": "cut",
+    "compiled": true,
+    "tests": 25,
+    "passed": 25,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "slug": "region",
+    "compiled": true,
+    "tests": 25,
+    "passed": 25,
+    "failures": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "slug": "track",
+    "compiled": true,
+    "tests": 25,
+    "passed": 25,
+    "failures": []
+  }
+]

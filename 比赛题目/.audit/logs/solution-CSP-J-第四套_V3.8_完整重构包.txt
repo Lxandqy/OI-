@@ -1,0 +1,19 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第四套_V3.8_完整重构包.zip\statement.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第四套_V3.8_完整重构包.zip\solution.md --io std --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std chain=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第四套_V3.8_完整重构包\chain.cpp --std eval=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第四套_V3.8_完整重构包\eval.cpp --std necklace=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第四套_V3.8_完整重构包\necklace.cpp --std sumsq=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第四套_V3.8_完整重构包\sumsq.cpp
+
+STDOUT:
+solution.md: 11 code blocks, 8 cpp
+  chain: std found verbatim in solution
+  eval: std found verbatim in solution
+  necklace: std found verbatim in solution
+  sumsq: std found verbatim in solution
+  chain sample 1: std output matches
+  chain sample 2: std output matches
+  chain sample 3: std output matches
+  sumsq sample 1: std output matches
+  sumsq sample 2: std output matches
+  necklace sample 1: std output matches
+  eval sample 1: std output matches
+  eval sample 2: std output matches
+PASS
+
+STDERR:

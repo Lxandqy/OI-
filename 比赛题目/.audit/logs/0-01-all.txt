@@ -1,0 +1,6 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\CSP-J秋日训练卷\statement.md --public-root C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\public\0-01
+
+STDOUT:
+PASS
+
+STDERR:

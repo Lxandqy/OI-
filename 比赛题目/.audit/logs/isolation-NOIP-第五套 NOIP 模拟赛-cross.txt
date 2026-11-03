@@ -1,0 +1,7 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_isolation.py --hidden C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\isolation_tmp\iso-ppyfkcat\hidden --public C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\isolation_tmp\iso-ppyfkcat\public --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第五套 NOIP 模拟赛.zip\总题面.md --slug cross
+
+STDOUT:
+hidden points: 20, public inputs checked: 3
+PASS: no public input appears in the hidden data; hidden inputs are pairwise distinct.
+
+STDERR:

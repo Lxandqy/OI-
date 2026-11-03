@@ -1,0 +1,316 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{oi-statement}
+\OISetup{CSP-J 模拟赛}{第七套}{入门级}
+\OISetCompileOptions{-O2 -std=c++14}
+\begin{document}
+\OICoverTitle
+\OICoverTable{4}{
+题目名称 & 回文串 & 交错四元组 & 文件判定 & 树与叶子\\\hline
+题目类型 & 传统型 & 传统型 & 传统型 & 传统型\\\hline
+目录 & {\ttfamily palindrome} & {\ttfamily quad} & {\ttfamily files} & {\ttfamily leafcut}\\\hline
+可执行文件名 & {\ttfamily palindrome} & {\ttfamily quad} & {\ttfamily files} & {\ttfamily leafcut}\\\hline
+输入文件名 & {\ttfamily palindrome.in} & {\ttfamily quad.in} & {\ttfamily files.in} & {\ttfamily leafcut.in}\\\hline
+输出文件名 & {\ttfamily palindrome.out} & {\ttfamily quad.out} & {\ttfamily files.out} & {\ttfamily leafcut.out}\\\hline
+每个测试点时限 & 1.0 秒 & 1.0 秒 & 1.0 秒 & 1.0 秒\\\hline
+内存限制 & 512 MiB & 512 MiB & 512 MiB & 512 MiB\\\hline
+测试点数目 & 10 & 10 & 10 & 10\\\hline
+测试点是否等分 & 是，每点 10 分 & 是，每点 10 分 & 是，每点 10 分 & 是，每点 10 分\\\hline
+}
+\OICompilation{4}{
+对于 C++ 语言 & {\ttfamily palindrome.cpp} & {\ttfamily quad.cpp} & {\ttfamily files.cpp} & {\ttfamily leafcut.cpp}\\\hline
+}
+\OICoverNotes
+\begin{enumerate}
+\item 本套为 CSP-J 训练模拟赛，共 4 题，每题 100 分，总分 400 分。
+\item 各题均采用标准输入输出，提交对应的同名 C++ 源程序。
+\item 每题有 10 个测试点，每点 10 分，按测试点独立计分。
+\item 答案采用普通文本比较，忽略行末空格和文件末尾多余换行。
+\item 题面样例与下发大样例不计入正式测试点。
+\item 程序可使用的栈空间与题目的内存限制一致。
+\item 样例框左侧行号不属于输入输出。
+\item 使用 C++14，编译选项为 \texttt{-O2 -std=c++14}。
+\end{enumerate}
+
+\OIProblem{回文串}{palindrome}
+
+\OISection{题目描述}
+
+给定一个字符串 $s$。你可以任意重排其中的字符，求重排后回文子串数量的最大值。
+
+子串必须连续且非空。一个字符串正着读与反着读相同，就称为回文串，单个字符也是回文串。
+
+按子串的位置区间计数：即使内容相同，只要起点或终点不同，就视为不同子串。例如 \texttt{\detokenize{aa}} 有两个单字符回文子串和一个长度为 $2$ 的回文子串。
+
+\OISection{输入格式}
+
+输入一行字符串 $s$。
+
+\OISection{输出格式}
+
+输出一个整数，表示最多的回文子串数量。
+
+\begin{OISample}{1}{输入}
+abca
+\end{OISample}
+\begin{OISample}{1}{输出}
+5
+\end{OISample}
+\OISection{样例 1 解释}
+
+可以排列成 \texttt{\detokenize{aabc}}，回文子串为两个 \texttt{\detokenize{a}}、一个 \texttt{\detokenize{b}}、一个 \texttt{\detokenize{c}} 和一个 \texttt{\detokenize{aa}}，共 $5$ 个。
+
+\begin{OISample}{2}{输入}
+aa
+\end{OISample}
+\begin{OISample}{2}{输出}
+3
+\end{OISample}
+\OISection{样例 2 解释}
+
+两个 \texttt{\detokenize{a}} 和一个 \texttt{\detokenize{aa}}，共 $3$ 个。
+
+\OIAdditionalSample{3}{palindrome/palindrome}
+\OIAdditionalSample{4}{palindrome/palindrome}
+\Needspace{6\baselineskip}
+\OISection{数据范围}
+
+$1\le |s|\le10^6$；字符串只包含小写英文字母。
+
+每个测试点 10 分，共 10 个测试点，总分 100 分。
+
+\begin{OIDataTable}{|c|c|c|}
+测试点 & 本组分值 & 额外限制\\\hline
+1～3 & 30 & $1\le \lvert s\rvert\le3$\\\hline
+4～10 & 70 & 无额外限制\\\hline
+\end{OIDataTable}
+
+\OIProblem{交错四元组}{quad}
+
+\OISection{题目描述}
+
+给定一个长度为 $n$ 的整数数组 $a$，从左到右选择四个位置 $i<j<k<l$，要求
+
+\[
+a_i<a_k<a_j<a_l.
+\]
+
+求满足条件的下标四元组数量。四个不等号中的比较均为严格比较。数组可以包含相等元素；不同的下标选择分别计数。
+
+\OISection{输入格式}
+
+第一行一个整数 $n$。第二行 $n$ 个整数 $a_1,\ldots,a_n$。
+
+\OISection{输出格式}
+
+输出一个整数，表示合法选择的数量。
+
+\begin{OISample}{1}{输入}
+4
+1 3 2 4
+\end{OISample}
+\begin{OISample}{1}{输出}
+1
+\end{OISample}
+\begin{OISample}{2}{输入}
+5
+1 2 3 4 5
+\end{OISample}
+\begin{OISample}{2}{输出}
+0
+\end{OISample}
+\begin{OISample}{3}{输入}
+5
+1 4 2 3 5
+\end{OISample}
+\begin{OISample}{3}{输出}
+2
+\end{OISample}
+\OISection{样例 3 解释}
+
+合法下标组为 $(1,2,3,5)$ 和 $(1,2,4,5)$，答案为 $2$。
+
+\OIAdditionalSample{4}{quad/quad}
+\OIAdditionalSample{5}{quad/quad}
+\Needspace{7\baselineskip}
+\OISection{数据范围}
+
+$4\le n\le2000$，$-10^9\le a_i\le10^9$。前两档累计分别为 20\%、50\%。
+
+每个测试点 10 分，共 10 个测试点，总分 100 分。
+
+\begin{OIDataTable}{|c|c|c|}
+测试点 & 本组分值 & 额外限制\\\hline
+1～2 & 20 & $n\le20$\\\hline
+3～5 & 30 & $n\le800$\\\hline
+6～10 & 50 & 无额外限制\\\hline
+\end{OIDataTable}
+
+\OIProblem{文件判定}{files}
+
+\OISection{题目描述}
+
+一次练习赛有四道题。选手的提交目录必须满足以下规则，请判断给出的全部文件关系是否合法。
+
+\begin{enumerate}
+\item 只有一个根目录。根目录名称由一段非空英文字母和一段非空数字依次连接而成，例如 \texttt{\detokenize{BJ01}}；\texttt{\detokenize{123}}、\texttt{\detokenize{ABC}}、\texttt{\detokenize{A2B}} 都不合法。
+\item 根目录中恰好有四个题目文件夹，每个题目名称是非空的纯英文字母串。
+\item 每个题目文件夹恰好包含一个条目，名称必须为“题目名称 + \texttt{\detokenize{.cpp}}”，并且该条目不能再有子条目。
+\item 大小写敏感。不能出现多余文件或多余目录。只判断名称和包含关系，不区分文件与文件夹的真实类型。
+\end{enumerate}
+
+例如，合法目录可以是：
+
+\begin{quote}\ttfamily
+BJ01
+  apple / apple.cpp
+  Banana / Banana.cpp
+  candy / candy.cpp
+  task / task.cpp
+\end{quote}
+
+输入中的每条关系 $A\ B$ 表示 $B$ 是 $A$ 的直接子条目。关系不一定按目录层次顺序给出。
+
+\OISection{输入格式}
+
+第一行正整数 $t$，表示数据组数。
+
+每组数据先给出正整数 $n$，表示关系条数。接下来 $n$ 行，每行两个字符串 $A,B$。
+
+同一名称表示同一个条目，保证同名条目不会出现在目录的不同位置；给出的关系不重复，并且 $A\ne B$。
+
+\OISection{输出格式}
+
+每组输出一行 \texttt{\detokenize{yes}} 或 \texttt{\detokenize{no}}。
+
+\begin{OISample}{1}{输入}
+5
+2
+BJ01 task
+task task.cpp
+8
+task task.cpp
+bJ01 task
+bJ01 apple
+apple apple.cpp
+bJ01 Banana
+Banana Banana.cpp
+bJ01 candy
+candy candy.cpp
+8
+123 task
+task task.cpp
+123 plane
+plane plane.cpp
+123 banana
+banana banana.cpp
+123 candy
+candy candy.cpp
+8
+BJ01 task
+task task.cpp
+BJ01 apple
+apple banana.cpp
+BJ01 banana
+banana apple.cpp
+BJ01 candy
+candy candy.cpp
+8
+BJ01 task
+task task.cpp
+BJ01 apple
+apple apple.cpp
+BJ01 banana
+banana banana.cpp
+BJ01 candy
+candy candy.cpp.cpp
+\end{OISample}
+\begin{OISample}{1}{输出}
+no
+yes
+no
+no
+no
+\end{OISample}
+\OISection{样例 1 解释}
+
+五组依次为：题目数量不足；合法；根名称没有字母；文件与题目名称不对应；扩展名重复。
+
+\OIAdditionalSample{2}{files/files}
+\OIAdditionalSample{3}{files/files}
+\Needspace{11\baselineskip}
+\OISection{数据范围}
+
+$1\le t\le100$，每组 $1\le n\le10$。每个名称长度为 $1\sim20$，只可能包含英文字母、数字以及 \texttt{\detokenize{- . ( )}}。各行独立计分。
+
+性质 1：根目录唯一且其名称符合规则。
+
+性质 2：所有条目的名称均符合对应要求，只可能在根目录个数或第二级目录个数上出错。
+
+性质 3：目录的最大层数恰好为三级。
+
+每个测试点 10 分，共 10 个测试点，总分 100 分。
+
+\begin{OIDataTable}{|c|c|c|}
+测试点 & 本组分值 & 额外限制\\\hline
+1～2 & 20 & 同时满足性质 1、2、3\\\hline
+3～4 & 20 & 同时满足性质 1、3\\\hline
+5～6 & 20 & 满足性质 2\\\hline
+7～10 & 40 & 无额外性质\\\hline
+\end{OIDataTable}
+
+\OIProblem{树与叶子}{leafcut}
+
+\OISection{题目描述}
+
+给定一棵 $n$ 个点的无根树。一个点的度是与它直接相连的点数。本题将度不超过 $1$ 的点定义为叶子，因此孤立的单个点也是叶子。
+
+删除树中的一条边后，树分成两个连通部分。分别按照删除后的度数，统计两部分的叶子数量 $L_1,L_2$。
+
+求 $|L_1-L_2|$ 的最小值，以及有多少条边在删除后能达到这个最小值。
+
+\OISection{输入格式}
+
+第一行正整数 $T$。每组先输入整数 $n$，接下来 $n-1$ 行，每行两个整数 $u,v$，表示一条无向边。
+
+\OISection{输出格式}
+
+每组输出两个非负整数：最小叶子数量差值，以及达到该差值的断边方案数。
+
+\begin{OISample}{1}{输入}
+2
+4
+1 2
+2 3
+2 4
+4
+2 1
+1 3
+3 4
+\end{OISample}
+\begin{OISample}{1}{输出}
+1 3
+0 1
+\end{OISample}
+\OISection{样例 1 解释}
+
+第一组无论删除哪条边，都是一个孤点和一棵三点小树，叶子数分别为 $1,2$，所以输出 \texttt{\detokenize{1 3}}。第二组是一条四点链，只有删去中间边能让两边各有两个叶子。
+
+\OIAdditionalSample{2}{leafcut/leafcut}
+\OIAdditionalSample{3}{leafcut/leafcut}
+\Needspace{9\baselineskip}
+\OISection{数据范围}
+
+$1\le T\le10$，每组 $2\le n\le10^5$，$1\le u,v\le n$。保证输入为一棵树。前两档累计为 10\%、20\%；链和方案数为 1 的两档各另占 10\%。
+
+每个测试点 10 分，共 10 个测试点，总分 100 分。
+
+\begin{OIDataTable}{|c|c|c|}
+测试点 & 本组分值 & 额外限制\\\hline
+1 & 10 & $n\le100$，$T=1$\\\hline
+2 & 10 & $n\le1000$\\\hline
+3 & 10 & 树是一条链\\\hline
+4 & 10 & 达到最小差值的断边方案数为 1\\\hline
+5～10 & 60 & 无额外限制\\\hline
+\end{OIDataTable}
+
+\end{document}

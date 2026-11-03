@@ -1,0 +1,18 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第七套_V3.8_完整重构包.zip\statement.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第七套_V3.8_完整重构包.zip\solution.md --io std --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std files=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第七套_V3.8_完整重构包\files.cpp --std leafcut=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第七套_V3.8_完整重构包\leafcut.cpp --std palindrome=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第七套_V3.8_完整重构包\palindrome.cpp --std quad=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-第七套_V3.8_完整重构包\quad.cpp
+
+STDOUT:
+solution.md: 8 code blocks, 8 cpp
+  files: std found verbatim in solution
+  leafcut: std found verbatim in solution
+  palindrome: std found verbatim in solution
+  quad: std found verbatim in solution
+  palindrome sample 1: std output matches
+  palindrome sample 2: std output matches
+  quad sample 1: std output matches
+  quad sample 2: std output matches
+  quad sample 3: std output matches
+  files sample 1: std output matches
+  leafcut sample 1: std output matches
+PASS
+
+STDERR:

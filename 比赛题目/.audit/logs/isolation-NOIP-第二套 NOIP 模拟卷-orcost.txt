@@ -1,0 +1,7 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_isolation.py --hidden C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\isolation_tmp\iso-tep786o9\hidden --public C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\isolation_tmp\iso-tep786o9\public --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第二套 NOIP 模拟卷\总题面.md --slug orcost
+
+STDOUT:
+hidden points: 20, public inputs checked: 4
+PASS: no public input appears in the hidden data; hidden inputs are pairwise distinct.
+
+STDERR:

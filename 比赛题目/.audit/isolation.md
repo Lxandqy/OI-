@@ -1,0 +1,62 @@
+# 公开/隐藏隔离检查
+
+- CSP-J/CSP-J模拟赛第一套/chorus: PASS（hidden 20，public 2）
+- CSP-J/CSP-J模拟赛第一套/melody: PASS（hidden 20，public 2）
+- CSP-J/CSP-J模拟赛第一套/slime: PASS（hidden 20，public 2）
+- CSP-J/CSP-J模拟赛第一套/star: PASS（hidden 20，public 2）
+- CSP-J/CSP-J秋日训练卷/harvest: PASS（hidden 20，public 3）
+- CSP-J/CSP-J秋日训练卷/pairs: PASS（hidden 20，public 3）
+- CSP-J/CSP-J秋日训练卷/rail: PASS（hidden 20，public 3）
+- CSP-J/CSP-J秋日训练卷/visit: PASS（hidden 20，public 3）
+- CSP-J/CSP-J金桂第一试/growmax: PASS（hidden 20，public 1）
+- CSP-J/CSP-J金桂第一试/password: PASS（hidden 20，public 1）
+- CSP-J/CSP-J金桂第一试/souvenir: PASS（hidden 20，public 1）
+- CSP-J/CSP-J金桂第一试/widegraph: PASS（hidden 20，public 1）
+- CSP-J/第七套_V3.8_完整重构包/files: PASS（hidden 10，public 2）
+- CSP-J/第七套_V3.8_完整重构包/leafcut: PASS（hidden 10，public 2）
+- CSP-J/第七套_V3.8_完整重构包/palindrome: PASS（hidden 10，public 2）
+- CSP-J/第七套_V3.8_完整重构包/quad: PASS（hidden 10，public 2）
+- CSP-J/第五套_V3.8_完整重构包/date: PASS（hidden 10，public 2）
+- CSP-J/第五套_V3.8_完整重构包/divisible: PASS（hidden 10，public 2）
+- CSP-J/第五套_V3.8_完整重构包/green: PASS（hidden 20，public 2）
+- CSP-J/第五套_V3.8_完整重构包/purchase: PASS（hidden 10，public 2）
+- CSP-J/第六套_V3.8_完整重构包/crossmul: PASS（hidden 10，public 2）
+- CSP-J/第六套_V3.8_完整重构包/maxmod: PASS（hidden 10，public 2）
+- CSP-J/第六套_V3.8_完整重构包/splitnum: PASS（hidden 10，public 2）
+- CSP-J/第六套_V3.8_完整重构包/triples: PASS（hidden 10，public 2）
+- CSP-J/第四套_V3.8_完整重构包/chain: PASS（hidden 10，public 2）
+- CSP-J/第四套_V3.8_完整重构包/eval: PASS（hidden 20，public 2）
+- CSP-J/第四套_V3.8_完整重构包/necklace: PASS（hidden 20，public 2）
+- CSP-J/第四套_V3.8_完整重构包/sumsq: PASS（hidden 10，public 2）
+- NOIP/NOIP模拟赛-宴会名册/invite: PASS（hidden 25，public 1）
+- NOIP/NOIP模拟赛-宴会名册/river: PASS（hidden 25，public 1）
+- NOIP/NOIP模拟赛-宴会名册/roads: PASS（hidden 25，public 1）
+- NOIP/NOIP模拟赛-宴会名册/trio: PASS（hidden 20，public 1）
+- NOIP/NOIP模拟赛-第二套-CC版/bridge: PASS（hidden 20，public 1）
+- NOIP/NOIP模拟赛-第二套-CC版/lamp: PASS（hidden 20，public 1）
+- NOIP/NOIP模拟赛-第二套-CC版/liar: PASS（hidden 20，public 1）
+- NOIP/NOIP模拟赛-第二套-CC版/park: PASS（hidden 20，public 1）
+- NOIP/第一套 NOIP 模拟卷/logic: PASS（hidden 20，public 1）
+- NOIP/第一套 NOIP 模拟卷/menu: PASS（hidden 20，public 1）
+- NOIP/第一套 NOIP 模拟卷/triplet: PASS（hidden 20，public 1）
+- NOIP/第一套 NOIP 模拟卷/xor4: PASS（hidden 20，public 1）
+- NOIP/第三套 NOIP 模拟赛/circle: PASS（hidden 20，public 1）
+- NOIP/第三套 NOIP 模拟赛/palpath: PASS（hidden 20，public 1）
+- NOIP/第三套 NOIP 模拟赛/relay: PASS（hidden 20，public 1）
+- NOIP/第三套 NOIP 模拟赛/watch: PASS（hidden 20，public 1）
+- NOIP/第二套 NOIP 模拟卷/compile: PASS（hidden 20，public 1）
+- NOIP/第二套 NOIP 模拟卷/orcost: PASS（hidden 20，public 1）
+- NOIP/第二套 NOIP 模拟卷/patrol: PASS（hidden 20，public 1）
+- NOIP/第二套 NOIP 模拟卷/repair: PASS（hidden 20，public 1）
+- NOIP/第五套 NOIP 模拟赛/cross: PASS（hidden 20，public 1）
+- NOIP/第五套 NOIP 模拟赛/password: PASS（hidden 20，public 1）
+- NOIP/第五套 NOIP 模拟赛/spider: PASS（hidden 20，public 1）
+- NOIP/第五套 NOIP 模拟赛/tree: PASS（hidden 20，public 1）
+- NOIP/第六套 NOIP 模拟赛/disk: PASS（hidden 20，public 1）
+- NOIP/第六套 NOIP 模拟赛/gcdforest: PASS（hidden 20，public 1）
+- NOIP/第六套 NOIP 模拟赛/joint: PASS（hidden 20，public 1）
+- NOIP/第六套 NOIP 模拟赛/product: PASS（hidden 20，public 1）
+- NOIP/第四套 NOIP 模拟赛/bits: PASS（hidden 25，public 1）
+- NOIP/第四套 NOIP 模拟赛/cut: PASS（hidden 25，public 1）
+- NOIP/第四套 NOIP 模拟赛/region: PASS（hidden 25，public 1）
+- NOIP/第四套 NOIP 模拟赛/track: PASS（hidden 25，public 1）

@@ -1,0 +1,452 @@
+[
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "format": "generic_dir",
+    "problems": [
+      {
+        "slug": "chorus",
+        "std": "std/chorus/chorus.cpp"
+      },
+      {
+        "slug": "melody",
+        "std": "std/melody/melody.cpp"
+      },
+      {
+        "slug": "slime",
+        "std": "std/slime/slime.cpp"
+      },
+      {
+        "slug": "star",
+        "std": "std/star/star.cpp"
+      }
+    ],
+    "io": "file",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-CSP-J-CSP-J模拟赛第一套.txt",
+      "summary": "PASS",
+      "output": "solution.md: 19 code blocks, 16 cpp\n  chorus: std found verbatim in solution\n  melody: std found verbatim in solution\n  slime: std found verbatim in solution\n  star: std found verbatim in solution\n  star sample 1: std output matches\n  star sample 2: std output matches\n  slime sample 1: std output matches\n  slime sample 2: std output matches\n  melody sample 1: std output matches\n  melody sample 2: std output matches\n  chorus sample 1: std output matches\n  chorus sample 2: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "format": "generic_dir",
+    "problems": [
+      {
+        "slug": "harvest",
+        "std": "std/harvest/harvest.cpp"
+      },
+      {
+        "slug": "pairs",
+        "std": "std/pairs/pairs.cpp"
+      },
+      {
+        "slug": "rail",
+        "std": "std/rail/rail.cpp"
+      },
+      {
+        "slug": "visit",
+        "std": "std/visit/visit.cpp"
+      }
+    ],
+    "io": "file",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-CSP-J-CSP-J秋日训练卷.txt",
+      "summary": "PASS",
+      "output": "solution.md: 15 code blocks, 13 cpp\n  harvest: std found verbatim in solution\n  pairs: std found verbatim in solution\n  rail: std found verbatim in solution\n  visit: std found verbatim in solution\n  pairs sample 1: std output matches\n  pairs sample 2: std output matches\n  rail sample 1: std output matches\n  rail sample 2: std output matches\n  visit sample 1: std output matches\n  visit sample 2: std output matches\n  harvest sample 1: std output matches\n  harvest sample 2: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "format": "generic_dir",
+    "problems": [
+      {
+        "slug": "growmax",
+        "std": "std/growmax/growmax.cpp"
+      },
+      {
+        "slug": "password",
+        "std": "std/password/password.cpp"
+      },
+      {
+        "slug": "souvenir",
+        "std": "std/souvenir/souvenir.cpp"
+      },
+      {
+        "slug": "widegraph",
+        "std": "std/widegraph/widegraph.cpp"
+      }
+    ],
+    "io": "file",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-CSP-J-CSP-J金桂第一试.txt",
+      "summary": "PASS",
+      "output": "solution.md: 11 code blocks, 10 cpp\n  growmax: std found verbatim in solution\n  password: std found verbatim in solution\n  souvenir: std found verbatim in solution\n  widegraph: std found verbatim in solution\n  souvenir sample 1: std output matches\n  password sample 1: std output matches\n  growmax sample 1: std output matches\n  widegraph sample 1: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "format": "generic_dir",
+    "problems": [
+      {
+        "slug": "files",
+        "std": "std/files/files.cpp"
+      },
+      {
+        "slug": "leafcut",
+        "std": "std/leafcut/leafcut.cpp"
+      },
+      {
+        "slug": "palindrome",
+        "std": "std/palindrome/palindrome.cpp"
+      },
+      {
+        "slug": "quad",
+        "std": "std/quad/quad.cpp"
+      }
+    ],
+    "io": "std",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-CSP-J-第七套_V3.8_完整重构包.txt",
+      "summary": "PASS",
+      "output": "solution.md: 8 code blocks, 8 cpp\n  files: std found verbatim in solution\n  leafcut: std found verbatim in solution\n  palindrome: std found verbatim in solution\n  quad: std found verbatim in solution\n  palindrome sample 1: std output matches\n  palindrome sample 2: std output matches\n  quad sample 1: std output matches\n  quad sample 2: std output matches\n  quad sample 3: std output matches\n  files sample 1: std output matches\n  leafcut sample 1: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "format": "generic_dir",
+    "problems": [
+      {
+        "slug": "date",
+        "std": "std/date/date.cpp"
+      },
+      {
+        "slug": "divisible",
+        "std": "std/divisible/divisible.cpp"
+      },
+      {
+        "slug": "green",
+        "std": "std/green/green.cpp"
+      },
+      {
+        "slug": "purchase",
+        "std": "std/purchase/purchase.cpp"
+      }
+    ],
+    "io": "std",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-CSP-J-第五套_V3.8_完整重构包.txt",
+      "summary": "PASS",
+      "output": "solution.md: 14 code blocks, 9 cpp\n  date: std found verbatim in solution\n  divisible: std found verbatim in solution\n  green: std found verbatim in solution\n  purchase: std found verbatim in solution\n  date sample 1: std output matches\n  date sample 2: std output matches\n  purchase sample 1: std output matches\n  purchase sample 2: std output matches\n  divisible sample 1: std output matches\n  green sample 1: std output matches\n  green sample 2: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "format": "generic_dir",
+    "problems": [
+      {
+        "slug": "crossmul",
+        "std": "std/crossmul/crossmul.cpp"
+      },
+      {
+        "slug": "maxmod",
+        "std": "std/maxmod/maxmod.cpp"
+      },
+      {
+        "slug": "splitnum",
+        "std": "std/splitnum/splitnum.cpp"
+      },
+      {
+        "slug": "triples",
+        "std": "std/triples/triples.cpp"
+      }
+    ],
+    "io": "std",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-CSP-J-第六套_V3.8_完整重构包.txt",
+      "summary": "PASS",
+      "output": "solution.md: 13 code blocks, 7 cpp\n  crossmul: std found verbatim in solution\n  maxmod: std found verbatim in solution\n  splitnum: std found verbatim in solution\n  triples: std found verbatim in solution\n  maxmod sample 1: std output matches\n  maxmod sample 2: std output matches\n  crossmul sample 1: std output matches\n  crossmul sample 2: std output matches\n  triples sample 1: std output matches\n  splitnum sample 1: std output matches\n  splitnum sample 2: std output matches\n  splitnum sample 3: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "format": "generic_dir",
+    "problems": [
+      {
+        "slug": "chain",
+        "std": "std/chain/chain.cpp"
+      },
+      {
+        "slug": "eval",
+        "std": "std/eval/eval.cpp"
+      },
+      {
+        "slug": "necklace",
+        "std": "std/necklace/necklace.cpp"
+      },
+      {
+        "slug": "sumsq",
+        "std": "std/sumsq/sumsq.cpp"
+      }
+    ],
+    "io": "std",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-CSP-J-第四套_V3.8_完整重构包.txt",
+      "summary": "PASS",
+      "output": "solution.md: 11 code blocks, 8 cpp\n  chain: std found verbatim in solution\n  eval: std found verbatim in solution\n  necklace: std found verbatim in solution\n  sumsq: std found verbatim in solution\n  chain sample 1: std output matches\n  chain sample 2: std output matches\n  chain sample 3: std output matches\n  sumsq sample 1: std output matches\n  sumsq sample 2: std output matches\n  necklace sample 1: std output matches\n  eval sample 1: std output matches\n  eval sample 2: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "format": "noip_zip",
+    "problems": [
+      {
+        "slug": "invite",
+        "std": "代码/invite.cpp"
+      },
+      {
+        "slug": "river",
+        "std": "代码/river.cpp"
+      },
+      {
+        "slug": "roads",
+        "std": "代码/roads.cpp"
+      },
+      {
+        "slug": "trio",
+        "std": "代码/trio.cpp"
+      }
+    ],
+    "io": "std",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-NOIP-NOIP模拟赛-宴会名册.txt",
+      "summary": "PASS",
+      "output": "总题解.md: 4 code blocks, 4 cpp\n  invite: std found verbatim in solution\n  river: std found verbatim in solution\n  roads: std found verbatim in solution\n  trio: std found verbatim in solution\n  invite sample 1: std output matches\n  river sample 1: std output matches\n  trio sample 1: std output matches\n  roads sample 1: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "format": "noip_zip",
+    "problems": [
+      {
+        "slug": "bridge",
+        "std": "代码/bridge.cpp"
+      },
+      {
+        "slug": "lamp",
+        "std": "代码/lamp.cpp"
+      },
+      {
+        "slug": "liar",
+        "std": "代码/liar.cpp"
+      },
+      {
+        "slug": "park",
+        "std": "代码/park.cpp"
+      }
+    ],
+    "io": "file",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-NOIP-NOIP模拟赛-第二套-CC版.txt",
+      "summary": "PASS",
+      "output": "总题解.md: 5 code blocks, 4 cpp\n  bridge: std found verbatim in solution\n  lamp: std found verbatim in solution\n  liar: std found verbatim in solution\n  park: std found verbatim in solution\n  lamp sample 1: std output matches\n  lamp sample 2: std output matches\n  liar sample 1: std output matches\n  liar sample 2: std output matches\n  liar sample 3: std output matches\n  bridge sample 1: std output matches\n  bridge sample 2: std output matches\n  park sample 1: std output matches\n  park sample 2: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "format": "noip_zip",
+    "problems": [
+      {
+        "slug": "logic",
+        "std": "代码/logic.cpp"
+      },
+      {
+        "slug": "menu",
+        "std": "代码/menu.cpp"
+      },
+      {
+        "slug": "triplet",
+        "std": "代码/triplet.cpp"
+      },
+      {
+        "slug": "xor4",
+        "std": "代码/xor4.cpp"
+      }
+    ],
+    "io": "std",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-NOIP-第一套 NOIP 模拟卷.txt",
+      "summary": "PASS",
+      "output": "总题解.md: 4 code blocks, 4 cpp\n  logic: std found verbatim in solution\n  menu: std found verbatim in solution\n  triplet: std found verbatim in solution\n  xor4: std found verbatim in solution\n  xor4 sample 1: std output matches\n  xor4 sample 2: std output matches\n  xor4 sample 3: std output matches\n  triplet sample 1: std output matches\n  triplet sample 2: std output matches\n  menu sample 1: std output matches\n  menu sample 2: std output matches\n  menu sample 3: std output matches\n  logic sample 1: std output matches\n  logic sample 2: std output matches\n  logic sample 3: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "format": "noip_zip",
+    "problems": [
+      {
+        "slug": "circle",
+        "std": "代码/circle.cpp"
+      },
+      {
+        "slug": "palpath",
+        "std": "代码/palpath.cpp"
+      },
+      {
+        "slug": "relay",
+        "std": "代码/relay.cpp"
+      },
+      {
+        "slug": "watch",
+        "std": "代码/watch.cpp"
+      }
+    ],
+    "io": "file",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-NOIP-第三套 NOIP 模拟赛.txt",
+      "summary": "PASS",
+      "output": "总题解.md: 4 code blocks, 4 cpp\n  circle: std found verbatim in solution\n  palpath: std found verbatim in solution\n  relay: std found verbatim in solution\n  watch: std found verbatim in solution\n  relay sample 1: std output matches\n  watch sample 1: std output matches\n  palpath sample 1: std output matches\n  circle sample 1: std output matches\n  circle sample 2: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "format": "noip_zip",
+    "problems": [
+      {
+        "slug": "compile",
+        "std": "代码/compile.cpp"
+      },
+      {
+        "slug": "orcost",
+        "std": "代码/orcost.cpp"
+      },
+      {
+        "slug": "patrol",
+        "std": "代码/patrol.cpp"
+      },
+      {
+        "slug": "repair",
+        "std": "代码/repair.cpp"
+      }
+    ],
+    "io": "file",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-NOIP-第二套 NOIP 模拟卷.txt",
+      "summary": "PASS",
+      "output": "总题解.md: 4 code blocks, 4 cpp\n  compile: std found verbatim in solution\n  orcost: std found verbatim in solution\n  patrol: std found verbatim in solution\n  repair: std found verbatim in solution\n  repair sample 1: std output matches\n  repair sample 2: std output matches\n  repair sample 3: std output matches\n  patrol sample 1: std output matches\n  patrol sample 2: std output matches\n  patrol sample 3: std output matches\n  compile sample 1: std output matches\n  compile sample 2: std output matches\n  compile sample 3: std output matches\n  orcost sample 1: std output matches\n  orcost sample 2: std output matches\n  orcost sample 3: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "format": "noip_zip",
+    "problems": [
+      {
+        "slug": "cross",
+        "std": "代码/cross.cpp"
+      },
+      {
+        "slug": "password",
+        "std": "代码/password.cpp"
+      },
+      {
+        "slug": "spider",
+        "std": "代码/spider.cpp"
+      },
+      {
+        "slug": "tree",
+        "std": "代码/tree.cpp"
+      }
+    ],
+    "io": "file",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-NOIP-第五套 NOIP 模拟赛.txt",
+      "summary": "PASS",
+      "output": "总题解.md: 4 code blocks, 4 cpp\n  cross: std found verbatim in solution\n  password: std found verbatim in solution\n  spider: std found verbatim in solution\n  tree: std found verbatim in solution\n  cross sample 1: std output matches\n  cross sample 2: std output matches\n  password sample 1: std output matches\n  password sample 2: std output matches\n  spider sample 1: std output matches\n  spider sample 2: std output matches\n  tree sample 1: std output matches\n  tree sample 2: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "format": "noip_zip",
+    "problems": [
+      {
+        "slug": "disk",
+        "std": "代码/disk.cpp"
+      },
+      {
+        "slug": "gcdforest",
+        "std": "代码/gcdforest.cpp"
+      },
+      {
+        "slug": "joint",
+        "std": "代码/joint.cpp"
+      },
+      {
+        "slug": "product",
+        "std": "代码/product.cpp"
+      }
+    ],
+    "io": "file",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-NOIP-第六套 NOIP 模拟赛.txt",
+      "summary": "PASS",
+      "output": "总题解.md: 4 code blocks, 4 cpp\n  disk: std found verbatim in solution\n  gcdforest: std found verbatim in solution\n  joint: std found verbatim in solution\n  product: std found verbatim in solution\n  product sample 1: std output matches\n  product sample 2: std output matches\n  disk sample 1: std output matches\n  disk sample 2: std output matches\n  gcdforest sample 1: std output matches\n  joint sample 1: std output matches\nPASS"
+    }
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "format": "noip_zip",
+    "problems": [
+      {
+        "slug": "bits",
+        "std": "代码/bits.cpp"
+      },
+      {
+        "slug": "cut",
+        "std": "代码/cut.cpp"
+      },
+      {
+        "slug": "region",
+        "std": "代码/region.cpp"
+      },
+      {
+        "slug": "track",
+        "std": "代码/track.cpp"
+      }
+    ],
+    "io": "file",
+    "check": {
+      "returncode": 0,
+      "log": ".audit\\logs\\solution-NOIP-第四套 NOIP 模拟赛.txt",
+      "summary": "PASS",
+      "output": "总题解.md: 4 code blocks, 4 cpp\n  bits: std found verbatim in solution\n  cut: std found verbatim in solution\n  region: std found verbatim in solution\n  track: std found verbatim in solution\n  cut sample 1: std output matches\n  cut sample 2: std output matches\n  cut sample 3: std output matches\n  region sample 1: std output matches\n  region sample 2: std output matches\n  track sample 1: std output matches\n  track sample 2: std output matches\n  track sample 3: std output matches\n  bits sample 1: std output matches\n  bits sample 2: std output matches\n  bits sample 3: std output matches\nPASS"
+    }
+  }
+]

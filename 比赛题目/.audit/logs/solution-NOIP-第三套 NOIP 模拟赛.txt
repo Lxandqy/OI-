@@ -1,0 +1,16 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第三套 NOIP 模拟赛\总题面.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第三套 NOIP 模拟赛\总题解.md --io file --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std circle=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第三套 NOIP 模拟赛\circle.cpp --std palpath=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第三套 NOIP 模拟赛\palpath.cpp --std relay=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第三套 NOIP 模拟赛\relay.cpp --std watch=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第三套 NOIP 模拟赛\watch.cpp
+
+STDOUT:
+总题解.md: 4 code blocks, 4 cpp
+  circle: std found verbatim in solution
+  palpath: std found verbatim in solution
+  relay: std found verbatim in solution
+  watch: std found verbatim in solution
+  relay sample 1: std output matches
+  watch sample 1: std output matches
+  palpath sample 1: std output matches
+  circle sample 1: std output matches
+  circle sample 2: std output matches
+PASS
+
+STDERR:

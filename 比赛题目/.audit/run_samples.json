@@ -1,0 +1,1770 @@
+[
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "slug": "chorus",
+    "std": "std/chorus/chorus.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "7\n",
+        "expected": "7\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "12\n",
+        "expected": "12\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "slug": "melody",
+    "std": "std/melody/melody.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "5\n",
+        "expected": "5\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "4\n",
+        "expected": "4\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "slug": "slime",
+    "std": "std/slime/slime.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "5\n7\n7\n",
+        "expected": "5\n7\n7\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "0\n1998999999\n",
+        "expected": "0\n1998999999\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "slug": "star",
+    "std": "std/star/star.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "5\n",
+        "expected": "5\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "3\n",
+        "expected": "3\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "slug": "harvest",
+    "std": "std/harvest/harvest.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "30\n",
+        "expected": "30\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "12\n",
+        "expected": "12\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      },
+      {
+        "k": 5,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "slug": "pairs",
+    "std": "std/pairs/pairs.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "6\n1\n",
+        "expected": "6\n1\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "0\n0\n",
+        "expected": "0\n0\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      },
+      {
+        "k": 5,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "slug": "rail",
+    "std": "std/rail/rail.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "31\n",
+        "expected": "31\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "16\n",
+        "expected": "16\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      },
+      {
+        "k": 5,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "slug": "visit",
+    "std": "std/visit/visit.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "16\n25\n32\n34\n",
+        "expected": "16\n25\n32\n34\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "25\n35\n39\n42\n44\n",
+        "expected": "25\n35\n39\n42\n44\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      },
+      {
+        "k": 5,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "slug": "growmax",
+    "std": "std/growmax/growmax.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "4\n7\n179\n5\n7\n6\n",
+        "expected": "4\n7\n179\n5\n7\n6\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "slug": "password",
+    "std": "std/password/password.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "YES\nNO\nYES\nNO\nYES\n",
+        "expected": "YES\nNO\nYES\nNO\nYES\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "slug": "souvenir",
+    "std": "std/souvenir/souvenir.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "6\n",
+        "expected": "6\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "slug": "widegraph",
+    "std": "std/widegraph/widegraph.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "1 1 2 4 6 6\n",
+        "expected": "1 1 2 4 6 6\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "slug": "files",
+    "std": "std/files/files.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "no\r\nyes\r\nno\r\nno\r\nno\r\n",
+        "expected": "no\nyes\nno\nno\nno\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      },
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "slug": "leafcut",
+    "std": "std/leafcut/leafcut.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "1 3\r\n0 1\r\n",
+        "expected": "1 3\n0 1\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      },
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "slug": "palindrome",
+    "std": "std/palindrome/palindrome.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "5\r\n",
+        "expected": "5\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "3\r\n",
+        "expected": "3\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "slug": "quad",
+    "std": "std/quad/quad.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "1\r\n",
+        "expected": "1\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "0\r\n",
+        "expected": "0\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "2\r\n",
+        "expected": "2\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      },
+      {
+        "k": 5,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "slug": "date",
+    "std": "std/date/date.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "2019 10 2\r\n",
+        "expected": "2019 10 2\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "2111 1 12\r\n",
+        "expected": "2111 1 12\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "slug": "divisible",
+    "std": "std/divisible/divisible.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "2 4\r\n2 6\r\n5 1\r\n",
+        "expected": "2 4\n2 6\n5 1\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      },
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "slug": "green",
+    "std": "std/green/green.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "21\r\n",
+        "expected": "21\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "8\r\n",
+        "expected": "8\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "slug": "purchase",
+    "std": "std/purchase/purchase.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "8\r\n",
+        "expected": "8\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "0\r\n",
+        "expected": "0\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "slug": "crossmul",
+    "std": "std/crossmul/crossmul.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "8\r\n",
+        "expected": "8\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "-15\r\n",
+        "expected": "-15\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "slug": "maxmod",
+    "std": "std/maxmod/maxmod.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "1\r\n",
+        "expected": "1\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "2\r\n",
+        "expected": "2\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "slug": "splitnum",
+    "std": "std/splitnum/splitnum.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "1\r\n",
+        "expected": "1\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "0\r\n",
+        "expected": "0\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "-1\r\n",
+        "expected": "-1\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      },
+      {
+        "k": 5,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "slug": "triples",
+    "std": "std/triples/triples.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "30\r\n",
+        "expected": "30\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      },
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "slug": "chain",
+    "std": "std/chain/chain.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "16\r\n",
+        "expected": "16\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "0\r\n",
+        "expected": "0\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "15\r\n",
+        "expected": "15\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      },
+      {
+        "k": 5,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "slug": "eval",
+    "std": "std/eval/eval.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "4\r\n",
+        "expected": "4\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "139741066\r\n",
+        "expected": "139741066\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "slug": "necklace",
+    "std": "std/necklace/necklace.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "3\r\n",
+        "expected": "3\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      },
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "slug": "sumsq",
+    "std": "std/sumsq/sumsq.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "34\r\n",
+        "expected": "34\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "20\r\n",
+        "expected": "20\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "slug": "invite",
+    "std": "代码/invite.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "3\r\n",
+        "expected": "3\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "slug": "river",
+    "std": "代码/river.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "4\r\n",
+        "expected": "4\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "slug": "roads",
+    "std": "代码/roads.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "12\r\n",
+        "expected": "12\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "slug": "trio",
+    "std": "代码/trio.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "4\r\n",
+        "expected": "4\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "slug": "bridge",
+    "std": "代码/bridge.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "1 7\n",
+        "expected": "1 7\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "0 3\n",
+        "expected": "0 3\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "slug": "lamp",
+    "std": "代码/lamp.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "4\n",
+        "expected": "4\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "39\n",
+        "expected": "39\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "slug": "liar",
+    "std": "代码/liar.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "1\n",
+        "expected": "1\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "-1\n",
+        "expected": "-1\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "14\n",
+        "expected": "14\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "slug": "park",
+    "std": "代码/park.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "14\n",
+        "expected": "14\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "-6\n",
+        "expected": "-6\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "slug": "logic",
+    "std": "代码/logic.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "1\r\n111 1\r\n",
+        "expected": "1\n111 1\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "-1\r\n",
+        "expected": "-1\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "0\r\n",
+        "expected": "0\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "slug": "menu",
+    "std": "代码/menu.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "4\r\n",
+        "expected": "4\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "2\r\n",
+        "expected": "2\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "-1\r\n",
+        "expected": "-1\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "slug": "triplet",
+    "std": "代码/triplet.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "2\r\n1 4\r\n",
+        "expected": "2\n1 4\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "3\r\n1 4 7\r\n",
+        "expected": "3\n1 4 7\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "slug": "xor4",
+    "std": "代码/xor4.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "3\r\n",
+        "expected": "3\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "5\r\n",
+        "expected": "5\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "-4\r\n",
+        "expected": "-4\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "slug": "circle",
+    "std": "代码/circle.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "11\n9\n10\n9\n11\n",
+        "expected": "11\n9\n10\n9\n11\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "6\n",
+        "expected": "6\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "slug": "palpath",
+    "std": "代码/palpath.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "5\n",
+        "expected": "5\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "slug": "relay",
+    "std": "代码/relay.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "3\n",
+        "expected": "3\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "slug": "watch",
+    "std": "代码/watch.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "24\n",
+        "expected": "24\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "slug": "compile",
+    "std": "代码/compile.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "22\n",
+        "expected": "22\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "45\n",
+        "expected": "45\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "13\n19\n15\n",
+        "expected": "13\n19\n15\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "slug": "orcost",
+    "std": "代码/orcost.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "40\n7\n21\n7\n",
+        "expected": "40\n7\n21\n7\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "38\n5\n23\n15\n",
+        "expected": "38\n5\n23\n15\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "10737418230\n3221225469\n",
+        "expected": "10737418230\n3221225469\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "slug": "patrol",
+    "std": "代码/patrol.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "2\n",
+        "expected": "2\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "12\n",
+        "expected": "12\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "18\n",
+        "expected": "18\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "slug": "repair",
+    "std": "代码/repair.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "8\n",
+        "expected": "8\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "12\n",
+        "expected": "12\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "12\n",
+        "expected": "12\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "slug": "cross",
+    "std": "代码/cross.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "4\n",
+        "expected": "4\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "1\n",
+        "expected": "1\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "slug": "password",
+    "std": "代码/password.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "3\n",
+        "expected": "3\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "1\n",
+        "expected": "1\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "slug": "spider",
+    "std": "代码/spider.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "3 2\n",
+        "expected": "3 2\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "1 1\n",
+        "expected": "1 1\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "slug": "tree",
+    "std": "代码/tree.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "9\n",
+        "expected": "9\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "0\n",
+        "expected": "0\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "slug": "disk",
+    "std": "代码/disk.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "1\n6\n15\n1\n3\n7\n4\n",
+        "expected": "1\n6\n15\n1\n3\n7\n4\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "-1\n2\n-1\n",
+        "expected": "-1\n2\n-1\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "slug": "gcdforest",
+    "std": "代码/gcdforest.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "38\n",
+        "expected": "38\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "slug": "joint",
+    "std": "代码/joint.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "8\n13\n-1\n7\n",
+        "expected": "8\n13\n-1\n7\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 2,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "slug": "product",
+    "std": "代码/product.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "2\n",
+        "expected": "2\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "1000000003\n",
+        "expected": "1000000003\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 3,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "slug": "bits",
+    "std": "代码/bits.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "3\n",
+        "expected": "3\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "2\n",
+        "expected": "2\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "0\n",
+        "expected": "0\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "slug": "cut",
+    "std": "代码/cut.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "11\n",
+        "expected": "11\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "59\n",
+        "expected": "59\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "0\n",
+        "expected": "0\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "slug": "region",
+    "std": "代码/region.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "1 4\n1 2\n1 2\n1 3\n-1 4\n0 1\n",
+        "expected": "1 4\n1 2\n1 2\n1 3\n-1 4\n0 1\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "-1 1\n-2 1\n-1 1\n",
+        "expected": "-1 1\n-2 1\n-1 1\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "slug": "track",
+    "std": "代码/track.cpp",
+    "compile": "PASS",
+    "compile_error": "",
+    "inline": [
+      {
+        "k": 1,
+        "ok": true,
+        "got": "6\n",
+        "expected": "6\n"
+      },
+      {
+        "k": 2,
+        "ok": true,
+        "got": "3\n",
+        "expected": "3\n"
+      },
+      {
+        "k": 3,
+        "ok": true,
+        "got": "0\n",
+        "expected": "0\n"
+      }
+    ],
+    "public": [
+      {
+        "k": 4,
+        "ok": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第四套_V3.8_完整重构包.zip\T4\statement.md --public-root C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\public\0-06
+
+STDOUT:
+FAIL:
+  statement.md/eval: missing 【题目描述】
+  statement.md/eval: missing 【输入格式】
+  statement.md/eval: missing 【输出格式】
+  statement.md/eval: missing 【数据范围】
+
+STDERR:

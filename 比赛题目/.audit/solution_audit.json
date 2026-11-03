@@ -1,0 +1,662 @@
+[
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "statement": "statement.md",
+    "solution": "solution.md",
+    "problems": [
+      {
+        "slug": "star",
+        "std": "std/star/star.cpp",
+        "cpp_blocks": 4,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.9044,
+        "diff": "--- std\n+++ solution-block\n@@ -9,15 +9,15 @@\n \tcin >> n >> k >> m >> q;\n \tfor(int i = 1; i <= n; i++) cin >> a[i];\n \tlong long ans = 0;\n-\tint l = 1,bad = 0;   // bad������ [l,r] �ж���ҹ���ĸ���\n+\tint l = 1,bad = 0;   // bad：区间 [l,r] 中多云夜晚的个数\n \tfor(int r = 1; r <= n; r++){\n \t\tif(a[r] > q) bad++;\n-\t\t// ����ҹ������ m ��ʱ����˵�����\n+\t\t// 多云夜晚超过 m 个时，左端点右移\n \t\twhile(bad > m){\n \t\t\tif(a[l] > q) bad--;\n \t\t\tl++;\n \t\t}\n-\t\t// �� r ��β�ĺϷ����䣬��˵��ȡ l ~ r-k+1\n+\t\t// 以 r 结尾的合法区间，左端点可取 l ~ r-k+1\n \t\tif(r - k + 1 >= l) ans += r - k + 1 - l + 1;\n \t}\n \tcout << ans << endl;",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "slime",
+        "std": "std/slime/slime.cpp",
+        "cpp_blocks": 4,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.871,
+        "diff": "--- std\n+++ solution-block\n@@ -8,19 +8,19 @@\n \tcin >> T;\n \twhile(T--){\n \t\tcin >> n >> a >> b;\n-\t\t// s Ϊ n ������ƽ������s * s <= n < (s + 1) * (s + 1)\n+\t\t// s 为 n 的整数平方根：s * s <= n < (s + 1) * (s + 1)\n \t\tlong long s = (long long)sqrt((double)n);\n \t\twhile(s * s > n) s--;\n \t\twhile((s + 1) * (s + 1) <= n) s++;\n \t\tlong long ans = -1;\n-\t\t// ������ y ֻʷ��ķ��ÿֻ��СΪ x����Ҫ x * y >= n������ a(x-1) + b(y-1)\n-\t\t// ���һ��x <= s + 1��ö�� x��y ȡ��С�� ceil(n / x)\n+\t\t// 最终有 y 只史莱姆、每只大小为 x，需要 x * y >= n，花费 a(x-1) + b(y-1)\n+\t\t// 情况一：x <= s + 1，枚举 x，y 取最小的 ceil(n / x)\n \t\tfor(long long x = 1; x <= s + 1; x++){\n \t\t\tlong long y = (n + x - 1) / x;\n \t\t\tlong long cost = a * (x - 1) + b * (y - 1);\n \t\t\tif(ans == -1 || cost < ans) ans = cost;\n \t\t}\n-\t\t// �������x > s + 1����ʱ y <= s + 1��ö�� y��x ȡ��С�� ceil(n / y)\n+\t\t// 情况二：x > s + 1，此时 y <= s + 1，枚举 y，x 取最小的 ceil(n / y)\n \t\tfor(long long y = 1; y <= s + 1; y++){\n \t\t\tlong long x = (n + y - 1) / y;\n \t\t\tlong long cost = a * (x - 1) + b * (y - 1);",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "melody",
+        "std": "std/melody/melody.cpp",
+        "cpp_blocks": 4,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.867,
+        "diff": "--- std\n+++ solution-block\n@@ -4,7 +4,7 @@\n const int K = 25;\n int n,k;\n int a[N];\n-// f[i][j]�������� i �����������������ε����һ�����������ɾ�� j ������ʱ�������ε���󳤶�\n+// f[i][j]：保留第 i 个音符、它是上升段的最后一个，段内最多删除 j 个音符时，上升段的最大长度\n int f[N][K];\n int main(){\n \tfreopen(\"melody.in\",\"r\",stdin);\n@@ -15,7 +15,7 @@\n \tfor(int i = 1; i <= n; i++){\n \t\tfor(int j = 0; j <= k; j++){\n \t\t\tf[i][j] = 1;\n-\t\t\t// �������� i ��ǰһ�������������� p���м�ɾ�� g = i - p - 1 ��\n+\t\t\t// 上升段中 i 的前一个保留的音符是 p，中间删掉 g = i - p - 1 个\n \t\t\tfor(int g = 0; g <= j; g++){\n \t\t\t\tint p = i - 1 - g;\n \t\t\t\tif(p < 1) break;",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "chorus",
+        "std": "std/chorus/chorus.cpp",
+        "cpp_blocks": 4,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.8918,
+        "diff": "--- std\n+++ solution-block\n@@ -4,7 +4,7 @@\n const long long INF = 4e18;\n int n,L;\n long long a[N];\n-// cost[i][t]����λ�� i ��ʼ������Ϊ t ��һ��ȫ���ĳ�ͬһ��������С���ۣ�t �� L ~ 2L-1 ֮�䣩\n+// cost[i][t]：从位置 i 开始、长度为 t 的一段全部改成同一个数的最小代价（t 在 L ~ 2L-1 之间）\n long long cost[N][20];\n long long b[25];\n long long f[N];\n@@ -14,14 +14,14 @@\n \tcin >> n >> L;\n \tfor(int i = 1; i <= n; i++){\n \t\tcin >> a[i];\n-\t\ta[i + n] = a[i];   // ����һ�ݣ�������\n+\t\ta[i + n] = a[i];   // 复制一份，处理环\n \t}\n \tint maxT = 2 * L - 1;\n-\tint maxS = min(maxT - 1,n - 1);   // ���ϵ�һ�ε����ֻ���� 1 ~ maxS+1\n+\tint maxS = min(maxT - 1,n - 1);   // 环上第一段的起点只需试 1 ~ maxS+1\n \tfor(int i = 1; i <= maxS + n; i++){\n \t\tint m = 0;\n \t\tfor(int t = 1; t <= maxT && i + t - 1 <= 2 * n; t++){\n-\t\t\t// �� a[i+t-1] ������������ b[1..m]\n+\t\t\t// 把 a[i+t-1] 插入有序数组 b[1..m]\n \t\t\tlong long x = a[i + t - 1];\n \t\t\tint p = ++m;\n \t\t\twhile(p > 1 && b[p - 1] > x){\n@@ -30,7 +30,7 @@\n \t\t\t}\n \t\t\tb[p] = x;\n \t\t\tif(t >= L){\n-\t\t\t\tlong long mid = b[(t + 1) / 2],s = 0;   // �ĳ���λ��������С\n+\t\t\t\tlong long mid = b[(t + 1) / 2],s = 0;   // 改成中位数代价最小\n \t\t\t\tfor(int j = 1; j <= t; j++) s += abs(b[j] - mid);\n \t\t\t\tcost[i][t] = s;\n \t\t\t}\n@@ -38,7 +38,7 @@\n \t}\n \tlong long ans = INF;\n \tfor(int s = 0; s <= maxS; s++){\n-\t\t// ��λ�� s+1 ��ѻ�������f[j]��ǰ j �����ֺöε���С����\n+\t\t// 从位置 s+1 起把环剪开，f[j]：前 j 个数分好段的最小代价\n \t\tf[0] = 0;\n \t\tfor(int j = 1; j <= n; j++){\n \t\t\tf[j] = INF;",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "statement": "statement.md",
+    "solution": "solution.md",
+    "problems": [
+      {
+        "slug": "pairs",
+        "std": "std/pairs/pairs.cpp",
+        "cpp_blocks": 3,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "rail",
+        "std": "std/rail/rail.cpp",
+        "cpp_blocks": 3,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "visit",
+        "std": "std/visit/visit.cpp",
+        "cpp_blocks": 4,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "harvest",
+        "std": "std/harvest/harvest.cpp",
+        "cpp_blocks": 3,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "statement": "statement.md",
+    "solution": "solution.md",
+    "problems": [
+      {
+        "slug": "souvenir",
+        "std": "std/souvenir/souvenir.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "password",
+        "std": "std/password/password.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "growmax",
+        "std": "std/growmax/growmax.cpp",
+        "cpp_blocks": 3,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "widegraph",
+        "std": "std/widegraph/widegraph.cpp",
+        "cpp_blocks": 3,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "statement": null,
+    "solution": "solution.md",
+    "problems": [
+      {
+        "slug": "T1",
+        "std": "T1/std.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T2",
+        "std": "T2/std.cpp",
+        "cpp_blocks": 3,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T3",
+        "std": "T3/std.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T4",
+        "std": "T4/std.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "statement": null,
+    "solution": "solution.md",
+    "problems": [
+      {
+        "slug": "T1",
+        "std": "T1/std.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T2",
+        "std": "T2/std.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T3",
+        "std": "T3/std.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T4",
+        "std": "T4/std.cpp",
+        "cpp_blocks": 4,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "statement": null,
+    "solution": "solution.md",
+    "problems": [
+      {
+        "slug": "T1",
+        "std": "T1/std.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T2",
+        "std": "T2/std.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T3",
+        "std": "T3/std.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T4",
+        "std": "T4/std.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "statement": null,
+    "solution": "solution.md",
+    "problems": [
+      {
+        "slug": "T1",
+        "std": "T1/std.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T2",
+        "std": "T2/std.cpp",
+        "cpp_blocks": 3,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T3",
+        "std": "T3/std.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "T4",
+        "std": "T4/std.cpp",
+        "cpp_blocks": 2,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "statement": "总题面.md",
+    "solution": "总题解.md",
+    "problems": [
+      {
+        "slug": "invite",
+        "std": "代码/invite.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "river",
+        "std": "代码/river.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "trio",
+        "std": "代码/trio.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "roads",
+        "std": "代码/roads.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "statement": "总题面.md",
+    "solution": "总题解.md",
+    "problems": [
+      {
+        "slug": "lamp",
+        "std": "代码/lamp.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.939,
+        "diff": "--- std\n+++ solution-block\n@@ -25,7 +25,7 @@\n \tif(bb < 0 || bb > a) return 0;\n \treturn fac[a] * inv[bb] % MOD * inv[a - bb] % MOD;\n }\n-// ��״���飺���Ҷ˵�����ͳ���Ѽ�����߶θ���\n+// 树状数组：按右端点排名统计已加入的线段个数\n void add(int p){\n \tfor(; p <= n; p += p & -p) t[p]++;\n }\n@@ -53,8 +53,8 @@\n \tsort(b + 1,b + n + 1);\n \tsort(id + 1,id + n + 1,cmp);\n \tlong long ans = 0;\n-\t// �� (l, ���) ��������δ�����ÿ�������鵽�������������߶� s �ϣ�\n-\t// ���� k-1 ���� s ֮ǰ���Ҷ˵㲻С�� l_s + L ���߶���ѡ\n+\t// 按 (l, 编号) 排序后依次处理：每个方案归到其中排在最后的线段 s 上，\n+\t// 其余 k-1 条从 s 之前、右端点不小于 l_s + L 的线段中选\n \tfor(int q = 1; q <= n; q++){\n \t\tint s = id[q];\n \t\tif(r[s] - l[s] >= L){",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "liar",
+        "std": "代码/liar.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.8714,
+        "diff": "--- std\n+++ solution-block\n@@ -2,10 +2,10 @@\n using namespace std;\n const int N = 1e6 + 10;\n int c,n,m,K;\n-int head[N],nxt[2 * N],to[2 * N],w[2 * N],tot;   // �ڽӱ���w Ϊ 1 ��ʾ�������ݲ�ͬ��0 ��ʾ��ͬ\n-int col[N],q[N];         // col[x]��x ��Ⱦɫ��-1 ��ʾδ���ʣ���q Ϊ BFS ����\n-int num[N];              // num[d]����������֮��Ϊ d ����ͨ�����\n-bitset<N> dp;            // dp[s]����� s ��˵�����ܷ�ճ�\n+int head[N],nxt[2 * N],to[2 * N],w[2 * N],tot;   // 邻接表：w 为 1 表示两人身份不同，0 表示相同\n+int col[N],q[N];         // col[x]：x 的染色（-1 表示未访问）；q 为 BFS 队列\n+int num[N];              // num[d]：两侧人数之差为 d 的连通块个数\n+bitset<N> dp;            // dp[s]：多出 s 个说谎者能否凑出\n void addEdge(int u,int v,int t){\n \tnxt[++tot] = head[u];\n \tto[tot] = v;\n@@ -22,13 +22,13 @@\n \tfor(int k = 1; k <= m; k++){\n \t\tint i,j,t;\n \t\tcin >> i >> j >> t;\n-\t\t// t = 1��i ˵ j ��˵���ߣ��������ݲ�ͬ��t = 0������������ͬ\n+\t\t// t = 1：i 说 j 是说谎者，两人身份不同；t = 0：两人身份相同\n \t\taddEdge(i,j,t);\n \t\taddEdge(j,i,t);\n \t}\n \tfor(int i = 1; i <= n; i++) col[i] = -1;\n \tlong long base = 0;\n-\t// ��ÿ����ͨ�� BFS Ⱦɫ��ͳ��������ɫ����������ɫ��ͻ˵������ì��\n+\t// 对每个连通块 BFS 染色，统计两种颜色的人数；颜色冲突说明陈述矛盾\n \tfor(int s = 1; s <= n; s++){\n \t\tif(col[s] != -1) continue;\n \t\tint h = 0,tl = 0,cnt0 = 0,cnt1 = 0;\n@@ -50,7 +50,7 @@\n \t\t\t\t}\n \t\t\t}\n \t\t}\n-\t\t// ÿ����ͨ��ֻ�������ѡһ����ȡ�����ٵ�һ�࣬����� d ����Ϊ������Ʒ\n+\t\t// 每个连通块只能整体二选一：先取人数少的一侧，多出的 d 个作为背包物品\n \t\tbase += min(cnt0,cnt1);\n \t\tnum[abs(cnt0 - cnt1)]++;\n \t}\n@@ -58,7 +58,7 @@\n \t\tcout << -1 << endl;\n \t\treturn 0;\n \t}\n-\t// ��ͬ�� d ����Լ sqrt(2n) �֣���ÿ�� d �ĸ����������Ʋ�֣��� bitset �� 0/1 ����\n+\t// 不同的 d 至多约 sqrt(2n) 种，对每种 d 的个数做二进制拆分，用 bitset 做 0/1 背包\n \tdp[0] = 1;\n \tfor(int d = 1; d <= n; d++){\n \t\tint left = num[d];",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "bridge",
+        "std": "代码/bridge.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.9055,
+        "diff": "--- std\n+++ solution-block\n@@ -3,15 +3,15 @@\n const int N = 3e5 + 10;\n int c,n,m;\n int eu[N],ev[N];\n-int head[N],nxt[2 * N],eid[2 * N],gcnt;     // ԭͼ�ڽӱ�����ʽǰ���ǣ�����ߵı��\n-int thead[N],tnxt[2 * N],tto[2 * N],tcnt;   // ����������������\n+int head[N],nxt[2 * N],eid[2 * N],gcnt;     // 原图邻接表（链式前向星），存边的编号\n+int thead[N],tnxt[2 * N],tto[2 * N],tcnt;   // 桥树（缩点后的树）\n int dfn[N],low[N],tim;\n bool isBridge[N];\n int comp[N],compCnt;\n long long sz[N];\n int dis[N],pre[N],dep[N],bel[N],q[N];\n long long brSum[N];\n-long long sq;   // sumAtDepth ˳������ġ�����֧�͵�ƽ���͡�\n+long long sq;   // sumAtDepth 顺便求出的“各分支和的平方和”\n void addEdge(int u,int e){\n \tnxt[++gcnt] = head[u];\n \teid[gcnt] = e;\n@@ -22,12 +22,12 @@\n \ttto[tcnt] = v;\n \tthead[u] = tcnt;\n }\n-// �� e ����һ���˵�\n+// 边 e 的另一个端点\n int other(int e,int u){\n \tif(eu[e] == u) return ev[e];\n \treturn eu[e];\n }\n-// Tarjan ���ţ�inE ���ߵ� u ʱ�����ıߵı�ţ�ֻ������һ���ߣ��������ȷ�����ر�\n+// Tarjan 求桥：inE 是走到 u 时经过的边的编号，只跳过这一条边，因此能正确处理重边\n void tarjan(int u,int inE){\n \tdfn[u] = low[u] = ++tim;\n \tfor(int i = head[u]; i != 0; i = nxt[i]){\n@@ -43,7 +43,7 @@\n \t\t}\n \t}\n }\n-// �������ϴ� s ���� BFS������벢��¼ǰ����������Զ��\n+// 在桥树上从 s 出发 BFS，求距离并记录前驱，返回最远点\n int bfs(int s){\n \tfor(int i = 1; i <= compCnt; i++) dis[i] = -1;\n \tint h = 0,t = 0;\n@@ -65,8 +65,8 @@\n \t}\n \treturn far;\n }\n-// �� s ������������ block�������� s ����ǡΪ d �ķ�����С֮�ͣ�\n-// brSum[x] �ۼ����� s ���ھӷ�֧ x �Ĳ��֣�ȫ�ֱ��� sq ��¼����֧�͵�ƽ����\n+// 从 s 出发（不经过 block），求与 s 距离恰为 d 的分量大小之和；\n+// brSum[x] 累加属于 s 的邻居分支 x 的部分，全局变量 sq 记录各分支和的平方和\n long long sumAtDepth(int s,int block,int d){\n \tfor(int i = 1; i <= compCnt; i++) dep[i] = -1;\n \tint h = 0,t = 0;\n@@ -112,7 +112,7 @@\n \t\taddEdge(ev[i],i);\n \t}\n \ttarjan(1,0);\n-\t// �������ŵ���ͨ����Ǳ�˫��ͨ����\n+\t// 不经过桥的连通块就是边双连通分量\n \tfor(int i = 1; i <= n; i++){\n \t\tif(comp[i]) continue;\n \t\tcompCnt++;\n@@ -144,7 +144,7 @@\n \t\tcout << 0 << ' ' << 1LL * n * (n - 1) / 2 << endl;\n \t\treturn 0;\n \t}\n-\t// ����ֱ�� D���ӵı����ӵ��������������Ͼ���Ϊ D ʱ����ȥ�������\n+\t// 桥树直径 D：加的边连接的两个分量在树上距离为 D 时，消去的桥最多\n \tint a = bfs(1);\n \tint b = bfs(a);\n \tint D = dis[b];\n@@ -152,12 +152,12 @@\n \tfor(int x = b; x != 0; x = pre[x]) path.push_back(x);\n \tlong long ways;\n \tif(D % 2 == 0){\n-\t\t// ֱ�������ǵ� mid�����˵㵽 mid �ľ��붼�� D/2������ mid �Ĳ�ͬ��֧��\n+\t\t// 直径中心是点 mid：两端点到 mid 的距离都是 D/2，且在 mid 的不同分支中\n \t\tint mid = path[D / 2];\n \t\tlong long S = sumAtDepth(mid,0,D / 2);\n \t\tways = (S * S - sq) / 2;\n \t}else{\n-\t\t// ֱ�������Ǳ� (x,y)�����˵�ֱ������������࣬�� x��y �ľ��붼�� (D-1)/2\n+\t\t// 直径中心是边 (x,y)：两端点分别在这条边两侧，到 x、y 的距离都是 (D-1)/2\n \t\tint x = path[(D - 1) / 2],y = path[(D + 1) / 2];\n \t\tlong long Wx = sumAtDepth(x,y,(D - 1) / 2);\n \t\tlong long Wy = sumAtDepth(y,x,(D - 1) / 2);",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "park",
+        "std": "代码/park.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.8964,
+        "diff": "--- std\n+++ solution-block\n@@ -2,15 +2,15 @@\n using namespace std;\n const int N = 1e5 + 10;\n const int K = 205;\n-const long long NEG = -1e18;   // ��ʾ�����ܵ�״̬\n+const long long NEG = -1e18;   // 表示不可能的状态\n int c,n,k;\n long long a[N];\n vector<int> g[N];\n int sz[N];\n-// f[u][j][0]��u ��������ǡ���γ� j ��������u ������ʱ���������\n-// f[u][j][1]��u ���ţ�u ���ڵľ����Ѿ����� j��ʱ���������\n+// f[u][j][0]：u 的子树中恰好形成 j 个景区、u 不开放时的最大收益\n+// f[u][j][1]：u 开放（u 所在的景区已经计入 j）时的最大收益\n long long f[N][K][2];\n-long long t0[K],t1[K];         // �ϲ�һ������ʱ����ʱ���\n+long long t0[K],t1[K];         // 合并一个儿子时的临时结果\n void dfs(int u,int fa){\n \tsz[u] = 1;\n \tf[u][0][0] = 0;\n@@ -21,7 +21,7 @@\n \t\tint v = g[u][i];\n \t\tif(v == fa) continue;\n \t\tdfs(v,u);\n-\t\t// ֻö�ٵ����Ѻϲ��ĵ������� k �н�С���Ǹ�\n+\t\t// 只枚举到“已合并的点数”和 k 中较小的那个\n \t\tint lu = min(sz[u],k),lv = min(sz[v],k),lim = min(sz[u] + sz[v],k);\n \t\tfor(int j = 0; j <= lim; j++){\n \t\t\tt0[j] = NEG;\n@@ -30,16 +30,16 @@\n \t\tfor(int x = 0; x <= lu; x++){\n \t\t\tfor(int y = 0; y <= lv; y++){\n \t\t\t\tlong long best = max(f[v][y][0],f[v][y][1]);\n-\t\t\t\t// u �����ţ�v һ��ľ������Զ���\n+\t\t\t\t// u 不开放：v 一侧的景区各自独立\n \t\t\t\tif(f[u][x][0] != NEG && best != NEG && x + y <= lim){\n \t\t\t\t\tt0[x + y] = max(t0[x + y],f[u][x][0] + best);\n \t\t\t\t}\n \t\t\t\tif(f[u][x][1] == NEG) continue;\n-\t\t\t\t// u ���š�v �����ţ����������\n+\t\t\t\t// u 开放、v 不开放：景区数相加\n \t\t\t\tif(f[v][y][0] != NEG && x + y <= lim){\n \t\t\t\t\tt1[x + y] = max(t1[x + y],f[u][x][1] + f[v][y][0]);\n \t\t\t\t}\n-\t\t\t\t// u��v �����ţ�v ���ڵľ����� u ���ڵľ�������һ��\n+\t\t\t\t// u、v 都开放：v 所在的景区与 u 所在的景区连成一个\n \t\t\t\tif(f[v][y][1] != NEG && x + y - 1 <= lim){\n \t\t\t\t\tt1[x + y - 1] = max(t1[x + y - 1],f[u][x][1] + f[v][y][1]);\n \t\t\t\t}",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "statement": "statement.md",
+    "solution": "solution.md",
+    "problems": [
+      {
+        "slug": "xor4",
+        "std": "std/xor4/xor4.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.9422,
+        "diff": "--- std\n+++ solution-block\n@@ -25,14 +25,14 @@\n \t\t\tif(j % 2 == 1) w = x ^ p[(j + 1) / 2];\n \t\t\tf[i][j] = -inf;\n \n-\t\t\t// �Ӷδ� i ��ʼ��ǰ��Ҫ�ܷ��¸ý׶�֮ǰ�Ĳ�����\n+\t\t\t// 子段从 i 开始，前面要能放下该阶段之前的操作。\n \t\t\tint first = 1;\n \t\t\tif(j > 0) first = j / 2 + 1;\n \t\t\tif(i >= first) f[i][j] = w;\n \n \t\t\tlong long pre = f[i - 1][j];\n \t\t\tif(j >= 1) pre = max(pre,f[i - 1][j - 1]);\n-\t\t\t// ���������ο������ڣ��м�Ŀ�϶����������\n+\t\t\t// 两个操作段可以相邻，中间的空隙可以跳过。\n \t\t\tif(j >= 3 && j % 2 == 1) pre = max(pre,f[i - 1][j - 2]);\n \t\t\tif(pre != -inf) f[i][j] = max(f[i][j],pre + w);\n ",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "triplet",
+        "std": "std/triplet/triplet.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.9854,
+        "diff": "--- std\n+++ solution-block\n@@ -10,7 +10,7 @@\n int n,deg[N],sz[N],tag[N],cnt[3];\n bool cut[N],ok;\n \n-// r = -1 ʱ��ɾ���ߣ�����ɾȥǰ׺��ģ 3 Ϊ r �Ļ��ߡ�\n+// r = -1 时不删环边，否则删去前缀和模 3 为 r 的环边。\n void update(int r){\n \tvector<int> now;\n \tfor(int i = 1; i <= n; i++){",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "menu",
+        "std": "std/menu/menu.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "logic",
+        "std": "std/logic/logic.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": false,
+        "best_similarity": 0.9406,
+        "diff": "--- std\n+++ solution-block\n@@ -5,7 +5,7 @@\n int n,k,r,a[N][N],rhs[N];\n long long b[N];\n \n-// b[i] �ǵ�һ�� 1 �ڵ� i �еĲ�ֻ�������\n+// b[i] 是第一个 1 在第 i 列的差分基向量。\n void add(long long x){\n \tfor(int i = 1; i <= n; i++){\n \t\tif(((x >> (i - 1)) & 1) == 0) continue;\n@@ -39,7 +39,7 @@\n \t\treturn 0;\n \t}\n \n-\t// ���������������е���Ԫ��ʹÿ����Ԫ��ֻ��һ�� 1��\n+\t// 消掉其他基向量中的主元，使每个主元列只有一个 1。\n \tfor(int i = n; i >= 1; i--){\n \t\tif(b[i] == 0) continue;\n \t\tfor(int j = 1; j < i; j++){\n@@ -55,13 +55,13 @@\n \t\tfor(int i = 1; i <= n; i++){\n \t\t\tif(b[i] != 0) a[q][i] = (b[i] >> (j - 1)) & 1;\n \t\t}\n-\t\t// �Ҷ��ɵ�һ�鸳ֵȷ����\n+\t\t// 右端由第一组赋值确定。\n \t\tfor(int i = 1; i <= n; i++){\n \t\t\tif(a[q][i] == 1 && ((first >> (i - 1)) & 1)) rhs[q] ^= 1;\n \t\t}\n \t}\n \n-\t// �Թ�����ķ���������Ԫ��������ĿҪ������˳��\n+\t// 对构造出的方程组再消元，满足题目要求的输出顺序。\n \tint row = 0;\n \tfor(int j = 1; j <= n; j++){\n \t\tint p = row + 1;",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "statement": "总题面.md",
+    "solution": "总题解.md",
+    "problems": [
+      {
+        "slug": "relay",
+        "std": "代码/relay.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "watch",
+        "std": "代码/watch.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "palpath",
+        "std": "代码/palpath.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "circle",
+        "std": "代码/circle.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "statement": "statement.md",
+    "solution": "solution.md",
+    "problems": [
+      {
+        "slug": "repair",
+        "std": "std/repair/repair.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "patrol",
+        "std": "std/patrol/patrol.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "compile",
+        "std": "std/compile/compile.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "orcost",
+        "std": "std/orcost/orcost.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "statement": "总题面.md",
+    "solution": "总题解.md",
+    "problems": [
+      {
+        "slug": "cross",
+        "std": "代码/cross.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "password",
+        "std": "代码/password.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "spider",
+        "std": "代码/spider.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "tree",
+        "std": "代码/tree.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "statement": "总题面.md",
+    "solution": "总题解.md",
+    "problems": [
+      {
+        "slug": "product",
+        "std": "代码/product.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "disk",
+        "std": "代码/disk.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "gcdforest",
+        "std": "代码/gcdforest.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "joint",
+        "std": "代码/joint.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "statement": "总题面.md",
+    "solution": "总题解.md",
+    "problems": [
+      {
+        "slug": "cut",
+        "std": "代码/cut.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "region",
+        "std": "代码/region.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "track",
+        "std": "代码/track.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      },
+      {
+        "slug": "bits",
+        "std": "代码/bits.cpp",
+        "cpp_blocks": 1,
+        "std_exact_in_solution": true,
+        "best_similarity": 0.0,
+        "diff": "",
+        "std_banned_tokens": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\第七套_V3.8_完整重构包.zip\T2\statement.md --public-root C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\public\0-03
+
+STDOUT:
+FAIL:
+  statement.md: no problem H1 like '# 中文题名（slug）'; slug must start with a-z/0-9, then a-z/0-9/_/-
+
+STDERR:

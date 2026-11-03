@@ -1,0 +1,22 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第一套 NOIP 模拟卷.zip\总题面.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第一套 NOIP 模拟卷.zip\总题解.md --io std --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std logic=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第一套 NOIP 模拟卷\logic.cpp --std menu=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第一套 NOIP 模拟卷\menu.cpp --std triplet=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第一套 NOIP 模拟卷\triplet.cpp --std xor4=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第一套 NOIP 模拟卷\xor4.cpp
+
+STDOUT:
+总题解.md: 4 code blocks, 4 cpp
+  logic: std found verbatim in solution
+  menu: std found verbatim in solution
+  triplet: std found verbatim in solution
+  xor4: std found verbatim in solution
+  xor4 sample 1: std output matches
+  xor4 sample 2: std output matches
+  xor4 sample 3: std output matches
+  triplet sample 1: std output matches
+  triplet sample 2: std output matches
+  menu sample 1: std output matches
+  menu sample 2: std output matches
+  menu sample 3: std output matches
+  logic sample 1: std output matches
+  logic sample 2: std output matches
+  logic sample 3: std output matches
+PASS
+
+STDERR:

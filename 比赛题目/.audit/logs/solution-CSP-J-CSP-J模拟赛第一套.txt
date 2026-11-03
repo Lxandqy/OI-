@@ -1,0 +1,19 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\CSP-J模拟赛第一套.zip\statement.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\CSP-J\CSP-J模拟赛第一套.zip\solution.md --io file --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std chorus=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-CSP-J模拟赛第一套\chorus.cpp --std melody=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-CSP-J模拟赛第一套\melody.cpp --std slime=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-CSP-J模拟赛第一套\slime.cpp --std star=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\CSP-J-CSP-J模拟赛第一套\star.cpp
+
+STDOUT:
+solution.md: 19 code blocks, 16 cpp
+  chorus: std found verbatim in solution
+  melody: std found verbatim in solution
+  slime: std found verbatim in solution
+  star: std found verbatim in solution
+  star sample 1: std output matches
+  star sample 2: std output matches
+  slime sample 1: std output matches
+  slime sample 2: std output matches
+  melody sample 1: std output matches
+  melody sample 2: std output matches
+  chorus sample 1: std output matches
+  chorus sample 2: std output matches
+PASS
+
+STDERR:

@@ -1,0 +1,19 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第五套 NOIP 模拟赛.zip\总题面.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第五套 NOIP 模拟赛.zip\总题解.md --io file --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std cross=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第五套 NOIP 模拟赛\cross.cpp --std password=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第五套 NOIP 模拟赛\password.cpp --std spider=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第五套 NOIP 模拟赛\spider.cpp --std tree=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第五套 NOIP 模拟赛\tree.cpp
+
+STDOUT:
+总题解.md: 4 code blocks, 4 cpp
+  cross: std found verbatim in solution
+  password: std found verbatim in solution
+  spider: std found verbatim in solution
+  tree: std found verbatim in solution
+  cross sample 1: std output matches
+  cross sample 2: std output matches
+  password sample 1: std output matches
+  password sample 2: std output matches
+  spider sample 1: std output matches
+  spider sample 2: std output matches
+  tree sample 1: std output matches
+  tree sample 2: std output matches
+PASS
+
+STDERR:

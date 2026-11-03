@@ -1,0 +1,580 @@
+[
+  {
+    "package": "NOIP模拟赛-宴会名册",
+    "is_zip": false,
+    "names": [
+      "总题解.md",
+      "总题面.md",
+      "data/invite.zip",
+      "data/river.zip",
+      "data/roads.zip",
+      "data/trio.zip",
+      "下发/invite.zip",
+      "下发/river.zip",
+      "下发/roads.zip",
+      "下发/trio.zip",
+      "代码/invite.cpp",
+      "代码/river.cpp",
+      "代码/roads.cpp",
+      "代码/trio.cpp"
+    ],
+    "slugs": [
+      "invite",
+      "river",
+      "roads",
+      "trio"
+    ],
+    "inline": {
+      "invite": [
+        1
+      ],
+      "river": [
+        1
+      ],
+      "trio": [
+        1
+      ],
+      "roads": [
+        1
+      ]
+    },
+    "data": {
+      "invite": {
+        "members": 51,
+        "config": "-p 4 -t 1 -m 524288",
+        "tests": 25
+      },
+      "river": {
+        "members": 51,
+        "config": "-p 4 -t 1 -m 524288",
+        "tests": 25
+      },
+      "roads": {
+        "members": 51,
+        "config": "-p 4 -t 3 -m 524288",
+        "tests": 25
+      },
+      "trio": {
+        "members": 41,
+        "config": "-p 5 -t 1 -m 524288",
+        "tests": 20
+      }
+    },
+    "std_encoding": {
+      "invite": "UTF-8",
+      "river": "UTF-8",
+      "roads": "UTF-8",
+      "trio": "UTF-8"
+    }
+  },
+  {
+    "package": "NOIP模拟赛-第二套-CC版.zip",
+    "is_zip": true,
+    "names": [
+      "总题面.md",
+      "总题解.md",
+      "data/lamp.zip",
+      "代码/lamp.cpp",
+      "下发/lamp.zip",
+      "data/liar.zip",
+      "代码/liar.cpp",
+      "下发/liar.zip",
+      "data/bridge.zip",
+      "代码/bridge.cpp",
+      "下发/bridge.zip",
+      "data/park.zip",
+      "代码/park.cpp",
+      "下发/park.zip"
+    ],
+    "slugs": [
+      "bridge",
+      "lamp",
+      "liar",
+      "park"
+    ],
+    "inline": {
+      "lamp": [
+        1,
+        2
+      ],
+      "liar": [
+        1,
+        2,
+        3
+      ],
+      "bridge": [
+        1,
+        2
+      ],
+      "park": [
+        1,
+        2
+      ]
+    },
+    "data": {
+      "lamp": {
+        "members": 41,
+        "config": "-p 5 -t 1 -m 524288",
+        "tests": 20
+      },
+      "liar": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 524288",
+        "tests": 20
+      },
+      "bridge": {
+        "members": 41,
+        "config": "-p 5 -t 1.5 -m 524288",
+        "tests": 20
+      },
+      "park": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 524288",
+        "tests": 20
+      }
+    },
+    "std_encoding": {
+      "lamp": "UTF-8",
+      "liar": "UTF-8",
+      "bridge": "UTF-8",
+      "park": "UTF-8"
+    }
+  },
+  {
+    "package": "第一套 NOIP 模拟卷.zip",
+    "is_zip": true,
+    "names": [
+      "总题面.md",
+      "总题解.md",
+      "data/xor4.zip",
+      "代码/xor4.cpp",
+      "下发/xor4.zip",
+      "data/triplet.zip",
+      "代码/triplet.cpp",
+      "下发/triplet.zip",
+      "data/menu.zip",
+      "代码/menu.cpp",
+      "下发/menu.zip",
+      "data/logic.zip",
+      "代码/logic.cpp",
+      "下发/logic.zip"
+    ],
+    "slugs": [
+      "logic",
+      "menu",
+      "triplet",
+      "xor4"
+    ],
+    "inline": {
+      "xor4": [
+        1,
+        2,
+        3
+      ],
+      "triplet": [
+        1,
+        2
+      ],
+      "menu": [
+        1,
+        2,
+        3
+      ],
+      "logic": [
+        1,
+        2,
+        3
+      ]
+    },
+    "data": {
+      "xor4": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 262144",
+        "tests": 20
+      },
+      "triplet": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 262144",
+        "tests": 20
+      },
+      "menu": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 262144",
+        "tests": 20
+      },
+      "logic": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 262144",
+        "tests": 20
+      }
+    },
+    "std_encoding": {
+      "xor4": "UTF-8",
+      "triplet": "UTF-8",
+      "menu": "UTF-8",
+      "logic": "UTF-8"
+    }
+  },
+  {
+    "package": "第三套 NOIP 模拟赛",
+    "is_zip": false,
+    "names": [
+      "总题解.md",
+      "总题面.md",
+      "data/circle.zip",
+      "data/palpath.zip",
+      "data/relay.zip",
+      "data/watch.zip",
+      "下发/circle.zip",
+      "下发/palpath.zip",
+      "下发/relay.zip",
+      "下发/watch.zip",
+      "代码/circle.cpp",
+      "代码/palpath.cpp",
+      "代码/relay.cpp",
+      "代码/watch.cpp"
+    ],
+    "slugs": [
+      "circle",
+      "palpath",
+      "relay",
+      "watch"
+    ],
+    "inline": {
+      "relay": [
+        1
+      ],
+      "watch": [
+        1
+      ],
+      "palpath": [
+        1
+      ],
+      "circle": [
+        1,
+        2
+      ]
+    },
+    "data": {
+      "circle": {
+        "members": 41,
+        "config": "-p 5 -t 3 -m 524288",
+        "tests": 20
+      },
+      "palpath": {
+        "members": 41,
+        "config": "-p 5 -t 3 -m 524288",
+        "tests": 20
+      },
+      "relay": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 524288",
+        "tests": 20
+      },
+      "watch": {
+        "members": 41,
+        "config": "-p 5 -t 3 -m 524288",
+        "tests": 20
+      }
+    },
+    "std_encoding": {
+      "circle": "UTF-8",
+      "palpath": "UTF-8",
+      "relay": "UTF-8",
+      "watch": "UTF-8"
+    }
+  },
+  {
+    "package": "第二套 NOIP 模拟卷",
+    "is_zip": false,
+    "names": [
+      "总题解.md",
+      "总题面.md",
+      "data/compile.zip",
+      "data/orcost.zip",
+      "data/patrol.zip",
+      "data/repair.zip",
+      "下发/compile.zip",
+      "下发/orcost.zip",
+      "下发/patrol.zip",
+      "下发/repair.zip",
+      "代码/compile.cpp",
+      "代码/orcost.cpp",
+      "代码/patrol.cpp",
+      "代码/repair.cpp"
+    ],
+    "slugs": [
+      "compile",
+      "orcost",
+      "patrol",
+      "repair"
+    ],
+    "inline": {
+      "repair": [
+        1,
+        2,
+        3
+      ],
+      "patrol": [
+        1,
+        2,
+        3
+      ],
+      "compile": [
+        1,
+        2,
+        3
+      ],
+      "orcost": [
+        1,
+        2,
+        3
+      ]
+    },
+    "data": {
+      "compile": {
+        "members": 41,
+        "config": "-p 5 -t 3 -m 262144",
+        "tests": 20
+      },
+      "orcost": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 262144",
+        "tests": 20
+      },
+      "patrol": {
+        "members": 41,
+        "config": "-p 5 -t 3 -m 524288",
+        "tests": 20
+      },
+      "repair": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 262144",
+        "tests": 20
+      }
+    },
+    "std_encoding": {
+      "compile": "UTF-8",
+      "orcost": "UTF-8",
+      "patrol": "UTF-8",
+      "repair": "UTF-8"
+    }
+  },
+  {
+    "package": "第五套 NOIP 模拟赛.zip",
+    "is_zip": true,
+    "names": [
+      "总题面.md",
+      "总题解.md",
+      "data/cross.zip",
+      "代码/cross.cpp",
+      "下发/cross.zip",
+      "data/password.zip",
+      "代码/password.cpp",
+      "下发/password.zip",
+      "data/spider.zip",
+      "代码/spider.cpp",
+      "下发/spider.zip",
+      "data/tree.zip",
+      "代码/tree.cpp",
+      "下发/tree.zip"
+    ],
+    "slugs": [
+      "cross",
+      "password",
+      "spider",
+      "tree"
+    ],
+    "inline": {
+      "cross": [
+        1,
+        2
+      ],
+      "password": [
+        1,
+        2
+      ],
+      "spider": [
+        1,
+        2
+      ],
+      "tree": [
+        1,
+        2
+      ]
+    },
+    "data": {
+      "cross": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 524288",
+        "tests": 20
+      },
+      "password": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 524288",
+        "tests": 20
+      },
+      "spider": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 524288",
+        "tests": 20
+      },
+      "tree": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 524288",
+        "tests": 20
+      }
+    },
+    "std_encoding": {
+      "cross": "UTF-8",
+      "password": "UTF-8",
+      "spider": "UTF-8",
+      "tree": "UTF-8"
+    }
+  },
+  {
+    "package": "第六套 NOIP 模拟赛",
+    "is_zip": false,
+    "names": [
+      "总题解.md",
+      "总题面.md",
+      "data/disk.zip",
+      "data/gcdforest.zip",
+      "data/joint.zip",
+      "data/product.zip",
+      "下发/disk.zip",
+      "下发/gcdforest.zip",
+      "下发/joint.zip",
+      "下发/product.zip",
+      "代码/disk.cpp",
+      "代码/gcdforest.cpp",
+      "代码/joint.cpp",
+      "代码/product.cpp"
+    ],
+    "slugs": [
+      "disk",
+      "gcdforest",
+      "joint",
+      "product"
+    ],
+    "inline": {
+      "product": [
+        1,
+        2
+      ],
+      "disk": [
+        1,
+        2
+      ],
+      "gcdforest": [
+        1
+      ],
+      "joint": [
+        1
+      ]
+    },
+    "data": {
+      "disk": {
+        "members": 41,
+        "config": "-p 5 -t 3 -m 524288",
+        "tests": 20
+      },
+      "gcdforest": {
+        "members": 41,
+        "config": "-p 5 -t 3 -m 524288",
+        "tests": 20
+      },
+      "joint": {
+        "members": 41,
+        "config": "-p 5 -t 3 -m 524288",
+        "tests": 20
+      },
+      "product": {
+        "members": 41,
+        "config": "-p 5 -t 2 -m 524288",
+        "tests": 20
+      }
+    },
+    "std_encoding": {
+      "disk": "UTF-8",
+      "gcdforest": "UTF-8",
+      "joint": "UTF-8",
+      "product": "UTF-8"
+    }
+  },
+  {
+    "package": "第四套 NOIP 模拟赛",
+    "is_zip": false,
+    "names": [
+      "总题解.md",
+      "总题面.md",
+      "data/bits.zip",
+      "data/cut.zip",
+      "data/region.zip",
+      "data/track.zip",
+      "下发/bits.zip",
+      "下发/cut.zip",
+      "下发/region.zip",
+      "下发/track.zip",
+      "代码/bits.cpp",
+      "代码/cut.cpp",
+      "代码/region.cpp",
+      "代码/track.cpp"
+    ],
+    "slugs": [
+      "bits",
+      "cut",
+      "region",
+      "track"
+    ],
+    "inline": {
+      "cut": [
+        1,
+        2,
+        3
+      ],
+      "region": [
+        1,
+        2
+      ],
+      "track": [
+        1,
+        2,
+        3
+      ],
+      "bits": [
+        1,
+        2,
+        3
+      ]
+    },
+    "data": {
+      "bits": {
+        "members": 51,
+        "config": "-p 4 -t 3 -m 524288",
+        "tests": 25
+      },
+      "cut": {
+        "members": 51,
+        "config": "-p 4 -t 1 -m 524288",
+        "tests": 25
+      },
+      "region": {
+        "members": 51,
+        "config": "-p 4 -t 1 -m 524288",
+        "tests": 25
+      },
+      "track": {
+        "members": 51,
+        "config": "-p 4 -t 3 -m 524288",
+        "tests": 25
+      }
+    },
+    "std_encoding": {
+      "bits": "UTF-8",
+      "cut": "UTF-8",
+      "region": "UTF-8",
+      "track": "UTF-8"
+    }
+  }
+]

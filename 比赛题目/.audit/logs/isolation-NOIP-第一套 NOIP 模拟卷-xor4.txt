@@ -1,0 +1,7 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_isolation.py --hidden C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\isolation_tmp\iso-z9q5vppv\hidden --public C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\isolation_tmp\iso-z9q5vppv\public --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第一套 NOIP 模拟卷.zip\总题面.md --slug xor4
+
+STDOUT:
+hidden points: 20, public inputs checked: 4
+PASS: no public input appears in the hidden data; hidden inputs are pairwise distinct.
+
+STDERR:

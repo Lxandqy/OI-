@@ -1,0 +1,23 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第二套 NOIP 模拟卷\总题面.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第二套 NOIP 模拟卷\总题解.md --io file --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std compile=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第二套 NOIP 模拟卷\compile.cpp --std orcost=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第二套 NOIP 模拟卷\orcost.cpp --std patrol=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第二套 NOIP 模拟卷\patrol.cpp --std repair=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第二套 NOIP 模拟卷\repair.cpp
+
+STDOUT:
+总题解.md: 4 code blocks, 4 cpp
+  compile: std found verbatim in solution
+  orcost: std found verbatim in solution
+  patrol: std found verbatim in solution
+  repair: std found verbatim in solution
+  repair sample 1: std output matches
+  repair sample 2: std output matches
+  repair sample 3: std output matches
+  patrol sample 1: std output matches
+  patrol sample 2: std output matches
+  patrol sample 3: std output matches
+  compile sample 1: std output matches
+  compile sample 2: std output matches
+  compile sample 3: std output matches
+  orcost sample 1: std output matches
+  orcost sample 2: std output matches
+  orcost sample 3: std output matches
+PASS
+
+STDERR:

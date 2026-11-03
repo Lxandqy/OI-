@@ -1,0 +1,22 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_md.py --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第四套 NOIP 模拟赛\总题面.md --solution C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\第四套 NOIP 模拟赛\总题解.md --io file --compile C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\tools\w64devkit\w64devkit\bin\g++.exe -O2 -std=c++14 --std bits=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第四套 NOIP 模拟赛\bits.cpp --std cut=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第四套 NOIP 模拟赛\cut.cpp --std region=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第四套 NOIP 模拟赛\region.cpp --std track=C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\std_stage\NOIP-第四套 NOIP 模拟赛\track.cpp
+
+STDOUT:
+总题解.md: 4 code blocks, 4 cpp
+  bits: std found verbatim in solution
+  cut: std found verbatim in solution
+  region: std found verbatim in solution
+  track: std found verbatim in solution
+  cut sample 1: std output matches
+  cut sample 2: std output matches
+  cut sample 3: std output matches
+  region sample 1: std output matches
+  region sample 2: std output matches
+  track sample 1: std output matches
+  track sample 2: std output matches
+  track sample 3: std output matches
+  bits sample 1: std output matches
+  bits sample 2: std output matches
+  bits sample 3: std output matches
+PASS
+
+STDERR:

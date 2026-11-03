@@ -1,0 +1,46 @@
+[
+  {
+    "package": "第四套_V3.8_完整重构包.zip",
+    "problems": [
+      "chain",
+      "sumsq",
+      "necklace",
+      "eval"
+    ],
+    "statement_pdf_sha256": "06eb0fc311eb94e3e3ec95fba13feb65061c82704b52ed8f5c3daf13923da55e",
+    "solution_pdf_sha256": "f7a57a165146f24d930ca0c18ff0b855a40e64160a225cdd008de27a9e53e8d3"
+  },
+  {
+    "package": "第五套_V3.8_完整重构包.zip",
+    "problems": [
+      "date",
+      "purchase",
+      "divisible",
+      "green"
+    ],
+    "statement_pdf_sha256": "4846c38019e5dd847fe442137c9436ceff4fe09955174bc45ed134ad97cc54e0",
+    "solution_pdf_sha256": "68810560f52386f9580f07c602fde2a2595c309b5e6f949e1ae616b3f67f3b48"
+  },
+  {
+    "package": "第六套_V3.8_完整重构包.zip",
+    "problems": [
+      "maxmod",
+      "crossmul",
+      "triples",
+      "splitnum"
+    ],
+    "statement_pdf_sha256": "c0ea28bca843c33e6a8458601e4adcd3999d1c851d1125a50f036ae9fdfed16f",
+    "solution_pdf_sha256": "2b373bc862e7a1147d288de2936e6d588626227081f1e8816395da18c3792600"
+  },
+  {
+    "package": "第七套_V3.8_完整重构包.zip",
+    "problems": [
+      "palindrome",
+      "quad",
+      "files",
+      "leafcut"
+    ],
+    "statement_pdf_sha256": "ad66c29a63c79a14cea28e7235a84524c42087298fcea4195947a32f6173efd6",
+    "solution_pdf_sha256": "0fef970b2a27af03e2c623d1e06fe6aeea64b14cccb3c6f6add03fa5556f5c80"
+  }
+]

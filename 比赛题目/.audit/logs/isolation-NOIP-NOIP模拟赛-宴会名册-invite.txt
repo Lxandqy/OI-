@@ -1,0 +1,7 @@
+$ C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe C:\Users\Administrator\.codex\skills\oi-contest-authoring\scripts\check_isolation.py --hidden C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\isolation_tmp\iso-4h_mod46\hidden --public C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\isolation_tmp\iso-4h_mod46\public --statement C:\Users\Administrator\Desktop\OI-\比赛题目\.audit\text\NOIP\NOIP模拟赛-宴会名册\总题面.md --slug invite
+
+STDOUT:
+hidden points: 25, public inputs checked: 2
+PASS: no public input appears in the hidden data; hidden inputs are pairwise distinct.
+
+STDERR:

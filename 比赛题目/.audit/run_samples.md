@@ -1,0 +1,62 @@
+# std 编译与样例复现
+
+- CSP-J/CSP-J模拟赛第一套/chorus: compile=PASS; inline=2/2; public=2/2
+- CSP-J/CSP-J模拟赛第一套/melody: compile=PASS; inline=2/2; public=2/2
+- CSP-J/CSP-J模拟赛第一套/slime: compile=PASS; inline=2/2; public=2/2
+- CSP-J/CSP-J模拟赛第一套/star: compile=PASS; inline=2/2; public=2/2
+- CSP-J/CSP-J秋日训练卷/harvest: compile=PASS; inline=2/2; public=3/3
+- CSP-J/CSP-J秋日训练卷/pairs: compile=PASS; inline=2/2; public=3/3
+- CSP-J/CSP-J秋日训练卷/rail: compile=PASS; inline=2/2; public=3/3
+- CSP-J/CSP-J秋日训练卷/visit: compile=PASS; inline=2/2; public=3/3
+- CSP-J/CSP-J金桂第一试/growmax: compile=PASS; inline=1/1; public=1/1
+- CSP-J/CSP-J金桂第一试/password: compile=PASS; inline=1/1; public=1/1
+- CSP-J/CSP-J金桂第一试/souvenir: compile=PASS; inline=1/1; public=1/1
+- CSP-J/CSP-J金桂第一试/widegraph: compile=PASS; inline=1/1; public=1/1
+- CSP-J/第七套_V3.8_完整重构包/files: compile=PASS; inline=1/1; public=2/2
+- CSP-J/第七套_V3.8_完整重构包/leafcut: compile=PASS; inline=1/1; public=2/2
+- CSP-J/第七套_V3.8_完整重构包/palindrome: compile=PASS; inline=2/2; public=2/2
+- CSP-J/第七套_V3.8_完整重构包/quad: compile=PASS; inline=3/3; public=2/2
+- CSP-J/第五套_V3.8_完整重构包/date: compile=PASS; inline=2/2; public=2/2
+- CSP-J/第五套_V3.8_完整重构包/divisible: compile=PASS; inline=1/1; public=2/2
+- CSP-J/第五套_V3.8_完整重构包/green: compile=PASS; inline=2/2; public=2/2
+- CSP-J/第五套_V3.8_完整重构包/purchase: compile=PASS; inline=2/2; public=2/2
+- CSP-J/第六套_V3.8_完整重构包/crossmul: compile=PASS; inline=2/2; public=2/2
+- CSP-J/第六套_V3.8_完整重构包/maxmod: compile=PASS; inline=2/2; public=2/2
+- CSP-J/第六套_V3.8_完整重构包/splitnum: compile=PASS; inline=3/3; public=2/2
+- CSP-J/第六套_V3.8_完整重构包/triples: compile=PASS; inline=1/1; public=2/2
+- CSP-J/第四套_V3.8_完整重构包/chain: compile=PASS; inline=3/3; public=2/2
+- CSP-J/第四套_V3.8_完整重构包/eval: compile=PASS; inline=2/2; public=2/2
+- CSP-J/第四套_V3.8_完整重构包/necklace: compile=PASS; inline=1/1; public=2/2
+- CSP-J/第四套_V3.8_完整重构包/sumsq: compile=PASS; inline=2/2; public=2/2
+- NOIP/NOIP模拟赛-宴会名册/invite: compile=PASS; inline=1/1; public=1/1
+- NOIP/NOIP模拟赛-宴会名册/river: compile=PASS; inline=1/1; public=1/1
+- NOIP/NOIP模拟赛-宴会名册/roads: compile=PASS; inline=1/1; public=1/1
+- NOIP/NOIP模拟赛-宴会名册/trio: compile=PASS; inline=1/1; public=1/1
+- NOIP/NOIP模拟赛-第二套-CC版/bridge: compile=PASS; inline=2/2; public=1/1
+- NOIP/NOIP模拟赛-第二套-CC版/lamp: compile=PASS; inline=2/2; public=1/1
+- NOIP/NOIP模拟赛-第二套-CC版/liar: compile=PASS; inline=3/3; public=1/1
+- NOIP/NOIP模拟赛-第二套-CC版/park: compile=PASS; inline=2/2; public=1/1
+- NOIP/第一套 NOIP 模拟卷/logic: compile=PASS; inline=3/3; public=1/1
+- NOIP/第一套 NOIP 模拟卷/menu: compile=PASS; inline=3/3; public=1/1
+- NOIP/第一套 NOIP 模拟卷/triplet: compile=PASS; inline=2/2; public=1/1
+- NOIP/第一套 NOIP 模拟卷/xor4: compile=PASS; inline=3/3; public=1/1
+- NOIP/第三套 NOIP 模拟赛/circle: compile=PASS; inline=2/2; public=1/1
+- NOIP/第三套 NOIP 模拟赛/palpath: compile=PASS; inline=1/1; public=1/1
+- NOIP/第三套 NOIP 模拟赛/relay: compile=PASS; inline=1/1; public=1/1
+- NOIP/第三套 NOIP 模拟赛/watch: compile=PASS; inline=1/1; public=1/1
+- NOIP/第二套 NOIP 模拟卷/compile: compile=PASS; inline=3/3; public=1/1
+- NOIP/第二套 NOIP 模拟卷/orcost: compile=PASS; inline=3/3; public=1/1
+- NOIP/第二套 NOIP 模拟卷/patrol: compile=PASS; inline=3/3; public=1/1
+- NOIP/第二套 NOIP 模拟卷/repair: compile=PASS; inline=3/3; public=1/1
+- NOIP/第五套 NOIP 模拟赛/cross: compile=PASS; inline=2/2; public=1/1
+- NOIP/第五套 NOIP 模拟赛/password: compile=PASS; inline=2/2; public=1/1
+- NOIP/第五套 NOIP 模拟赛/spider: compile=PASS; inline=2/2; public=1/1
+- NOIP/第五套 NOIP 模拟赛/tree: compile=PASS; inline=2/2; public=1/1
+- NOIP/第六套 NOIP 模拟赛/disk: compile=PASS; inline=2/2; public=1/1
+- NOIP/第六套 NOIP 模拟赛/gcdforest: compile=PASS; inline=1/1; public=1/1
+- NOIP/第六套 NOIP 模拟赛/joint: compile=PASS; inline=1/1; public=1/1
+- NOIP/第六套 NOIP 模拟赛/product: compile=PASS; inline=2/2; public=1/1
+- NOIP/第四套 NOIP 模拟赛/bits: compile=PASS; inline=3/3; public=1/1
+- NOIP/第四套 NOIP 模拟赛/cut: compile=PASS; inline=3/3; public=1/1
+- NOIP/第四套 NOIP 模拟赛/region: compile=PASS; inline=2/2; public=1/1
+- NOIP/第四套 NOIP 模拟赛/track: compile=PASS; inline=3/3; public=1/1
