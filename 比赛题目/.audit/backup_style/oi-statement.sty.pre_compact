@@ -1,0 +1,113 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{oi-statement}[2026/10/19 v3.9.9 fixed contest statement style]
+% This file owns the visual style. Change problem content in the .tex file.
+\RequirePackage{iftex}
+\RequireXeTeX
+\RequirePackage{geometry}
+\geometry{a4paper,left=18mm,right=18mm,top=17mm,bottom=18mm,headheight=12pt,headsep=14.3pt,footskip=31.3pt}
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+\setmainfont{texgyretermes-regular.otf}[Path=fonts/,BoldFont=texgyretermes-bold.otf,ItalicFont=texgyretermes-italic.otf,BoldItalicFont=texgyretermes-bolditalic.otf]
+\setsansfont{NotoSansCJKsc-Regular.otf}[Path=fonts/,BoldFont=NotoSansCJKsc-Bold.otf]
+\setmonofont{NotoSansCJKsc-Regular.otf}[Path=fonts/,BoldFont=NotoSansCJKsc-Bold.otf]
+\setCJKmainfont{NotoSerifCJKsc-Regular.otf}[Path=fonts/,BoldFont=NotoSerifCJKsc-Bold.otf]
+\setCJKsansfont{NotoSansCJKsc-Regular.otf}[Path=fonts/,BoldFont=NotoSansCJKsc-Bold.otf]
+\setCJKmonofont{NotoSansCJKsc-Regular.otf}[Path=fonts/,BoldFont=NotoSansCJKsc-Bold.otf]
+\xeCJKsetup{PunctStyle=quanjiao}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{xcolor}
+\definecolor{OISampleBlue}{rgb}{0.196,0.294,1.0}
+\RequirePackage{array,tabularx}
+\RequirePackage{fancyhdr,lastpage}
+\RequirePackage{listings}
+\RequirePackage{needspace}
+\RequirePackage{enumitem}
+\setlist[itemize]{leftmargin=2em,itemsep=3pt,topsep=3pt,parsep=0pt}
+\setlist[enumerate]{leftmargin=2em,itemsep=6pt,topsep=4pt,parsep=0pt}
+\renewcommand{\normalsize}{\@setfontsize\normalsize{10.95}{16.05}\abovedisplayskip=9pt\belowdisplayskip=9pt\abovedisplayshortskip=5pt\belowdisplayshortskip=5pt}
+\AtBeginDocument{\normalsize}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.25}
+\raggedbottom
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\newcommand{\OIContestName}{模拟赛}
+\newcommand{\OIContestSubtitle}{}
+\newcommand{\OIContestLevel}{}
+\newcommand{\OIProblemName}{}
+\newcommand{\OISetup}[3]{\renewcommand{\OIContestName}{#1}\renewcommand{\OIContestSubtitle}{#2}\renewcommand{\OIContestLevel}{#3}}
+% Compile options shown on the cover. Set the value confirmed for the current task,
+% e.g. \OISetCompileOptions{-O2 -std=c++14 -static} as on recent CCF covers.
+\newcommand{\OICompileOptions}{-O2 -std=c++14}
+\newcommand{\OISetCompileOptions}[1]{\renewcommand{\OICompileOptions}{#1}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\fontsize{10}{12}\selectfont\OIContestName\quad\OIContestSubtitle}
+\fancyhead[R]{\fontsize{10}{12}\selectfont\OIContestLevel\quad\OIProblemName}
+\fancyfoot[C]{\fontsize{10}{12}\selectfont 第\ \thepage\ 页\qquad 共\ \pageref{LastPage}\ 页}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\OIFile}[1]{{\sffamily\bfseries\detokenize{#1}}}
+\newcommand{\OICoverTitle}{%
+  \thispagestyle{empty}%
+  \vspace*{-3.57mm}%
+  \begin{center}%
+    {\fontsize{24.88}{32}\selectfont\bfseries\OIContestName\par}%
+    \vspace{16.6pt}%
+    {\fontsize{24.88}{32}\selectfont\OIContestSubtitle\par}%
+    \vspace{16.65pt}%
+    {\fontsize{17.28}{22}\selectfont\OIContestLevel\par}%
+  \end{center}%
+  \vspace{38.693pt}%
+}
+% #1 = problem column count; #2 = complete data rows ending in \\ \hline.
+\newcommand{\OICoverTable}[2]{%
+  \noindent\begin{tabularx}{\linewidth}{|p{29.3mm}|*{#1}{>{\raggedright\arraybackslash}X|}}\hline
+    #2
+  \end{tabularx}\par
+}
+\newcommand{\OICompilation}[2]{%
+  \vspace{5pt}\noindent 提交源程序文件名\par\vspace{3pt}%
+  \OICoverTable{#1}{#2}%
+  \vspace{5pt}\noindent 编译选项\par\vspace{3pt}%
+  \noindent\begin{tabularx}{\linewidth}{|p{39mm}|>{\centering\arraybackslash}X|}\hline
+    对于 C++ 语言 & {\ttfamily\detokenize\expandafter{\OICompileOptions}}\\\hline
+  \end{tabularx}\par
+}
+\newcommand{\OICoverNotes}{\par\vspace{7pt}\noindent{\fontsize{14.4}{20}\selectfont\bfseries 注意事项（请仔细阅读）}\par\vspace{2pt}}
+\newcommand{\OIProblem}[2]{%
+  \clearpage
+  \renewcommand{\OIProblemName}{#1（#2）}%
+  \noindent\makebox[\linewidth][c]{{\fontsize{17.28}{22}\selectfont\bfseries #1（{\sffamily #2}）}}\par
+  \vspace{20.3pt}%
+}
+\newcommand{\OISection}[1]{%
+  \par\addvspace{7pt}\Needspace{4\baselineskip}%
+  \noindent{\fontsize{12}{18}\selectfont\bfseries【#1】}\par\nobreak\vspace{4.93pt}%
+  \@afterindenttrue\@afterheading
+}
+\lstnewenvironment{OISample}[2]{%
+  \OISection{样例 #1 #2}%
+  \lstset{language={},basicstyle=\ttfamily\fontsize{10}{14.16}\selectfont,
+    numbers=left,numberstyle=\rmfamily\fontsize{6}{8}\selectfont,
+    stepnumber=1,firstnumber=1,numbersep=9.27pt,
+    frame=lr,framerule=0.8pt,rulecolor=\color{OISampleBlue},framesep=7.27pt,
+    xleftmargin=8.07pt,xrightmargin=8.07pt,
+    aboveskip=0pt,belowskip=7pt,showstringspaces=false,showspaces=false,
+    showtabs=false,keepspaces=true,columns=fixed,basewidth=0.5em,
+    breaklines=false,tabsize=4,upquote=true,literate={-}{{\char45}}1}%
+}{}
+% Data-range table: #1 = column spec, e.g. {|c|c|c|c|}; body rows end in \\ \hline.
+\newenvironment{OIDataTable}[1]{%
+  \par\addvspace{4pt}\noindent\begin{center}\begin{tabular}{#1}\hline
+}{%
+  \end{tabular}\end{center}\par
+}
+\newcommand{\OIAdditionalSample}[2]{%
+  \OISection{样例 #1}%
+  见选手目录下的 \OIFile{#2#1.in} 与 \OIFile{#2#1.ans}。\par
+}
+\endinput

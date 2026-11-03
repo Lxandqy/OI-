@@ -1,0 +1,3731 @@
+[
+  {
+    "category": "CSP-J",
+    "package": "CSP-J模拟赛第一套",
+    "format": "generic_dir",
+    "slugs": [
+      "chorus",
+      "melody",
+      "slime",
+      "star"
+    ],
+    "problems": [
+      {
+        "slug": "chorus",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "合唱（chorus）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "chorus3.ans",
+          "chorus3.in",
+          "chorus4.ans",
+          "chorus4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/chorus/chorus.cpp",
+        "cpp_blocks": 4,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "melody",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "旋律（melody）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "melody3.ans",
+          "melody3.in",
+          "melody4.ans",
+          "melody4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/melody/melody.cpp",
+        "cpp_blocks": 4,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "slime",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "史莱姆（slime）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "slime3.ans",
+          "slime3.in",
+          "slime4.ans",
+          "slime4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/slime/slime.cpp",
+        "cpp_blocks": 4,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "star",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "观星（star）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "star3.ans",
+          "star3.in",
+          "star4.ans",
+          "star4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/star/star.cpp",
+        "cpp_blocks": 4,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J秋日训练卷",
+    "format": "generic_dir",
+    "slugs": [
+      "harvest",
+      "pairs",
+      "rail",
+      "visit"
+    ],
+    "problems": [
+      {
+        "slug": "harvest",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "丰收（harvest）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4,
+          5
+        ],
+        "sample_numbers": [
+          3,
+          4,
+          5
+        ],
+        "sample_files": [
+          "harvest3.ans",
+          "harvest3.in",
+          "harvest4.ans",
+          "harvest4.in",
+          "harvest5.ans",
+          "harvest5.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\CSP-J\\CSP-J秋日训练卷\\下发\\harvest"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/harvest/harvest.cpp",
+        "cpp_blocks": 3,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "pairs",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "配对（pairs）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4,
+          5
+        ],
+        "sample_numbers": [
+          3,
+          4,
+          5
+        ],
+        "sample_files": [
+          "pairs3.ans",
+          "pairs3.in",
+          "pairs4.ans",
+          "pairs4.in",
+          "pairs5.ans",
+          "pairs5.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\CSP-J\\CSP-J秋日训练卷\\下发\\pairs"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/pairs/pairs.cpp",
+        "cpp_blocks": 3,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "rail",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "通行（rail）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4,
+          5
+        ],
+        "sample_numbers": [
+          3,
+          4,
+          5
+        ],
+        "sample_files": [
+          "rail3.ans",
+          "rail3.in",
+          "rail4.ans",
+          "rail4.in",
+          "rail5.ans",
+          "rail5.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\CSP-J\\CSP-J秋日训练卷\\下发\\rail"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/rail/rail.cpp",
+        "cpp_blocks": 3,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "visit",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "远行（visit）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4,
+          5
+        ],
+        "sample_numbers": [
+          3,
+          4,
+          5
+        ],
+        "sample_files": [
+          "visit3.ans",
+          "visit3.in",
+          "visit4.ans",
+          "visit4.in",
+          "visit5.ans",
+          "visit5.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\CSP-J\\CSP-J秋日训练卷\\下发\\visit"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/visit/visit.cpp",
+        "cpp_blocks": 4,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "CSP-J金桂第一试",
+    "format": "generic_dir",
+    "slugs": [
+      "growmax",
+      "password",
+      "souvenir",
+      "widegraph"
+    ],
+    "problems": [
+      {
+        "slug": "growmax",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "数组升格（growmax）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "growmax2.ans",
+          "growmax2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\CSP-J\\CSP-J金桂第一试\\下发\\growmax"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/growmax/growmax.cpp",
+        "cpp_blocks": 3,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "password",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "安全密码（password）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "password2.ans",
+          "password2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\CSP-J\\CSP-J金桂第一试\\下发\\password"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/password/password.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "souvenir",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "纪念品分组（souvenir）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "souvenir2.ans",
+          "souvenir2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\CSP-J\\CSP-J金桂第一试\\下发\\souvenir"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/souvenir/souvenir.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "widegraph",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "广阔图（widegraph）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "widegraph2.ans",
+          "widegraph2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\CSP-J\\CSP-J金桂第一试\\下发\\widegraph"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/widegraph/widegraph.cpp",
+        "cpp_blocks": 3,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第七套_V3.8_完整重构包",
+    "format": "generic_dir",
+    "slugs": [
+      "files",
+      "leafcut",
+      "palindrome",
+      "quad"
+    ],
+    "problems": [
+      {
+        "slug": "files",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "文件判定（files）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2,
+          3
+        ],
+        "sample_numbers": [
+          2,
+          3
+        ],
+        "sample_files": [
+          "files2.ans",
+          "files2.in",
+          "files3.ans",
+          "files3.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/files/files.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "leafcut",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "树与叶子（leafcut）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2,
+          3
+        ],
+        "sample_numbers": [
+          2,
+          3
+        ],
+        "sample_files": [
+          "leafcut2.ans",
+          "leafcut2.in",
+          "leafcut3.ans",
+          "leafcut3.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/leafcut/leafcut.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "palindrome",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "回文串（palindrome）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "palindrome3.ans",
+          "palindrome3.in",
+          "palindrome4.ans",
+          "palindrome4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/palindrome/palindrome.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "quad",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "交错四元组（quad）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4,
+          5
+        ],
+        "sample_numbers": [
+          4,
+          5
+        ],
+        "sample_files": [
+          "quad4.ans",
+          "quad4.in",
+          "quad5.ans",
+          "quad5.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/quad/quad.cpp",
+        "cpp_blocks": 3,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第五套_V3.8_完整重构包",
+    "format": "generic_dir",
+    "slugs": [
+      "date",
+      "divisible",
+      "green",
+      "purchase"
+    ],
+    "problems": [
+      {
+        "slug": "date",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "上下五千年（date）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "date3.ans",
+          "date3.in",
+          "date4.ans",
+          "date4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/date/date.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "divisible",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "整除序列（divisible）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2,
+          3
+        ],
+        "sample_numbers": [
+          2,
+          3
+        ],
+        "sample_files": [
+          "divisible2.ans",
+          "divisible2.in",
+          "divisible3.ans",
+          "divisible3.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/divisible/divisible.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "green",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "绿野仙踪（green）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "green3.ans",
+          "green3.in",
+          "green4.ans",
+          "green4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/green/green.cpp",
+        "cpp_blocks": 4,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "purchase",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "采购（purchase）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "purchase3.ans",
+          "purchase3.in",
+          "purchase4.ans",
+          "purchase4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/purchase/purchase.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第六套_V3.8_完整重构包",
+    "format": "generic_dir",
+    "slugs": [
+      "crossmul",
+      "maxmod",
+      "splitnum",
+      "triples"
+    ],
+    "problems": [
+      {
+        "slug": "crossmul",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "各乘一个（crossmul）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "crossmul3.ans",
+          "crossmul3.in",
+          "crossmul4.ans",
+          "crossmul4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/crossmul/crossmul.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "maxmod",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "最多求余（maxmod）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "maxmod3.ans",
+          "maxmod3.in",
+          "maxmod4.ans",
+          "maxmod4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/maxmod/maxmod.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "splitnum",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "切割（splitnum）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4,
+          5
+        ],
+        "sample_numbers": [
+          4,
+          5
+        ],
+        "sample_files": [
+          "splitnum4.ans",
+          "splitnum4.in",
+          "splitnum5.ans",
+          "splitnum5.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/splitnum/splitnum.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "triples",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "三元组（triples）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2,
+          3
+        ],
+        "sample_numbers": [
+          2,
+          3
+        ],
+        "sample_files": [
+          "triples2.ans",
+          "triples2.in",
+          "triples3.ans",
+          "triples3.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/triples/triples.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "CSP-J",
+    "package": "第四套_V3.8_完整重构包",
+    "format": "generic_dir",
+    "slugs": [
+      "chain",
+      "eval",
+      "necklace",
+      "sumsq"
+    ],
+    "problems": [
+      {
+        "slug": "chain",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "接龙（chain）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4,
+          5
+        ],
+        "sample_numbers": [
+          4,
+          5
+        ],
+        "sample_files": [
+          "chain4.ans",
+          "chain4.in",
+          "chain5.ans",
+          "chain5.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/chain/chain.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "eval",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "表达式（eval）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "eval3.ans",
+          "eval3.in",
+          "eval4.ans",
+          "eval4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/eval/eval.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "necklace",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "彩彩的三彩项链（necklace）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2,
+          3
+        ],
+        "sample_numbers": [
+          2,
+          3
+        ],
+        "sample_files": [
+          "necklace2.ans",
+          "necklace2.in",
+          "necklace3.ans",
+          "necklace3.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/necklace/necklace.cpp",
+        "cpp_blocks": 2,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "sumsq",
+        "statement": "statement.md",
+        "solution": "solution.md",
+        "h1": [
+          "平方和（sumsq）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3,
+          4
+        ],
+        "sample_numbers": [
+          3,
+          4
+        ],
+        "sample_files": [
+          "sumsq3.ans",
+          "sumsq3.in",
+          "sumsq4.ans",
+          "sumsq4.in"
+        ],
+        "sample_dirs": [],
+        "test_count": 10,
+        "test_paired": true,
+        "config_location": "",
+        "config_required": false,
+        "config": null,
+        "config_issues": [],
+        "std": "std/sumsq/sumsq.cpp",
+        "cpp_blocks": 3,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-宴会名册",
+    "format": "noip_zip",
+    "slugs": [
+      "invite",
+      "river",
+      "roads",
+      "trio"
+    ],
+    "problems": [
+      {
+        "slug": "invite",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "宴会名册（invite）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "invite2.ans",
+          "invite2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\NOIP模拟赛-宴会名册\\下发\\invite.zip"
+        ],
+        "test_count": 25,
+        "test_paired": true,
+        "config_location": "data/invite.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 4 -t 1 -m 524288",
+          "points": 4,
+          "tl": 1.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out",
+            "test 21.in 21.out",
+            "test 22.in 22.out",
+            "test 23.in 23.out",
+            "test 24.in 24.out",
+            "test 25.in 25.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/invite.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "river",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "河道预算（river）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "river2.ans",
+          "river2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\NOIP模拟赛-宴会名册\\下发\\river.zip"
+        ],
+        "test_count": 25,
+        "test_paired": true,
+        "config_location": "data/river.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 4 -t 1 -m 524288",
+          "points": 4,
+          "tl": 1.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out",
+            "test 21.in 21.out",
+            "test 22.in 22.out",
+            "test 23.in 23.out",
+            "test 24.in 24.out",
+            "test 25.in 25.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/river.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "roads",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "道路预选（roads）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "roads2.ans",
+          "roads2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\NOIP模拟赛-宴会名册\\下发\\roads.zip"
+        ],
+        "test_count": 25,
+        "test_paired": true,
+        "config_location": "data/roads.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 4 -t 3 -m 524288",
+          "points": 4,
+          "tl": 3.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out",
+            "test 21.in 21.out",
+            "test 22.in 22.out",
+            "test 23.in 23.out",
+            "test 24.in 24.out",
+            "test 25.in 25.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/roads.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "trio",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "三路同归（trio）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "trio2.ans",
+          "trio2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\NOIP模拟赛-宴会名册\\下发\\trio.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/trio.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 1 -m 524288",
+          "points": 5,
+          "tl": 1.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/trio.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "NOIP",
+    "package": "NOIP模拟赛-第二套-CC版",
+    "format": "noip_zip",
+    "slugs": [
+      "bridge",
+      "lamp",
+      "liar",
+      "park"
+    ],
+    "problems": [
+      {
+        "slug": "bridge",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "关键道路（bridge）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "bridge3.ans",
+          "bridge3.in"
+        ],
+        "sample_dirs": [
+          "下发/bridge.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/bridge.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 1.5 -m 524288",
+          "points": 5,
+          "tl": 1.5,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/bridge.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "lamp",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "彩灯（lamp）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "lamp3.ans",
+          "lamp3.in"
+        ],
+        "sample_dirs": [
+          "下发/lamp.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/lamp.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 1 -m 524288",
+          "points": 5,
+          "tl": 1.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/lamp.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "liar",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "说谎者（liar）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "liar4.ans",
+          "liar4.in"
+        ],
+        "sample_dirs": [
+          "下发/liar.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/liar.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 524288",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/liar.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "park",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "景区（park）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "park3.ans",
+          "park3.in"
+        ],
+        "sample_dirs": [
+          "下发/park.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/park.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 524288",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/park.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第一套 NOIP 模拟卷",
+    "format": "noip_zip",
+    "slugs": [
+      "logic",
+      "menu",
+      "triplet",
+      "xor4"
+    ],
+    "problems": [
+      {
+        "slug": "logic",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "丢失的异或方程（logic）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "logic4.ans",
+          "logic4.in"
+        ],
+        "sample_dirs": [
+          "下发/logic.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/logic.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 262144",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 262144,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/logic.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "menu",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "菜系点餐（menu）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "menu4.ans",
+          "menu4.in"
+        ],
+        "sample_dirs": [
+          "下发/menu.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/menu.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 262144",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 262144,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/menu.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "triplet",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "三点分块（triplet）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "triplet3.ans",
+          "triplet3.in"
+        ],
+        "sample_dirs": [
+          "下发/triplet.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/triplet.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 262144",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 262144,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/triplet.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "xor4",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "分段异或（xor4）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "xor44.ans",
+          "xor44.in"
+        ],
+        "sample_dirs": [
+          "下发/xor4.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/xor4.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 262144",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 262144,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/xor4.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第三套 NOIP 模拟赛",
+    "format": "noip_zip",
+    "slugs": [
+      "circle",
+      "palpath",
+      "relay",
+      "watch"
+    ],
+    "problems": [
+      {
+        "slug": "circle",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "朋友圈（circle）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "circle3.ans",
+          "circle3.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第三套 NOIP 模拟赛\\下发\\circle.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/circle.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 3 -m 524288",
+          "points": 5,
+          "tl": 3.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/circle.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "palpath",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "回文通路（palpath）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "palpath2.ans",
+          "palpath2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第三套 NOIP 模拟赛\\下发\\palpath.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/palpath.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 3 -m 524288",
+          "points": 5,
+          "tl": 3.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/palpath.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "relay",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "环线协作（relay）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "relay2.ans",
+          "relay2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第三套 NOIP 模拟赛\\下发\\relay.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/relay.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 524288",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/relay.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "watch",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "双点巡查（watch）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "watch2.ans",
+          "watch2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第三套 NOIP 模拟赛\\下发\\watch.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/watch.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 3 -m 524288",
+          "points": 5,
+          "tl": 3.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/watch.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第二套 NOIP 模拟卷",
+    "format": "noip_zip",
+    "slugs": [
+      "compile",
+      "orcost",
+      "patrol",
+      "repair"
+    ],
+    "problems": [
+      {
+        "slug": "compile",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "三机编排（compile）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "compile4.ans",
+          "compile4.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第二套 NOIP 模拟卷\\下发\\compile.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/compile.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 3 -m 262144",
+          "points": 5,
+          "tl": 3.0,
+          "ml_kib": 262144,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/compile.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "orcost",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "区间合码（orcost）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "orcost4.ans",
+          "orcost4.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第二套 NOIP 模拟卷\\下发\\orcost.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/orcost.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 262144",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 262144,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/orcost.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "patrol",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "协同巡检（patrol）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "patrol4.ans",
+          "patrol4.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第二套 NOIP 模拟卷\\下发\\patrol.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/patrol.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 3 -m 524288",
+          "points": 5,
+          "tl": 3.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/patrol.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "repair",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "连续检修（repair）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "repair4.ans",
+          "repair4.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第二套 NOIP 模拟卷\\下发\\repair.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/repair.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 262144",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 262144,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/repair.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第五套 NOIP 模拟赛",
+    "format": "noip_zip",
+    "slugs": [
+      "cross",
+      "password",
+      "spider",
+      "tree"
+    ],
+    "problems": [
+      {
+        "slug": "cross",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "交错对（cross）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "cross3.ans",
+          "cross3.in"
+        ],
+        "sample_dirs": [
+          "下发/cross.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/cross.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 524288",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/cross.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "password",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "密码库（password）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "password3.ans",
+          "password3.in"
+        ],
+        "sample_dirs": [
+          "下发/password.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/password.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 524288",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/password.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "spider",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "蛛网传信（spider）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "spider3.ans",
+          "spider3.in"
+        ],
+        "sample_dirs": [
+          "下发/spider.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/spider.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 524288",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/spider.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "tree",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "树上调和（tree）\r"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "tree3.ans",
+          "tree3.in"
+        ],
+        "sample_dirs": [
+          "下发/tree.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/tree.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 524288",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/tree.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第六套 NOIP 模拟赛",
+    "format": "noip_zip",
+    "slugs": [
+      "disk",
+      "gcdforest",
+      "joint",
+      "product"
+    ],
+    "problems": [
+      {
+        "slug": "disk",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "环盘（disk）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "disk3.ans",
+          "disk3.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第六套 NOIP 模拟赛\\下发\\disk.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/disk.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 3 -m 524288",
+          "points": 5,
+          "tl": 3.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/disk.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "gcdforest",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "约数林（gcdforest）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "gcdforest2.ans",
+          "gcdforest2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第六套 NOIP 模拟赛\\下发\\gcdforest.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/gcdforest.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 3 -m 524288",
+          "points": 5,
+          "tl": 3.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/gcdforest.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "joint",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "联保（joint）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1
+        ],
+        "distributed_refs": [
+          2
+        ],
+        "sample_numbers": [
+          2
+        ],
+        "sample_files": [
+          "joint2.ans",
+          "joint2.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第六套 NOIP 模拟赛\\下发\\joint.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/joint.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 3 -m 524288",
+          "points": 5,
+          "tl": 3.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/joint.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "product",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "乘积裁剪（product）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          3
+        ],
+        "sample_numbers": [
+          3
+        ],
+        "sample_files": [
+          "product3.ans",
+          "product3.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第六套 NOIP 模拟赛\\下发\\product.zip"
+        ],
+        "test_count": 20,
+        "test_paired": true,
+        "config_location": "data/product.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 5 -t 2 -m 524288",
+          "points": 5,
+          "tl": 2.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/product.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  },
+  {
+    "category": "NOIP",
+    "package": "第四套 NOIP 模拟赛",
+    "format": "noip_zip",
+    "slugs": [
+      "bits",
+      "cut",
+      "region",
+      "track"
+    ],
+    "problems": [
+      {
+        "slug": "bits",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "按位记录（bits）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "bits4.ans",
+          "bits4.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第四套 NOIP 模拟赛\\下发\\bits.zip"
+        ],
+        "test_count": 25,
+        "test_paired": true,
+        "config_location": "data/bits.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 4 -t 3 -m 524288",
+          "points": 4,
+          "tl": 3.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out",
+            "test 21.in 21.out",
+            "test 22.in 22.out",
+            "test 23.in 23.out",
+            "test 24.in 24.out",
+            "test 25.in 25.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/bits.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "cut",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "升温统计（cut）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "cut4.ans",
+          "cut4.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第四套 NOIP 模拟赛\\下发\\cut.zip"
+        ],
+        "test_count": 25,
+        "test_paired": true,
+        "config_location": "data/cut.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 4 -t 1 -m 524288",
+          "points": 4,
+          "tl": 1.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out",
+            "test 21.in 21.out",
+            "test 22.in 22.out",
+            "test 23.in 23.out",
+            "test 24.in 24.out",
+            "test 25.in 25.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/cut.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "region",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "最优区域（region）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "region4.ans",
+          "region4.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第四套 NOIP 模拟赛\\下发\\region.zip"
+        ],
+        "test_count": 25,
+        "test_paired": true,
+        "config_location": "data/region.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 4 -t 1 -m 524288",
+          "points": 4,
+          "tl": 1.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out",
+            "test 21.in 21.out",
+            "test 22.in 22.out",
+            "test 23.in 23.out",
+            "test 24.in 24.out",
+            "test 25.in 25.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/region.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      },
+      {
+        "slug": "track",
+        "statement": "总题面.md",
+        "solution": "总题解.md",
+        "h1": [
+          "轨道（track）"
+        ],
+        "has_standard_sections": true,
+        "inline_samples": [
+          1,
+          2,
+          3
+        ],
+        "distributed_refs": [
+          4
+        ],
+        "sample_numbers": [
+          4
+        ],
+        "sample_files": [
+          "track4.ans",
+          "track4.in"
+        ],
+        "sample_dirs": [
+          "C:\\Users\\Administrator\\Desktop\\OI-\\比赛题目\\NOIP\\第四套 NOIP 模拟赛\\下发\\track.zip"
+        ],
+        "test_count": 25,
+        "test_paired": true,
+        "config_location": "data/track.zip",
+        "config_required": true,
+        "config": {
+          "first": "-p 4 -t 3 -m 524288",
+          "points": 4,
+          "tl": 3.0,
+          "ml_kib": 524288,
+          "test_lines": [
+            "test 1.in 1.out",
+            "test 2.in 2.out",
+            "test 3.in 3.out",
+            "test 4.in 4.out",
+            "test 5.in 5.out",
+            "test 6.in 6.out",
+            "test 7.in 7.out",
+            "test 8.in 8.out",
+            "test 9.in 9.out",
+            "test 10.in 10.out",
+            "test 11.in 11.out",
+            "test 12.in 12.out",
+            "test 13.in 13.out",
+            "test 14.in 14.out",
+            "test 15.in 15.out",
+            "test 16.in 16.out",
+            "test 17.in 17.out",
+            "test 18.in 18.out",
+            "test 19.in 19.out",
+            "test 20.in 20.out",
+            "test 21.in 21.out",
+            "test 22.in 22.out",
+            "test 23.in 23.out",
+            "test 24.in 24.out",
+            "test 25.in 25.out"
+          ],
+          "issues": []
+        },
+        "config_issues": [],
+        "std": "代码/track.cpp",
+        "cpp_blocks": 1,
+        "std_exact": true,
+        "std_semantic_without_comments": true,
+        "sample_issues": [],
+        "isolation": {
+          "hidden_duplicates": [],
+          "public_duplicates": [],
+          "public_equals_hidden": []
+        }
+      }
+    ],
+    "zip_health": []
+  }
+]
