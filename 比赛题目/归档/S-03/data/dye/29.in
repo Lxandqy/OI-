@@ -1,0 +1,32 @@
+31
+10 4
+11 2 red
+2 12 blue
+12 8 blue
+8 18 black
+18 15 black
+15 27 black
+27 1 black
+1 31 red
+31 22 blue
+22 10 blue
+10 25 black
+25 17 blue
+17 9 black
+9 14 black
+14 3 black
+3 4 black
+4 7 blue
+7 29 black
+29 23 black
+23 28 red
+28 21 red
+21 19 red
+19 20 black
+20 24 blue
+24 30 black
+30 13 black
+13 26 red
+26 16 red
+16 6 red
+6 5 black
